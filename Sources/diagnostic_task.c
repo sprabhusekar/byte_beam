@@ -4,7 +4,11 @@
  *  Created on: 01-Aug-2022
  *      Author: Prabhu
  */
-
+#include "diagnostic_task.h"
+#include "timer.h"
+#include "rr_nvic.h"
+#include "uart.h"
+#include "operating_system.h"
 
 
 

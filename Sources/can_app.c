@@ -76,6 +76,8 @@ void can_data_push(void)
 		total_uart_length_u16 = length+8;
 		can_uart_tx_queue_data_st.event_e =  UART_TX_CAN_DATA_SEND;
 		can_uart_tx_queue_data_st.source_u8 =  0xAA;
+		//last_can_command_ack_pending = true;
+		//uart_tx_data(can_data, total_uart_length_u16);
 		xQueueSend(os_uart_tx_queue_handler_ge,&can_uart_tx_queue_data_st,1);
 	}
  }
@@ -86,7 +88,7 @@ void can_data_push(void)
 void uart_send_received_can_data(void)
 {
 	uart_tx_data(can_data, total_uart_length_u16);
-	last_can_command_ack_pending = true;
+
 }
 
 

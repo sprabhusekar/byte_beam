@@ -10,6 +10,7 @@
 #include "common_header.h"
 
 
+
  static can_queue_struct rx_can_queue __attribute__((section("m_data"), used)) = { .tail = 0, .head = 0, .full_status = 0,
 		.empty_status = true, .message[CAN_QUEUE_SIZE - 1] = { { 0 } }, } ;
 

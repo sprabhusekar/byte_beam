@@ -13,6 +13,8 @@
 #include "can.h"
 #include "timer.h"
 #include "operating_system.h"
+#include "rr_nvic.h"
+#include "clock.h"
 
 uint8_t core_main_u8(void)
 {
@@ -23,7 +25,7 @@ uint8_t core_main_u8(void)
     can_init();
     core_sts_u8 += timer_init_u8();
     core_sts_u8 += uart_init();
-    core_sts_u8 += nvic_init_v();
+     nvic_init_v();
     nvic_disable_all_Interrupts_v();
     return core_sts_u8;
 }

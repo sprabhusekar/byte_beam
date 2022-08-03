@@ -9,6 +9,7 @@
 #include "common_header.h"
 #include "uart_state_machine.h"
 #include "can.h"
+#include "can_app.h"
 
 void can_comm_rx_task_v(void *parameter)
 {

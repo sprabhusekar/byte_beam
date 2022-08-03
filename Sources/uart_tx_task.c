@@ -14,6 +14,8 @@
 
 operating_system_uart_tx_queue_tst queue_received_uart_send_gst;
 
+uint8_t can_mst_try_u8 = 0;
+uint8_t heart_beat_mst_try_u8 = 0;
 void uart_tx_task_v(void *parameter)
 {
 	(void)(parameter);
@@ -30,14 +32,51 @@ void uart_tx_task_v(void *parameter)
 						&& (last_can_command_ack_pending == false))
 					{
 						send_heartbeat();
+						heart_beat_mst_try_u8 = 0;
 					}
+					else
+					{
+						heart_beat_mst_try_u8++;
+						if(heart_beat_mst_try_u8 >=5)
+						{
+							heart_beat_mst_try_u8 = 6;
+						}
+						else
+						{
+							if(last_uart_command_ack_pending == true)
+								send_heartbeat();
+							//else
+								//uart_send_received_can_data();
+						}
 
+					}
 				}
 				break;
 /***********************************************************************************************************/
 				case UART_TX_CAN_DATA_SEND:
 				{
-					uart_send_received_can_data();
+					if((last_uart_command_ack_pending == false)
+						&& (last_can_command_ack_pending == false))
+					{
+						last_can_command_ack_pending = true;
+						uart_send_received_can_data();
+						can_mst_try_u8 = 0;
+					}
+					else
+					{
+						can_mst_try_u8++;
+						if(can_mst_try_u8 >= 5)
+						{
+							can_mst_try_u8 = 6;
+						}
+						else
+						{
+							if(last_can_command_ack_pending)
+								uart_send_received_can_data();
+							//else
+								//send_heartbeat();
+						}
+					}
 				}
 				break;
 /************************************************************************************************************/

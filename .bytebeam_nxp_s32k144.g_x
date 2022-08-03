@@ -69,23 +69,23 @@
       <File Name="SDK/platform/drivers/inc/lpuart_driver.h" FileDate="2022-07-31, 11:40:42" FileAge="1659247842000" FileType="1048576" CompNumb="14" />
       <File Name="SDK/platform/drivers/src/flexio/flexio_common.c" FileDate="1970-01-01, 05:29:59" FileAge="-1" FileType="1048576" />
       <File Name="SDK/platform/drivers/src/pins/pins_gpio_hw_access.h" FileDate="2022-07-31, 09:45:50" FileAge="1659240950000" FileType="1048576" CompNumb="2" />
-      <File Name="SDK/platform/drivers/src/clock/S32K1xx/smc_hw_access.h" FileDate="2022-07-31, 09:45:50" FileAge="1659240950000" FileType="1048576" CompNumb="16" />
       <File Name="Generated_Code/clockMan1.h" FileDate="2022-08-01, 11:35:24" FileAge="1659333924000" FileType="45637" CompNumb="16" />
+      <File Name="SDK/platform/drivers/src/clock/S32K1xx/smc_hw_access.h" FileDate="2022-07-31, 09:45:50" FileAge="1659240950000" FileType="1048576" CompNumb="16" />
       <File Name="Generated_Code/uart_pal_cfg.h" FileDate="2022-07-31, 11:40:42" FileAge="1659247842000" FileType="45637" CompNumb="14" />
       <File Name="SDK/platform/drivers/inc/pins_driver.h" FileDate="2022-07-31, 09:45:50" FileAge="1659240950000" FileType="1048576" CompNumb="2" />
       <File Name="Generated_Code/clockMan1.c" FileDate="2022-08-01, 11:35:24" FileAge="1659333924000" FileType="45637" CompNumb="16" />
       <File Name="SDK/rtos/FreeRTOS_S32K/Source/include/queue.h" FileDate="2022-07-31, 16:29:58" FileAge="1659265198000" FileType="1048576" CompNumb="15" />
-      <File Name="SDK/rtos/FreeRTOS_S32K/Source/timers.c" FileDate="2022-07-31, 16:29:58" FileAge="1659265198000" FileType="1048576" CompNumb="15" />
       <File Name="Generated_Code/pwrMan1.h" FileDate="2022-08-01, 12:19:52" FileAge="1659336592000" FileType="45637" CompNumb="17" />
+      <File Name="SDK/rtos/FreeRTOS_S32K/Source/timers.c" FileDate="2022-07-31, 16:29:58" FileAge="1659265198000" FileType="1048576" CompNumb="15" />
       <File Name="Generated_Code/timing_pal1.h" FileDate="2022-07-31, 17:56:46" FileAge="1659270406000" FileType="45637" CompNumb="10" />
       <File Name="SDK/rtos/FreeRTOS_S32K/Source/include/stack_macros.h" FileDate="2022-07-31, 16:29:58" FileAge="1659265198000" FileType="1048576" CompNumb="15" />
-      <File Name="SDK/platform/drivers/src/power/S32K1xx/power_rcm_hw_access.h" FileDate="2022-08-01, 12:19:52" FileAge="1659336592000" FileType="1048576" CompNumb="17" />
       <File Name="Generated_Code/FreeRTOSConfig.h" FileDate="2022-08-01, 20:16:40" FileAge="1659365200607" FileType="45637" CompNumb="15" />
+      <File Name="SDK/platform/drivers/src/power/S32K1xx/power_rcm_hw_access.h" FileDate="2022-08-01, 12:19:52" FileAge="1659336592000" FileType="1048576" CompNumb="17" />
       <File Name="Generated_Code/Cpu.h" FileDate="2022-08-01, 12:19:52" FileAge="1659336592000" FileType="45637" CompNumb="14" />
       <File Name="Generated_Code/pwrMan1.c" FileDate="2022-08-01, 12:19:52" FileAge="1659336592000" FileType="45637" CompNumb="17" />
-      <File Name="SDK/platform/drivers/src/ftm/ftm_oc_driver.c" FileDate="2022-07-31, 09:50:56" FileAge="1659241256000" FileType="1048576" CompNumb="14" />
       <File Name="SDK/platform/drivers/src/flexio/flexio_uart_driver.c" FileDate="1970-01-01, 05:29:59" FileAge="-1" FileType="1048576" />
       <File Name="Generated_Code/timing_pal1.c" FileDate="2022-07-31, 18:34:16" FileAge="1659272656000" FileType="45637" CompNumb="10" />
+      <File Name="SDK/platform/drivers/src/ftm/ftm_oc_driver.c" FileDate="2022-07-31, 09:50:56" FileAge="1659241256000" FileType="1048576" CompNumb="14" />
       <File Name="SDK/rtos/FreeRTOS_S32K/Source/include/semphr.h" FileDate="2022-07-31, 16:29:58" FileAge="1659265198000" FileType="1048576" CompNumb="15" />
       <File Name="Generated_Code/Cpu.c" FileDate="2022-07-31, 09:54:20" FileAge="1659241460000" FileType="45637" CompNumb="14" />
       <File Name="SDK/platform/drivers/src/clock/S32K1xx/clock_S32K1xx.h" FileDate="2022-07-31, 09:45:50" FileAge="1659240950000" FileType="1048576" CompNumb="16" />
@@ -165,12 +165,12 @@
       <File Name="SDK/platform/drivers/inc/flexio_uart_driver.h" FileDate="1970-01-01, 05:29:59" FileAge="-1" FileType="1048576" />
       <File Name="SDK/platform/drivers/src/power/S32K1xx/power_smc_hw_access.h" FileDate="2022-08-01, 12:19:52" FileAge="1659336592000" FileType="1048576" CompNumb="17" />
       <File Name="SDK/rtos/FreeRTOS_S32K/Source/include/stream_buffer.h" FileDate="2022-07-31, 16:29:58" FileAge="1659265198000" FileType="1048576" CompNumb="15" />
-      <File Name="Sources/main.c" FileDate="2022-08-01, 16:46:00" FileAge="1659352560000" FileType="128" />
+      <File Name="Sources/main.c" FileDate="2022-08-01, 22:21:21" FileAge="1659372681003" FileType="128" />
       <File Name="SDK/platform/drivers/src/ftm/ftm_common.c" FileDate="2022-07-31, 09:50:56" FileAge="1659241256000" FileType="1048576" CompNumb="14" />
       <File Name="SDK/platform/drivers/src/power/S32K1xx/power_smc_hw_access.c" FileDate="2022-08-01, 12:19:52" FileAge="1659336592000" FileType="1048576" CompNumb="17" />
       <File Name="SDK/platform/pal/src/uart/uart_pal.c" FileDate="2022-07-31, 09:47:32" FileAge="1659241052000" FileType="1048576" CompNumb="0" />
       <File Name="SDK/rtos/FreeRTOS_S32K/Source/portable/GCC/ARM_CM4F/port.c" FileDate="2022-07-31, 16:29:58" FileAge="1659265198000" FileType="1048576" CompNumb="15" />
     </GeneratedByPE>
   </GeneratedFilesList>
-  <CodeGenReference>44</CodeGenReference>
+  <CodeGenReference>46</CodeGenReference>
 </CodeGenerationInfo>

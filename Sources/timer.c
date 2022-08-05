@@ -7,18 +7,21 @@
 
 #include "s32k144.h"
 #include "Cpu.h"
+#include "common_header.h"
 #include "uart_state_machine.h"
 #include "can_app.h"
 #include "operating_system.h"
+#include "timer.h"
 
-volatile uint8_t timer_pal_chan0_100ms_timer_call_back_vu8 = 0;
+volatile U8 timer_pal_chan0_100ms_timer_call_back_vu8 = 0;
 
-volatile uint8_t timer_pal_chan2_10ms_timer_call_back_vu8 = 0;
+volatile U8 timer_pal_chan2_10ms_timer_call_back_vu8 = 0;
 
-volatile uint8_t timer_pal_chan4_5ms_timer_call_back_vu8 = 0;
+volatile U8 timer_pal_chan4_5ms_timer_call_back_vu8 = 0;
 
 uint32_t timeout_uart_ack_flag_counter_u32 = 0;
 
+volatile U8 n58_communication_start_vu8 = 0;
 uint32_t ftm_tim_sys_freq_u32[FTM_INSTANCE_COUNT];
 uint8_t  timer_init_u8(void)
 {
@@ -63,17 +66,33 @@ void timer_pal_chan0_callback_1000ms_v(void *userdata)
 void timer_pal_chan1_callback_5000ms_v(void *userdata)
 {
 	static uint8_t timer_5s_counter_u8 = 0;
+	static uint8_t timer_10s_counter_u8 = 0;
+
 	U32 dummy_byte_u32 = 100;
 	operating_system_uart_tx_queue_tst uart_tx_que_st;
-	timer_5s_counter_u8++;
-	if(timer_5s_counter_u8 >=5)
+
+	if(0 == n58_communication_start_vu8)
 	{
-		timer_5s_counter_u8  = 0;
-		uart_tx_que_st.event_e =  UART_TX_HEART_BEAT_SEND;
-		uart_tx_que_st.source_u8 = dummy_byte_u32;
-		BaseType_t xHigherPriorityTaskWoken = pdFALSE;
+		timer_10s_counter_u8++;
+		if(timer_10s_counter_u8 >=10)
+		{
+			timer_10s_counter_u8 = 12;
+			n58_communication_start_vu8 = 1;
+		}
+
+	}
+	if(n58_communication_start_vu8)
+	{
+		timer_5s_counter_u8++;
+		if(timer_5s_counter_u8 >=5)
+		{
+			timer_5s_counter_u8  = 0;
+			uart_tx_que_st.event_e =  UART_TX_HEART_BEAT_SEND;
+			uart_tx_que_st.source_u8 = dummy_byte_u32;
+			BaseType_t xHigherPriorityTaskWoken = pdFALSE;
 		//xSemaphoreGiveFromISR(uart_tx_intrupt_Semaphore,&xHigherPriorityTaskWoken);
-		xQueueSendFromISR(os_uart_tx_queue_handler_ge,&uart_tx_que_st,&xHigherPriorityTaskWoken);
+			xQueueSendFromISR(os_uart_tx_queue_handler_ge,&uart_tx_que_st,&xHigherPriorityTaskWoken);
+		}
 	}
 }
 

@@ -16,5 +16,6 @@ extern volatile U8 timer_pal_chan4_5ms_timer_call_back_vu8;
 U8 timer_init_u8(void);
 void timer_start_base_v(void);
 extern U32 timeout_uart_ack_flag_counter_u32;
+extern volatile U8 n58_communication_start_vu8;
 
 #endif /* TIMER_H_ */

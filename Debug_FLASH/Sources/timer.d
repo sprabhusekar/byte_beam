@@ -48,13 +48,15 @@ Sources/timer.o: ../Sources/timer.c \
  D:/Prabhu/New\ folder/New\ folder/New\ folder/modified_code/bytebeam_nxp_s32k144/Generated_Code/can_pal1.h \
  D:/Prabhu/New\ folder/New\ folder/New\ folder/modified_code/bytebeam_nxp_s32k144/Generated_Code/timing_pal1.h \
  D:/Prabhu/New\ folder/New\ folder/New\ folder/modified_code/bytebeam_nxp_s32k144/Generated_Code/pwrMan1.h \
+ D:/Prabhu/New\ folder/New\ folder/New\ folder/modified_code/bytebeam_nxp_s32k144/includes/common_header.h \
  D:/Prabhu/New\ folder/New\ folder/New\ folder/modified_code/bytebeam_nxp_s32k144/includes/uart_state_machine.h \
  D:/Prabhu/New\ folder/New\ folder/New\ folder/modified_code/bytebeam_nxp_s32k144/includes/common_header.h \
  D:/Prabhu/New\ folder/New\ folder/New\ folder/modified_code/bytebeam_nxp_s32k144/includes/can_app.h \
  D:/Prabhu/New\ folder/New\ folder/New\ folder/modified_code/bytebeam_nxp_s32k144/includes/operating_system.h \
  D:/Prabhu/New\ folder/New\ folder/New\ folder/modified_code/bytebeam_nxp_s32k144/SDK/rtos/FreeRTOS_S32K/Source/include/task.h \
  D:/Prabhu/New\ folder/New\ folder/New\ folder/modified_code/bytebeam_nxp_s32k144/SDK/rtos/FreeRTOS_S32K/Source/include/list.h \
- D:/Prabhu/New\ folder/New\ folder/New\ folder/modified_code/bytebeam_nxp_s32k144/SDK/rtos/FreeRTOS_S32K/Source/include/queue.h
+ D:/Prabhu/New\ folder/New\ folder/New\ folder/modified_code/bytebeam_nxp_s32k144/SDK/rtos/FreeRTOS_S32K/Source/include/queue.h \
+ D:/Prabhu/New\ folder/New\ folder/New\ folder/modified_code/bytebeam_nxp_s32k144/includes/timer.h
 
 D:/Prabhu/New\ folder/New\ folder/New\ folder/modified_code/bytebeam_nxp_s32k144/SDK/platform/devices/S32K144/include/s32k144.h:
 
@@ -154,6 +156,8 @@ D:/Prabhu/New\ folder/New\ folder/New\ folder/modified_code/bytebeam_nxp_s32k144
 
 D:/Prabhu/New\ folder/New\ folder/New\ folder/modified_code/bytebeam_nxp_s32k144/Generated_Code/pwrMan1.h:
 
+D:/Prabhu/New\ folder/New\ folder/New\ folder/modified_code/bytebeam_nxp_s32k144/includes/common_header.h:
+
 D:/Prabhu/New\ folder/New\ folder/New\ folder/modified_code/bytebeam_nxp_s32k144/includes/uart_state_machine.h:
 
 D:/Prabhu/New\ folder/New\ folder/New\ folder/modified_code/bytebeam_nxp_s32k144/includes/common_header.h:
@@ -167,3 +171,5 @@ D:/Prabhu/New\ folder/New\ folder/New\ folder/modified_code/bytebeam_nxp_s32k144
 D:/Prabhu/New\ folder/New\ folder/New\ folder/modified_code/bytebeam_nxp_s32k144/SDK/rtos/FreeRTOS_S32K/Source/include/list.h:
 
 D:/Prabhu/New\ folder/New\ folder/New\ folder/modified_code/bytebeam_nxp_s32k144/SDK/rtos/FreeRTOS_S32K/Source/include/queue.h:
+
+D:/Prabhu/New\ folder/New\ folder/New\ folder/modified_code/bytebeam_nxp_s32k144/includes/timer.h:

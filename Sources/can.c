@@ -6,6 +6,7 @@
  */
 
 #include "can.h"
+#include "timer.h"
 
 
 
@@ -106,7 +107,10 @@ void CAN_eventHandler(uint8_t instance, flexcan_event_type_t eventType,
 /**********************************************************************************************************************/
 		case FLEXCAN_EVENT_RX_COMPLETE:
 		{
-			can_rx_array_queue_put(message_can);
+			if(n58_communication_start_vu8)
+			{
+				can_rx_array_queue_put(message_can);
+			}
 			CAN_Receive(&can_pal1_instance, buffIdx, &message_can);
 		}
 		break;

@@ -49,7 +49,8 @@ Sources/can.o: ../Sources/can.c \
  D:/Prabhu/New\ folder/New\ folder/New\ folder/modified_code/bytebeam_nxp_s32k144/Generated_Code/timing_pal1.h \
  D:/Prabhu/New\ folder/New\ folder/New\ folder/modified_code/bytebeam_nxp_s32k144/Generated_Code/pwrMan1.h \
  D:/Prabhu/New\ folder/New\ folder/New\ folder/modified_code/bytebeam_nxp_s32k144/includes/can_queue.h \
- D:/Prabhu/New\ folder/New\ folder/New\ folder/modified_code/bytebeam_nxp_s32k144/includes/common_header.h
+ D:/Prabhu/New\ folder/New\ folder/New\ folder/modified_code/bytebeam_nxp_s32k144/includes/common_header.h \
+ D:/Prabhu/New\ folder/New\ folder/New\ folder/modified_code/bytebeam_nxp_s32k144/includes/timer.h
 
 D:/Prabhu/New\ folder/New\ folder/New\ folder/modified_code/bytebeam_nxp_s32k144/includes/can.h:
 
@@ -152,3 +153,5 @@ D:/Prabhu/New\ folder/New\ folder/New\ folder/modified_code/bytebeam_nxp_s32k144
 D:/Prabhu/New\ folder/New\ folder/New\ folder/modified_code/bytebeam_nxp_s32k144/includes/can_queue.h:
 
 D:/Prabhu/New\ folder/New\ folder/New\ folder/modified_code/bytebeam_nxp_s32k144/includes/common_header.h:
+
+D:/Prabhu/New\ folder/New\ folder/New\ folder/modified_code/bytebeam_nxp_s32k144/includes/timer.h:

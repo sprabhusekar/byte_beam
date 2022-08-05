@@ -1320,7 +1320,7 @@ LOAD d:/nxp/s32ds_arm_v2.2/s32ds/build_tools/gcc_v6.3/gcc-6.3-arm32-eabi/bin/../
  .FlashConfig   0x00000400       0x10 ./Project_Settings/Startup_Code/startup_S32K144.o
                 0x00000410                . = ALIGN (0x4)
 
-.text           0x00000410     0x7b80
+.text           0x00000410     0x7bc0
                 0x00000410                . = ALIGN (0x4)
  *(.text)
  .text          0x00000410       0x4c ./Project_Settings/Startup_Code/startup_S32K144.o
@@ -2171,233 +2171,233 @@ LOAD d:/nxp/s32ds_arm_v2.2/s32ds/build_tools/gcc_v6.3/gcc-6.3-arm32-eabi/bin/../
                 0x00007094       0x1c ./Sources/app_main.o
                 0x00007094                app_main
  .text.CAN_eventHandler
-                0x000070b0       0x54 ./Sources/can.o
+                0x000070b0       0x60 ./Sources/can.o
                 0x000070b0                CAN_eventHandler
  .text.can_init
-                0x00007104       0xa4 ./Sources/can.o
-                0x00007104                can_init
+                0x00007110       0xa4 ./Sources/can.o
+                0x00007110                can_init
  .text.can_data_push
-                0x000071a8      0x100 ./Sources/can_app.o
-                0x000071a8                can_data_push
+                0x000071b4      0x100 ./Sources/can_app.o
+                0x000071b4                can_data_push
  .text.uart_send_received_can_data
-                0x000072a8       0x18 ./Sources/can_app.o
-                0x000072a8                uart_send_received_can_data
+                0x000072b4       0x18 ./Sources/can_app.o
+                0x000072b4                uart_send_received_can_data
  .text.can_rx_array_queue_put
-                0x000072c0       0x7c ./Sources/can_queue.o
-                0x000072c0                can_rx_array_queue_put
+                0x000072cc       0x7c ./Sources/can_queue.o
+                0x000072cc                can_rx_array_queue_put
  .text.can_rx_array_queue_get
-                0x0000733c       0x5c ./Sources/can_queue.o
-                0x0000733c                can_rx_array_queue_get
+                0x00007348       0x5c ./Sources/can_queue.o
+                0x00007348                can_rx_array_queue_get
  .text.can_rx_array_queue_size
-                0x00007398       0x2c ./Sources/can_queue.o
-                0x00007398                can_rx_array_queue_size
+                0x000073a4       0x2c ./Sources/can_queue.o
+                0x000073a4                can_rx_array_queue_size
  .text.can_queue_init
-                0x000073c4       0x24 ./Sources/can_queue.o
-                0x000073c4                can_queue_init
+                0x000073d0       0x24 ./Sources/can_queue.o
+                0x000073d0                can_queue_init
  .text.can_comm_rx_task_v
-                0x000073e8       0x30 ./Sources/can_rx_task.o
-                0x000073e8                can_comm_rx_task_v
+                0x000073f4       0x30 ./Sources/can_rx_task.o
+                0x000073f4                can_comm_rx_task_v
  .text.clock_init_u8
-                0x00007418       0x40 ./Sources/clock.o
-                0x00007418                clock_init_u8
+                0x00007424       0x40 ./Sources/clock.o
+                0x00007424                clock_init_u8
  .text.core_main_u8
-                0x00007458       0x30 ./Sources/core_main.o
-                0x00007458                core_main_u8
+                0x00007464       0x30 ./Sources/core_main.o
+                0x00007464                core_main_u8
  .text.rtos_init_u8
-                0x00007488        0x8 ./Sources/core_main.o
-                0x00007488                rtos_init_u8
+                0x00007494        0x8 ./Sources/core_main.o
+                0x00007494                rtos_init_u8
  .text.rtos_run
-                0x00007490        0x8 ./Sources/core_main.o
-                0x00007490                rtos_run
+                0x0000749c        0x8 ./Sources/core_main.o
+                0x0000749c                rtos_run
  .text.diagnostic_task_v
-                0x00007498       0x1c ./Sources/diagnostic_task.o
-                0x00007498                diagnostic_task_v
+                0x000074a4       0x1c ./Sources/diagnostic_task.o
+                0x000074a4                diagnostic_task_v
  .text.gpio_init_u8
-                0x000074b4       0x14 ./Sources/gpio.o
-                0x000074b4                gpio_init_u8
- .text.main     0x000074c8       0x18 ./Sources/main.o
-                0x000074c8                main
+                0x000074c0       0x14 ./Sources/gpio.o
+                0x000074c0                gpio_init_u8
+ .text.main     0x000074d4       0x18 ./Sources/main.o
+                0x000074d4                main
  .text.operating_system_init_u8
-                0x000074e0      0x148 ./Sources/operating_system.o
-                0x000074e0                operating_system_init_u8
+                0x000074ec      0x148 ./Sources/operating_system.o
+                0x000074ec                operating_system_init_u8
  .text.operating_system_start_scheduler_v
-                0x00007628        0x8 ./Sources/operating_system.o
-                0x00007628                operating_system_start_scheduler_v
+                0x00007634        0x8 ./Sources/operating_system.o
+                0x00007634                operating_system_start_scheduler_v
  .text.nvic_init_v
-                0x00007630       0x78 ./Sources/rr_nvic.o
-                0x00007630                nvic_init_v
+                0x0000763c       0x78 ./Sources/rr_nvic.o
+                0x0000763c                nvic_init_v
  .text.nvic_enable_all_Interrupts_v
-                0x000076a8       0x3c ./Sources/rr_nvic.o
-                0x000076a8                nvic_enable_all_Interrupts_v
+                0x000076b4       0x3c ./Sources/rr_nvic.o
+                0x000076b4                nvic_enable_all_Interrupts_v
  .text.nvic_disable_all_Interrupts_v
-                0x000076e4       0x2c ./Sources/rr_nvic.o
-                0x000076e4                nvic_disable_all_Interrupts_v
+                0x000076f0       0x2c ./Sources/rr_nvic.o
+                0x000076f0                nvic_disable_all_Interrupts_v
  .text.timer_init_u8
-                0x00007710       0x30 ./Sources/timer.o
-                0x00007710                timer_init_u8
+                0x0000771c       0x30 ./Sources/timer.o
+                0x0000771c                timer_init_u8
  .text.timer_start_base_v
-                0x00007740       0x48 ./Sources/timer.o
-                0x00007740                timer_start_base_v
+                0x0000774c       0x48 ./Sources/timer.o
+                0x0000774c                timer_start_base_v
  .text.timer_pal_chan0_callback_1000ms_v
-                0x00007788       0x20 ./Sources/timer.o
-                0x00007788                timer_pal_chan0_callback_1000ms_v
+                0x00007794       0x20 ./Sources/timer.o
+                0x00007794                timer_pal_chan0_callback_1000ms_v
  .text.timer_pal_chan1_callback_5000ms_v
-                0x000077a8       0x44 ./Sources/timer.o
-                0x000077a8                timer_pal_chan1_callback_5000ms_v
+                0x000077b4       0x78 ./Sources/timer.o
+                0x000077b4                timer_pal_chan1_callback_5000ms_v
  .text.uart_rx_data_queue
-                0x000077ec       0x18 ./Sources/uart.o
-                0x000077ec                uart_rx_data_queue
+                0x0000782c       0x18 ./Sources/uart.o
+                0x0000782c                uart_rx_data_queue
  .text.uart_init
-                0x00007804       0x20 ./Sources/uart.o
-                0x00007804                uart_init
+                0x00007844       0x20 ./Sources/uart.o
+                0x00007844                uart_init
  .text.uart_tx_data
-                0x00007824       0x1c ./Sources/uart.o
-                0x00007824                uart_tx_data
+                0x00007864       0x1c ./Sources/uart.o
+                0x00007864                uart_tx_data
  .text.uart0_rx_callback
-                0x00007840       0x2c ./Sources/uart.o
-                0x00007840                uart0_rx_callback
+                0x00007880       0x2c ./Sources/uart.o
+                0x00007880                uart0_rx_callback
  .text.uart_rx_task_v
-                0x0000786c       0x40 ./Sources/uart_rx_task.o
-                0x0000786c                uart_rx_task_v
+                0x000078ac       0x40 ./Sources/uart_rx_task.o
+                0x000078ac                uart_rx_task_v
  .text.send_heartbeat
-                0x000078ac       0x44 ./Sources/uart_state_machine.o
-                0x000078ac                send_heartbeat
+                0x000078ec       0x44 ./Sources/uart_state_machine.o
+                0x000078ec                send_heartbeat
  .text.execute_command
-                0x000078f0       0x7c ./Sources/uart_state_machine.o
-                0x000078f0                execute_command
+                0x00007930       0x7c ./Sources/uart_state_machine.o
+                0x00007930                execute_command
  .text.process_uart_data
-                0x0000796c      0x118 ./Sources/uart_state_machine.o
-                0x0000796c                process_uart_data
+                0x000079ac      0x118 ./Sources/uart_state_machine.o
+                0x000079ac                process_uart_data
  .text.uart_tx_task_v
-                0x00007a84       0xd0 ./Sources/uart_tx_task.o
-                0x00007a84                uart_tx_task_v
- .text.memcpy   0x00007b54       0x16 D:/NXP/S32DS_ARM_v2.2/S32DS/build_tools/gcc_v6.3/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard\libc_nano.a(lib_a-memcpy-stub.o)
-                0x00007b54                memcpy
- .text.memset   0x00007b6a       0x10 D:/NXP/S32DS_ARM_v2.2/S32DS/build_tools/gcc_v6.3/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard\libc_nano.a(lib_a-memset.o)
-                0x00007b6a                memset
+                0x00007ac4       0xd0 ./Sources/uart_tx_task.o
+                0x00007ac4                uart_tx_task_v
+ .text.memcpy   0x00007b94       0x16 D:/NXP/S32DS_ARM_v2.2/S32DS/build_tools/gcc_v6.3/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard\libc_nano.a(lib_a-memcpy-stub.o)
+                0x00007b94                memcpy
+ .text.memset   0x00007baa       0x10 D:/NXP/S32DS_ARM_v2.2/S32DS/build_tools/gcc_v6.3/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard\libc_nano.a(lib_a-memset.o)
+                0x00007baa                memset
  *(.rodata)
  *(.rodata*)
- *fill*         0x00007b7a        0x2 
+ *fill*         0x00007bba        0x2 
  .rodata.can_pal1_Config0
-                0x00007b7c       0x34 ./Generated_Code/can_pal1.o
-                0x00007b7c                can_pal1_Config0
+                0x00007bbc       0x34 ./Generated_Code/can_pal1.o
+                0x00007bbc                can_pal1_Config0
  .rodata.can_pal1_instance
-                0x00007bb0        0x8 ./Generated_Code/can_pal1.o
-                0x00007bb0                can_pal1_instance
+                0x00007bf0        0x8 ./Generated_Code/can_pal1.o
+                0x00007bf0                can_pal1_instance
  .rodata.timing_pal1_instance
-                0x00007bb8        0x8 ./Generated_Code/timing_pal1.o
-                0x00007bb8                timing_pal1_instance
+                0x00007bf8        0x8 ./Generated_Code/timing_pal1.o
+                0x00007bf8                timing_pal1_instance
  .rodata.uart_pal1_Config0
-                0x00007bc0       0x20 ./Generated_Code/uart_pal1.o
-                0x00007bc0                uart_pal1_Config0
+                0x00007c00       0x20 ./Generated_Code/uart_pal1.o
+                0x00007c00                uart_pal1_Config0
  .rodata.uart_pal1_instance
-                0x00007be0        0x8 ./Generated_Code/uart_pal1.o
-                0x00007be0                uart_pal1_instance
+                0x00007c20        0x8 ./Generated_Code/uart_pal1.o
+                0x00007c20                uart_pal1_instance
  .rodata.clockNameMappings
-                0x00007be8       0x9e ./SDK/platform/drivers/src/clock/S32K1xx/clock_S32K1xx.o
-                0x00007be8                clockNameMappings
- *fill*         0x00007c86        0x2 
+                0x00007c28       0x9e ./SDK/platform/drivers/src/clock/S32K1xx/clock_S32K1xx.o
+                0x00007c28                clockNameMappings
+ *fill*         0x00007cc6        0x2 
  .rodata.maxSysClksInHSRUN.7598
-                0x00007c88       0x54 ./SDK/platform/drivers/src/clock/S32K1xx/clock_S32K1xx.o
+                0x00007cc8       0x54 ./SDK/platform/drivers/src/clock/S32K1xx/clock_S32K1xx.o
  .rodata.maxSysClksInRUN.7597
-                0x00007cdc       0x54 ./SDK/platform/drivers/src/clock/S32K1xx/clock_S32K1xx.o
+                0x00007d1c       0x54 ./SDK/platform/drivers/src/clock/S32K1xx/clock_S32K1xx.o
  .rodata.maxSysClksInVLPR.7596
-                0x00007d30       0x54 ./SDK/platform/drivers/src/clock/S32K1xx/clock_S32K1xx.o
+                0x00007d70       0x54 ./SDK/platform/drivers/src/clock/S32K1xx/clock_S32K1xx.o
  .rodata.peripheralFeaturesList
-                0x00007d84       0x4f ./SDK/platform/drivers/src/clock/S32K1xx/clock_S32K1xx.o
-                0x00007d84                peripheralFeaturesList
- *fill*         0x00007dd3        0x1 
+                0x00007dc4       0x4f ./SDK/platform/drivers/src/clock/S32K1xx/clock_S32K1xx.o
+                0x00007dc4                peripheralFeaturesList
+ *fill*         0x00007e13        0x1 
  .rodata.g_flexcanBase
-                0x00007dd4        0xc ./SDK/platform/drivers/src/flexcan/flexcan_driver.o
+                0x00007e14        0xc ./SDK/platform/drivers/src/flexcan/flexcan_driver.o
  .rodata.g_flexcanBusOffIrqId
-                0x00007de0        0x3 ./SDK/platform/drivers/src/flexcan/flexcan_driver.o
- *fill*         0x00007de3        0x1 
+                0x00007e20        0x3 ./SDK/platform/drivers/src/flexcan/flexcan_driver.o
+ *fill*         0x00007e23        0x1 
  .rodata.g_flexcanErrorIrqId
-                0x00007de4        0x3 ./SDK/platform/drivers/src/flexcan/flexcan_driver.o
- *fill*         0x00007de7        0x1 
+                0x00007e24        0x3 ./SDK/platform/drivers/src/flexcan/flexcan_driver.o
+ *fill*         0x00007e27        0x1 
  .rodata.g_flexcanOredMessageBufferIrqId
-                0x00007de8        0x6 ./SDK/platform/drivers/src/flexcan/flexcan_driver.o
- *fill*         0x00007dee        0x2 
+                0x00007e28        0x6 ./SDK/platform/drivers/src/flexcan/flexcan_driver.o
+ *fill*         0x00007e2e        0x2 
  .rodata.g_flexcanWakeUpIrqId
-                0x00007df0        0x3 ./SDK/platform/drivers/src/flexcan/flexcan_driver.o
- *fill*         0x00007df3        0x1 
+                0x00007e30        0x3 ./SDK/platform/drivers/src/flexcan/flexcan_driver.o
+ *fill*         0x00007e33        0x1 
  .rodata.payload_code.7574
-                0x00007df4       0x41 ./SDK/platform/drivers/src/flexcan/flexcan_hw_access.o
- *fill*         0x00007e35        0x3 
+                0x00007e34       0x41 ./SDK/platform/drivers/src/flexcan/flexcan_hw_access.o
+ *fill*         0x00007e75        0x3 
  .rodata.g_ftmBase
-                0x00007e38       0x10 ./SDK/platform/drivers/src/ftm/ftm_common.o
-                0x00007e38                g_ftmBase
+                0x00007e78       0x10 ./SDK/platform/drivers/src/ftm/ftm_common.o
+                0x00007e78                g_ftmBase
  .rodata.g_ftmExtClockSel
-                0x00007e48        0x8 ./SDK/platform/drivers/src/ftm/ftm_common.o
+                0x00007e88        0x8 ./SDK/platform/drivers/src/ftm/ftm_common.o
  .rodata.g_ftmFaultIrqId
-                0x00007e50        0x4 ./SDK/platform/drivers/src/ftm/ftm_common.o
-                0x00007e50                g_ftmFaultIrqId
+                0x00007e90        0x4 ./SDK/platform/drivers/src/ftm/ftm_common.o
+                0x00007e90                g_ftmFaultIrqId
  .rodata.g_ftmIrqId
-                0x00007e54       0x20 ./SDK/platform/drivers/src/ftm/ftm_common.o
-                0x00007e54                g_ftmIrqId
+                0x00007e94       0x20 ./SDK/platform/drivers/src/ftm/ftm_common.o
+                0x00007e94                g_ftmIrqId
  .rodata.g_ftmOverflowIrqId
-                0x00007e74        0x4 ./SDK/platform/drivers/src/ftm/ftm_common.o
-                0x00007e74                g_ftmOverflowIrqId
+                0x00007eb4        0x4 ./SDK/platform/drivers/src/ftm/ftm_common.o
+                0x00007eb4                g_ftmOverflowIrqId
  .rodata.g_ftmReloadIrqId
-                0x00007e78        0x4 ./SDK/platform/drivers/src/ftm/ftm_common.o
-                0x00007e78                g_ftmReloadIrqId
+                0x00007eb8        0x4 ./SDK/platform/drivers/src/ftm/ftm_common.o
+                0x00007eb8                g_ftmReloadIrqId
  .rodata.s_lpuartBase
-                0x00007e7c        0xc ./SDK/platform/drivers/src/lpuart/lpuart_driver.o
+                0x00007ebc        0xc ./SDK/platform/drivers/src/lpuart/lpuart_driver.o
  .rodata.s_lpuartClkNames
-                0x00007e88        0x3 ./SDK/platform/drivers/src/lpuart/lpuart_driver.o
- *fill*         0x00007e8b        0x1 
+                0x00007ec8        0x3 ./SDK/platform/drivers/src/lpuart/lpuart_driver.o
+ *fill*         0x00007ecb        0x1 
  .rodata.s_lpuartRxTxIrqId
-                0x00007e8c        0x3 ./SDK/platform/drivers/src/lpuart/lpuart_driver.o
- *fill*         0x00007e8f        0x1 
+                0x00007ecc        0x3 ./SDK/platform/drivers/src/lpuart/lpuart_driver.o
+ *fill*         0x00007ecf        0x1 
  .rodata.s_timingOverFtmIsr
-                0x00007e90       0x80 ./SDK/platform/pal/src/timing/timing_irq.o
-                0x00007e90                s_timingOverFtmIsr
+                0x00007ed0       0x80 ./SDK/platform/pal/src/timing/timing_irq.o
+                0x00007ed0                s_timingOverFtmIsr
  .rodata.ftmBase
-                0x00007f10       0x10 ./SDK/platform/pal/src/timing/timing_pal.o
-                0x00007f10                ftmBase
+                0x00007f50       0x10 ./SDK/platform/pal/src/timing/timing_pal.o
+                0x00007f50                ftmBase
  .rodata.s_ftmIrq
-                0x00007f20       0x20 ./SDK/platform/pal/src/timing/timing_pal.o
+                0x00007f60       0x20 ./SDK/platform/pal/src/timing/timing_pal.o
  .rodata.vTaskStartScheduler.str1.4
-                0x00007f40        0x5 ./SDK/rtos/FreeRTOS_S32K/Source/tasks.o
- *fill*         0x00007f45        0x3 
+                0x00007f80        0x5 ./SDK/rtos/FreeRTOS_S32K/Source/tasks.o
+ *fill*         0x00007f85        0x3 
  .rodata.xTimerCreateTimerTask.str1.4
-                0x00007f48        0x8 ./SDK/rtos/FreeRTOS_S32K/Source/timers.o
+                0x00007f88        0x8 ./SDK/rtos/FreeRTOS_S32K/Source/timers.o
  .rodata.operating_system_init_u8.str1.4
-                0x00007f50       0x38 ./Sources/operating_system.o
+                0x00007f90       0x38 ./Sources/operating_system.o
                                  0x37 (size before relaxing)
  *(.init)
- .init          0x00007f88        0x4 d:/nxp/s32ds_arm_v2.2/s32ds/build_tools/gcc_v6.3/gcc-6.3-arm32-eabi/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v7e-m/fpv4-sp/hard/crti.o
-                0x00007f88                _init
+ .init          0x00007fc8        0x4 d:/nxp/s32ds_arm_v2.2/s32ds/build_tools/gcc_v6.3/gcc-6.3-arm32-eabi/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v7e-m/fpv4-sp/hard/crti.o
+                0x00007fc8                _init
  *(.fini)
- .fini          0x00007f8c        0x4 d:/nxp/s32ds_arm_v2.2/s32ds/build_tools/gcc_v6.3/gcc-6.3-arm32-eabi/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v7e-m/fpv4-sp/hard/crti.o
-                0x00007f8c                _fini
+ .fini          0x00007fcc        0x4 d:/nxp/s32ds_arm_v2.2/s32ds/build_tools/gcc_v6.3/gcc-6.3-arm32-eabi/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v7e-m/fpv4-sp/hard/crti.o
+                0x00007fcc                _fini
  *(.eh_frame)
-                0x00007f90                . = ALIGN (0x4)
+                0x00007fd0                . = ALIGN (0x4)
 
-.glue_7         0x00007f90        0x0
- .glue_7        0x00007f90        0x0 linker stubs
+.glue_7         0x00007fd0        0x0
+ .glue_7        0x00007fd0        0x0 linker stubs
 
-.glue_7t        0x00007f90        0x0
- .glue_7t       0x00007f90        0x0 linker stubs
+.glue_7t        0x00007fd0        0x0
+ .glue_7t       0x00007fd0        0x0 linker stubs
 
-.vfp11_veneer   0x00007f90        0x0
- .vfp11_veneer  0x00007f90        0x0 linker stubs
+.vfp11_veneer   0x00007fd0        0x0
+ .vfp11_veneer  0x00007fd0        0x0 linker stubs
 
-.v4_bx          0x00007f90        0x0
- .v4_bx         0x00007f90        0x0 linker stubs
+.v4_bx          0x00007fd0        0x0
+ .v4_bx         0x00007fd0        0x0 linker stubs
 
-.iplt           0x00007f90        0x0
- .iplt          0x00007f90        0x0 d:/nxp/s32ds_arm_v2.2/s32ds/build_tools/gcc_v6.3/gcc-6.3-arm32-eabi/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v7e-m/fpv4-sp/hard/crtbegin.o
+.iplt           0x00007fd0        0x0
+ .iplt          0x00007fd0        0x0 d:/nxp/s32ds_arm_v2.2/s32ds/build_tools/gcc_v6.3/gcc-6.3-arm32-eabi/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v7e-m/fpv4-sp/hard/crtbegin.o
 
-.rel.dyn        0x00007f90        0x0
- .rel.iplt      0x00007f90        0x0 d:/nxp/s32ds_arm_v2.2/s32ds/build_tools/gcc_v6.3/gcc-6.3-arm32-eabi/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v7e-m/fpv4-sp/hard/crtbegin.o
+.rel.dyn        0x00007fd0        0x0
+ .rel.iplt      0x00007fd0        0x0 d:/nxp/s32ds_arm_v2.2/s32ds/build_tools/gcc_v6.3/gcc-6.3-arm32-eabi/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v7e-m/fpv4-sp/hard/crtbegin.o
 
-.ARM            0x00007f90        0x0
-                0x00007f90                __exidx_start = .
+.ARM            0x00007fd0        0x0
+                0x00007fd0                __exidx_start = .
  *(.ARM.exidx*)
-                0x00007f90                __exidx_end = .
-                0x00007f90                __etext = .
-                0x00007f90                __DATA_ROM = .
+                0x00007fd0                __exidx_end = .
+                0x00007fd0                __etext = .
+                0x00007fd0                __DATA_ROM = .
 
 .interrupts_ram
                 0x1fff8000      0x400
@@ -2413,7 +2413,7 @@ LOAD d:/nxp/s32ds_arm_v2.2/s32ds/build_tools/gcc_v6.3/gcc-6.3-arm32-eabi/bin/../
                 0x1fff8000                __VECTOR_RAM = DEFINED (__flash_vector_table__)?ORIGIN (m_interrupts):__VECTOR_RAM__
                 0x00000400                __RAM_VECTOR_TABLE_SIZE = DEFINED (__flash_vector_table__)?0x0:(__interrupts_ram_end__ - __interrupts_ram_start__)
 
-.data           0x1fff8400     0x1294 load address 0x00007f90
+.data           0x1fff8400     0x1294 load address 0x00007fd0
                 0x1fff8400                . = ALIGN (0x4)
                 0x1fff8400                __DATA_RAM = .
                 0x1fff8400                __data_start__ = .
@@ -2460,19 +2460,19 @@ LOAD d:/nxp/s32ds_arm_v2.2/s32ds/build_tools/gcc_v6.3/gcc-6.3-arm32-eabi/bin/../
                 0x1fff967c                nvic_init_st
                 0x1fff9694                . = ALIGN (0x4)
                 0x1fff9694                __data_end__ = .
-                0x00009224                __DATA_END = (__DATA_ROM + (__data_end__ - __data_start__))
-                0x00009224                __CODE_ROM = __DATA_END
+                0x00009264                __DATA_END = (__DATA_ROM + (__data_end__ - __data_start__))
+                0x00009264                __CODE_ROM = __DATA_END
 
-.igot.plt       0x1fff9694        0x0 load address 0x00009224
+.igot.plt       0x1fff9694        0x0 load address 0x00009264
  .igot.plt      0x1fff9694        0x0 d:/nxp/s32ds_arm_v2.2/s32ds/build_tools/gcc_v6.3/gcc-6.3-arm32-eabi/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v7e-m/fpv4-sp/hard/crtbegin.o
 
-m_data          0x1fff9694     0x1780 load address 0x00009224
+m_data          0x1fff9694     0x1780 load address 0x00009264
  m_data         0x1fff9694     0x1780 ./Sources/can_queue.o
 
-m_data_2        0x1fffae14     0x1780 load address 0x0000a9a4
+m_data_2        0x1fffae14     0x1780 load address 0x0000a9e4
  m_data_2       0x1fffae14     0x1780 ./Sources/can_queue.o
 
-.code           0x1fffc594        0x0 load address 0x00009224
+.code           0x1fffc594        0x0 load address 0x00009264
                 0x1fffc594                . = ALIGN (0x4)
                 0x1fffc594                __CODE_RAM = .
                 0x1fffc594                __code_start__ = .
@@ -2481,16 +2481,16 @@ m_data_2        0x1fffae14     0x1780 load address 0x0000a9a4
                 0x1fffc594                . = ALIGN (0x4)
                 0x1fffc594                __code_end__ = .
                 0x1fffc594                __code_ram_end__ = .
-                0x00009224                __CODE_END = (__CODE_ROM + (__code_end__ - __code_start__))
-                0x00009224                __CUSTOM_ROM = __CODE_END
+                0x00009264                __CODE_END = (__CODE_ROM + (__code_end__ - __code_start__))
+                0x00009264                __CUSTOM_ROM = __CODE_END
 
 .customSectionBlock
-                0x20000000        0x0 load address 0x00009224
+                0x20000000        0x0 load address 0x00009264
                 0x20000000                __customSection_start__ = .
  *(.customSection)
                 0x20000000                __customSection_end__ = .
-                0x00009224                __CUSTOM_END = (__CUSTOM_ROM + (__customSection_end__ - __customSection_start__))
-                0x00009224                __rom_end = __CUSTOM_END
+                0x00009264                __CUSTOM_END = (__CUSTOM_ROM + (__customSection_end__ - __customSection_start__))
+                0x00009264                __rom_end = __CUSTOM_END
 
 .bss            0x20000000     0x58f4
                 0x20000000                . = ALIGN (0x4)
@@ -2693,9 +2693,14 @@ m_data_2        0x1fffae14     0x1780 load address 0x0000a9a4
  .bss.ftm_tim_sys_freq_u32
                 0x200057c0       0x10 ./Sources/timer.o
                 0x200057c0                ftm_tim_sys_freq_u32
- .bss.timer_5s_counter_u8.9112
+ .bss.n58_communication_start_vu8
                 0x200057d0        0x1 ./Sources/timer.o
- *fill*         0x200057d1        0x3 
+                0x200057d0                n58_communication_start_vu8
+ .bss.timer_10s_counter_u8.9123
+                0x200057d1        0x1 ./Sources/timer.o
+ .bss.timer_5s_counter_u8.9122
+                0x200057d2        0x1 ./Sources/timer.o
+ *fill*         0x200057d3        0x1 
  .bss.uart_received_data_au8
                 0x200057d4       0x96 ./Sources/uart.o
                 0x200057d4                uart_received_data_au8
@@ -2889,7 +2894,7 @@ m_data_2        0x1fffae14     0x1780 load address 0x0000a9a4
                 0x00000001                ASSERT ((__StackLimit >= __HeapLimit), region m_data_2 overflowed with stack and heap)
 OUTPUT(bytebeam_nxp_s32k144.elf elf32-littlearm)
 
-.debug_info     0x00000000    0x6291a
+.debug_info     0x00000000    0x629dc
  .debug_info    0x00000000     0x2768 ./Generated_Code/can_pal1.o
  .debug_info    0x00002768     0x2890 ./Generated_Code/clockMan1.o
  .debug_info    0x00004ff8      0x406 ./Generated_Code/pin_mux.o
@@ -2930,24 +2935,24 @@ OUTPUT(bytebeam_nxp_s32k144.elf elf32-littlearm)
  .debug_info    0x00039425      0xb4a ./SDK/rtos/FreeRTOS_S32K/Source/portable/MemMang/heap_2.o
  .debug_info    0x00039f6f      0xa92 ./SDK/rtos/osif/osif_freertos.o
  .debug_info    0x0003aa01       0xec ./Sources/app_main.o
- .debug_info    0x0003aaed     0x355f ./Sources/can.o
- .debug_info    0x0003e04c     0x3291 ./Sources/can_app.o
- .debug_info    0x000412dd      0xdd1 ./Sources/can_queue.o
- .debug_info    0x000420ae     0x3126 ./Sources/can_rx_task.o
- .debug_info    0x000451d4     0x27e6 ./Sources/clock.o
- .debug_info    0x000479ba     0x31ee ./Sources/core_main.o
- .debug_info    0x0004aba8     0x28c6 ./Sources/diagnostic_task.o
- .debug_info    0x0004d46e      0x45a ./Sources/gpio.o
- .debug_info    0x0004d8c8     0x279a ./Sources/main.o
- .debug_info    0x00050062     0x2ba0 ./Sources/operating_system.o
- .debug_info    0x00052c02      0x781 ./Sources/rr_nvic.o
- .debug_info    0x00053383     0x2b36 ./Sources/timer.o
- .debug_info    0x00055eb9     0x31db ./Sources/uart.o
- .debug_info    0x00059094     0x315c ./Sources/uart_rx_task.o
- .debug_info    0x0005c1f0     0x354d ./Sources/uart_state_machine.o
- .debug_info    0x0005f73d     0x31dd ./Sources/uart_tx_task.o
+ .debug_info    0x0003aaed     0x35b7 ./Sources/can.o
+ .debug_info    0x0003e0a4     0x3291 ./Sources/can_app.o
+ .debug_info    0x00041335      0xdd1 ./Sources/can_queue.o
+ .debug_info    0x00042106     0x3126 ./Sources/can_rx_task.o
+ .debug_info    0x0004522c     0x27e6 ./Sources/clock.o
+ .debug_info    0x00047a12     0x31f9 ./Sources/core_main.o
+ .debug_info    0x0004ac0b     0x28d1 ./Sources/diagnostic_task.o
+ .debug_info    0x0004d4dc      0x45a ./Sources/gpio.o
+ .debug_info    0x0004d936     0x279a ./Sources/main.o
+ .debug_info    0x000500d0     0x2ba0 ./Sources/operating_system.o
+ .debug_info    0x00052c70      0x781 ./Sources/rr_nvic.o
+ .debug_info    0x000533f1     0x2b8a ./Sources/timer.o
+ .debug_info    0x00055f7b     0x31db ./Sources/uart.o
+ .debug_info    0x00059156     0x315c ./Sources/uart_rx_task.o
+ .debug_info    0x0005c2b2     0x354d ./Sources/uart_state_machine.o
+ .debug_info    0x0005f7ff     0x31dd ./Sources/uart_tx_task.o
 
-.debug_abbrev   0x00000000     0x79b0
+.debug_abbrev   0x00000000     0x79ca
  .debug_abbrev  0x00000000      0x14a ./Generated_Code/can_pal1.o
  .debug_abbrev  0x0000014a      0x157 ./Generated_Code/clockMan1.o
  .debug_abbrev  0x000002a1       0xca ./Generated_Code/pin_mux.o
@@ -2988,22 +2993,22 @@ OUTPUT(bytebeam_nxp_s32k144.elf elf32-littlearm)
  .debug_abbrev  0x000052e2      0x27b ./SDK/rtos/FreeRTOS_S32K/Source/portable/MemMang/heap_2.o
  .debug_abbrev  0x0000555d      0x249 ./SDK/rtos/osif/osif_freertos.o
  .debug_abbrev  0x000057a6       0x7c ./Sources/app_main.o
- .debug_abbrev  0x00005822      0x277 ./Sources/can.o
- .debug_abbrev  0x00005a99      0x293 ./Sources/can_app.o
- .debug_abbrev  0x00005d2c      0x225 ./Sources/can_queue.o
- .debug_abbrev  0x00005f51      0x232 ./Sources/can_rx_task.o
- .debug_abbrev  0x00006183      0x1b2 ./Sources/clock.o
- .debug_abbrev  0x00006335      0x23c ./Sources/core_main.o
- .debug_abbrev  0x00006571      0x1bb ./Sources/diagnostic_task.o
- .debug_abbrev  0x0000672c      0x114 ./Sources/gpio.o
- .debug_abbrev  0x00006840      0x18a ./Sources/main.o
- .debug_abbrev  0x000069ca      0x25f ./Sources/operating_system.o
- .debug_abbrev  0x00006c29      0x164 ./Sources/rr_nvic.o
- .debug_abbrev  0x00006d8d      0x24f ./Sources/timer.o
- .debug_abbrev  0x00006fdc      0x26c ./Sources/uart.o
- .debug_abbrev  0x00007248      0x236 ./Sources/uart_rx_task.o
- .debug_abbrev  0x0000747e      0x2de ./Sources/uart_state_machine.o
- .debug_abbrev  0x0000775c      0x254 ./Sources/uart_tx_task.o
+ .debug_abbrev  0x00005822      0x284 ./Sources/can.o
+ .debug_abbrev  0x00005aa6      0x293 ./Sources/can_app.o
+ .debug_abbrev  0x00005d39      0x225 ./Sources/can_queue.o
+ .debug_abbrev  0x00005f5e      0x232 ./Sources/can_rx_task.o
+ .debug_abbrev  0x00006190      0x1b2 ./Sources/clock.o
+ .debug_abbrev  0x00006342      0x23c ./Sources/core_main.o
+ .debug_abbrev  0x0000657e      0x1bb ./Sources/diagnostic_task.o
+ .debug_abbrev  0x00006739      0x114 ./Sources/gpio.o
+ .debug_abbrev  0x0000684d      0x18a ./Sources/main.o
+ .debug_abbrev  0x000069d7      0x25f ./Sources/operating_system.o
+ .debug_abbrev  0x00006c36      0x164 ./Sources/rr_nvic.o
+ .debug_abbrev  0x00006d9a      0x25c ./Sources/timer.o
+ .debug_abbrev  0x00006ff6      0x26c ./Sources/uart.o
+ .debug_abbrev  0x00007262      0x236 ./Sources/uart_rx_task.o
+ .debug_abbrev  0x00007498      0x2de ./Sources/uart_state_machine.o
+ .debug_abbrev  0x00007776      0x254 ./Sources/uart_tx_task.o
 
 .debug_aranges  0x00000000     0x16b0
  .debug_aranges
@@ -3119,7 +3124,7 @@ OUTPUT(bytebeam_nxp_s32k144.elf elf32-littlearm)
  .debug_aranges
                 0x00001690       0x20 ./Sources/uart_tx_task.o
 
-.debug_line     0x00000000    0x14cf2
+.debug_line     0x00000000    0x14d2a
  .debug_line    0x00000000      0x5b9 ./Generated_Code/can_pal1.o
  .debug_line    0x000005b9      0x5ba ./Generated_Code/clockMan1.o
  .debug_line    0x00000b73      0x222 ./Generated_Code/pin_mux.o
@@ -3160,24 +3165,24 @@ OUTPUT(bytebeam_nxp_s32k144.elf elf32-littlearm)
  .debug_line    0x0000d102      0x37b ./SDK/rtos/FreeRTOS_S32K/Source/portable/MemMang/heap_2.o
  .debug_line    0x0000d47d      0x44b ./SDK/rtos/osif/osif_freertos.o
  .debug_line    0x0000d8c8       0xc3 ./Sources/app_main.o
- .debug_line    0x0000d98b      0x871 ./Sources/can.o
- .debug_line    0x0000e1fc      0x8e6 ./Sources/can_app.o
- .debug_line    0x0000eae2      0x3c7 ./Sources/can_queue.o
- .debug_line    0x0000eea9      0x891 ./Sources/can_rx_task.o
- .debug_line    0x0000f73a      0x61f ./Sources/clock.o
- .debug_line    0x0000fd59      0x827 ./Sources/core_main.o
- .debug_line    0x00010580      0x76a ./Sources/diagnostic_task.o
- .debug_line    0x00010cea      0x286 ./Sources/gpio.o
- .debug_line    0x00010f70      0x687 ./Sources/main.o
- .debug_line    0x000115f7      0x844 ./Sources/operating_system.o
- .debug_line    0x00011e3b      0x3eb ./Sources/rr_nvic.o
- .debug_line    0x00012226      0x866 ./Sources/timer.o
- .debug_line    0x00012a8c      0x781 ./Sources/uart.o
- .debug_line    0x0001320d      0x888 ./Sources/uart_rx_task.o
- .debug_line    0x00013a95      0x9ae ./Sources/uart_state_machine.o
- .debug_line    0x00014443      0x8af ./Sources/uart_tx_task.o
+ .debug_line    0x0000d98b      0x890 ./Sources/can.o
+ .debug_line    0x0000e21b      0x8e6 ./Sources/can_app.o
+ .debug_line    0x0000eb01      0x3c7 ./Sources/can_queue.o
+ .debug_line    0x0000eec8      0x891 ./Sources/can_rx_task.o
+ .debug_line    0x0000f759      0x61f ./Sources/clock.o
+ .debug_line    0x0000fd78      0x827 ./Sources/core_main.o
+ .debug_line    0x0001059f      0x76a ./Sources/diagnostic_task.o
+ .debug_line    0x00010d09      0x286 ./Sources/gpio.o
+ .debug_line    0x00010f8f      0x687 ./Sources/main.o
+ .debug_line    0x00011616      0x844 ./Sources/operating_system.o
+ .debug_line    0x00011e5a      0x3eb ./Sources/rr_nvic.o
+ .debug_line    0x00012245      0x87f ./Sources/timer.o
+ .debug_line    0x00012ac4      0x781 ./Sources/uart.o
+ .debug_line    0x00013245      0x888 ./Sources/uart_rx_task.o
+ .debug_line    0x00013acd      0x9ae ./Sources/uart_state_machine.o
+ .debug_line    0x0001447b      0x8af ./Sources/uart_tx_task.o
 
-.debug_str      0x00000000     0xf7ec
+.debug_str      0x00000000     0xf81d
  .debug_str     0x00000000     0x3b4b ./Generated_Code/can_pal1.o
                                0x3e72 (size before relaxing)
  .debug_str     0x00003b4b      0x4b6 ./Generated_Code/clockMan1.o
@@ -3258,37 +3263,37 @@ OUTPUT(bytebeam_nxp_s32k144.elf elf32-littlearm)
                                 0xe04 (size before relaxing)
  .debug_str     0x0000e747       0x5e ./Sources/app_main.o
                                 0x26a (size before relaxing)
- .debug_str     0x0000e7a5      0x12d ./Sources/can.o
-                               0x478f (size before relaxing)
- .debug_str     0x0000e8d2      0x2d7 ./Sources/can_app.o
+ .debug_str     0x0000e7a5      0x1e6 ./Sources/can.o
+                               0x4848 (size before relaxing)
+ .debug_str     0x0000e98b      0x2d7 ./Sources/can_app.o
                                0x4667 (size before relaxing)
- .debug_str     0x0000eba9       0xd8 ./Sources/can_queue.o
+ .debug_str     0x0000ec62       0xd8 ./Sources/can_queue.o
                                0x1027 (size before relaxing)
- .debug_str     0x0000ec81       0x2c ./Sources/can_rx_task.o
+ .debug_str     0x0000ed3a       0x2c ./Sources/can_rx_task.o
                                0x44e3 (size before relaxing)
- .debug_str     0x0000ecad       0x33 ./Sources/clock.o
+ .debug_str     0x0000ed66       0x33 ./Sources/clock.o
                                0x3ec4 (size before relaxing)
- .debug_str     0x0000ece0      0x157 ./Sources/core_main.o
-                               0x4599 (size before relaxing)
- .debug_str     0x0000ee37       0x72 ./Sources/diagnostic_task.o
-                               0x40a6 (size before relaxing)
- .debug_str     0x0000eea9       0x20 ./Sources/gpio.o
+ .debug_str     0x0000ed99       0xba ./Sources/core_main.o
+                               0x45b5 (size before relaxing)
+ .debug_str     0x0000ee53       0x72 ./Sources/diagnostic_task.o
+                               0x40c2 (size before relaxing)
+ .debug_str     0x0000eec5       0x20 ./Sources/gpio.o
                                 0x643 (size before relaxing)
- .debug_str     0x0000eec9       0x1c ./Sources/main.o
+ .debug_str     0x0000eee5       0x1c ./Sources/main.o
                                0x3e7f (size before relaxing)
- .debug_str     0x0000eee5      0x1c8 ./Sources/operating_system.o
+ .debug_str     0x0000ef01      0x1c8 ./Sources/operating_system.o
                                0x4252 (size before relaxing)
- .debug_str     0x0000f0ad      0x1a7 ./Sources/rr_nvic.o
+ .debug_str     0x0000f0c9      0x1a7 ./Sources/rr_nvic.o
                                 0xe2c (size before relaxing)
- .debug_str     0x0000f254      0x135 ./Sources/timer.o
-                               0x436d (size before relaxing)
- .debug_str     0x0000f389       0xc0 ./Sources/uart.o
+ .debug_str     0x0000f270      0x14a ./Sources/timer.o
+                               0x439e (size before relaxing)
+ .debug_str     0x0000f3ba       0xc0 ./Sources/uart.o
                                0x443d (size before relaxing)
- .debug_str     0x0000f449      0x126 ./Sources/uart_rx_task.o
+ .debug_str     0x0000f47a      0x126 ./Sources/uart_rx_task.o
                                0x458e (size before relaxing)
- .debug_str     0x0000f56f      0x212 ./Sources/uart_state_machine.o
+ .debug_str     0x0000f5a0      0x212 ./Sources/uart_state_machine.o
                                0x47e5 (size before relaxing)
- .debug_str     0x0000f781       0x6b ./Sources/uart_tx_task.o
+ .debug_str     0x0000f7b2       0x6b ./Sources/uart_tx_task.o
                                0x4621 (size before relaxing)
 
 .comment        0x00000000       0xa0
@@ -3349,7 +3354,7 @@ OUTPUT(bytebeam_nxp_s32k144.elf elf32-littlearm)
  .comment       0x000000a0       0xa1 ./Sources/uart_state_machine.o
  .comment       0x000000a0       0xa1 ./Sources/uart_tx_task.o
 
-.debug_loc      0x00000000    0x1b40c
+.debug_loc      0x00000000    0x1b45f
  .debug_loc     0x00000000       0xeb ./SDK/platform/devices/S32K144/startup/system_S32K144.o
  .debug_loc     0x000000eb       0xec ./SDK/platform/devices/startup.o
  .debug_loc     0x000001d7     0x4e0b ./SDK/platform/drivers/src/clock/S32K1xx/clock_S32K1xx.o
@@ -3381,21 +3386,21 @@ OUTPUT(bytebeam_nxp_s32k144.elf elf32-littlearm)
  .debug_loc     0x0001a363      0x255 ./SDK/rtos/FreeRTOS_S32K/Source/portable/MemMang/heap_2.o
  .debug_loc     0x0001a5b8      0x516 ./SDK/rtos/osif/osif_freertos.o
  .debug_loc     0x0001aace       0x2f ./Sources/app_main.o
- .debug_loc     0x0001aafd      0x181 ./Sources/can.o
- .debug_loc     0x0001ac7e       0x55 ./Sources/can_app.o
- .debug_loc     0x0001acd3       0x74 ./Sources/can_queue.o
- .debug_loc     0x0001ad47       0x21 ./Sources/can_rx_task.o
- .debug_loc     0x0001ad68       0x3a ./Sources/clock.o
- .debug_loc     0x0001ada2       0x59 ./Sources/core_main.o
- .debug_loc     0x0001adfb       0x21 ./Sources/diagnostic_task.o
- .debug_loc     0x0001ae1c       0x1f ./Sources/gpio.o
- .debug_loc     0x0001ae3b       0xf8 ./Sources/operating_system.o
- .debug_loc     0x0001af33      0x173 ./Sources/rr_nvic.o
- .debug_loc     0x0001b0a6       0x67 ./Sources/timer.o
- .debug_loc     0x0001b10d      0x16c ./Sources/uart.o
- .debug_loc     0x0001b279       0x21 ./Sources/uart_rx_task.o
- .debug_loc     0x0001b29a      0x151 ./Sources/uart_state_machine.o
- .debug_loc     0x0001b3eb       0x21 ./Sources/uart_tx_task.o
+ .debug_loc     0x0001aafd      0x1c9 ./Sources/can.o
+ .debug_loc     0x0001acc6       0x55 ./Sources/can_app.o
+ .debug_loc     0x0001ad1b       0x74 ./Sources/can_queue.o
+ .debug_loc     0x0001ad8f       0x21 ./Sources/can_rx_task.o
+ .debug_loc     0x0001adb0       0x3a ./Sources/clock.o
+ .debug_loc     0x0001adea       0x59 ./Sources/core_main.o
+ .debug_loc     0x0001ae43       0x21 ./Sources/diagnostic_task.o
+ .debug_loc     0x0001ae64       0x1f ./Sources/gpio.o
+ .debug_loc     0x0001ae83       0xf8 ./Sources/operating_system.o
+ .debug_loc     0x0001af7b      0x173 ./Sources/rr_nvic.o
+ .debug_loc     0x0001b0ee       0x72 ./Sources/timer.o
+ .debug_loc     0x0001b160      0x16c ./Sources/uart.o
+ .debug_loc     0x0001b2cc       0x21 ./Sources/uart_rx_task.o
+ .debug_loc     0x0001b2ed      0x151 ./Sources/uart_state_machine.o
+ .debug_loc     0x0001b43e       0x21 ./Sources/uart_tx_task.o
 
 .debug_ranges   0x00000000     0x1db0
  .debug_ranges  0x00000000       0x20 ./SDK/platform/devices/S32K144/startup/system_S32K144.o
@@ -3448,7 +3453,7 @@ OUTPUT(bytebeam_nxp_s32k144.elf elf32-littlearm)
  .debug_ranges  0x00001d70       0x30 ./Sources/uart_state_machine.o
  .debug_ranges  0x00001da0       0x10 ./Sources/uart_tx_task.o
 
-.debug_frame    0x00000000     0x3ab0
+.debug_frame    0x00000000     0x3ab4
  .debug_frame   0x00000000       0x40 ./SDK/platform/devices/S32K144/startup/system_S32K144.o
  .debug_frame   0x00000040       0x2c ./SDK/platform/devices/startup.o
  .debug_frame   0x0000006c      0x37c ./SDK/platform/drivers/src/clock/S32K1xx/clock_S32K1xx.o
@@ -3493,10 +3498,10 @@ OUTPUT(bytebeam_nxp_s32k144.elf elf32-littlearm)
  .debug_frame   0x000036e0       0x28 ./Sources/main.o
  .debug_frame   0x00003708       0x50 ./Sources/operating_system.o
  .debug_frame   0x00003758       0xc8 ./Sources/rr_nvic.o
- .debug_frame   0x00003820       0xc4 ./Sources/timer.o
- .debug_frame   0x000038e4       0x7c ./Sources/uart.o
- .debug_frame   0x00003960       0x28 ./Sources/uart_rx_task.o
- .debug_frame   0x00003988       0xb8 ./Sources/uart_state_machine.o
- .debug_frame   0x00003a40       0x28 ./Sources/uart_tx_task.o
- .debug_frame   0x00003a68       0x28 D:/NXP/S32DS_ARM_v2.2/S32DS/build_tools/gcc_v6.3/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard\libc_nano.a(lib_a-memcpy-stub.o)
- .debug_frame   0x00003a90       0x20 D:/NXP/S32DS_ARM_v2.2/S32DS/build_tools/gcc_v6.3/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard\libc_nano.a(lib_a-memset.o)
+ .debug_frame   0x00003820       0xc8 ./Sources/timer.o
+ .debug_frame   0x000038e8       0x7c ./Sources/uart.o
+ .debug_frame   0x00003964       0x28 ./Sources/uart_rx_task.o
+ .debug_frame   0x0000398c       0xb8 ./Sources/uart_state_machine.o
+ .debug_frame   0x00003a44       0x28 ./Sources/uart_tx_task.o
+ .debug_frame   0x00003a6c       0x28 D:/NXP/S32DS_ARM_v2.2/S32DS/build_tools/gcc_v6.3/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard\libc_nano.a(lib_a-memcpy-stub.o)
+ .debug_frame   0x00003a94       0x20 D:/NXP/S32DS_ARM_v2.2/S32DS/build_tools/gcc_v6.3/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard\libc_nano.a(lib_a-memset.o)

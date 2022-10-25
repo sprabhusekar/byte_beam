@@ -3,7 +3,7 @@
   <Header>
     <Name>bytebeam_nxp_s32k144</Name>
     <SavedBy>Prabhu</SavedBy>
-    <ModificationStamp>35</ModificationStamp>
+    <ModificationStamp>39</ModificationStamp>
     <Date>2022-07-31</Date>
     <IDE>Eclipse IDE</IDE>
     <PEversion>1.12.2.RT7_b1743-0713</PEversion>
@@ -29,7 +29,7 @@
     <UseExistingModules>true</UseExistingModules>
     <RenamePeripheries>false</RenamePeripheries>
     <Autodependency>true</Autodependency>
-    <ProjectCompNumb>18</ProjectCompNumb>
+    <ProjectCompNumb>20</ProjectCompNumb>
     <DelUnusedPreviouslyGenFiles>true</DelUnusedPreviouslyGenFiles>
     <GeneratedCodeFrozen>false</GeneratedCodeFrozen>
     <AssignInitComponentNameToPrph>true</AssignInitComponentNameToPrph>
@@ -587,29 +587,31 @@
       <Count>0</Count>
     </BoolList_FpgaConfig>
     <BoolList_BeanConfig>
-      <Count>11</Count>
-      <ItemId0>10</ItemId0>
+      <Count>12</Count>
+      <ItemId0>9</ItemId0>
       <Value0>true</Value0>
-      <ItemId1>9</ItemId1>
+      <ItemId1>8</ItemId1>
       <Value1>true</Value1>
-      <ItemId2>8</ItemId2>
+      <ItemId2>6</ItemId2>
       <Value2>true</Value2>
-      <ItemId3>6</ItemId3>
+      <ItemId3>5</ItemId3>
       <Value3>true</Value3>
-      <ItemId4>5</ItemId4>
+      <ItemId4>4</ItemId4>
       <Value4>true</Value4>
-      <ItemId5>4</ItemId5>
+      <ItemId5>2</ItemId5>
       <Value5>true</Value5>
-      <ItemId6>2</ItemId6>
+      <ItemId6>14</ItemId6>
       <Value6>true</Value6>
-      <ItemId7>14</ItemId7>
+      <ItemId7>15</ItemId7>
       <Value7>true</Value7>
-      <ItemId8>15</ItemId8>
+      <ItemId8>16</ItemId8>
       <Value8>true</Value8>
-      <ItemId9>16</ItemId9>
+      <ItemId9>17</ItemId9>
       <Value9>true</Value9>
-      <ItemId10>17</ItemId10>
+      <ItemId10>18</ItemId10>
       <Value10>true</Value10>
+      <ItemId11>19</ItemId11>
+      <Value11>true</Value11>
     </BoolList_BeanConfig>
     <BoolList_TaskConfig>
       <Count>0</Count>
@@ -676,29 +678,31 @@
       <Count>0</Count>
     </BoolList_FpgaConfig>
     <BoolList_BeanConfig>
-      <Count>11</Count>
-      <ItemId0>10</ItemId0>
+      <Count>12</Count>
+      <ItemId0>9</ItemId0>
       <Value0>true</Value0>
-      <ItemId1>9</ItemId1>
+      <ItemId1>8</ItemId1>
       <Value1>true</Value1>
-      <ItemId2>8</ItemId2>
+      <ItemId2>6</ItemId2>
       <Value2>true</Value2>
-      <ItemId3>6</ItemId3>
+      <ItemId3>5</ItemId3>
       <Value3>true</Value3>
-      <ItemId4>5</ItemId4>
+      <ItemId4>4</ItemId4>
       <Value4>true</Value4>
-      <ItemId5>4</ItemId5>
+      <ItemId5>2</ItemId5>
       <Value5>true</Value5>
-      <ItemId6>2</ItemId6>
+      <ItemId6>14</ItemId6>
       <Value6>true</Value6>
-      <ItemId7>14</ItemId7>
+      <ItemId7>15</ItemId7>
       <Value7>true</Value7>
-      <ItemId8>15</ItemId8>
+      <ItemId8>16</ItemId8>
       <Value8>true</Value8>
-      <ItemId9>16</ItemId9>
+      <ItemId9>17</ItemId9>
       <Value9>true</Value9>
-      <ItemId10>17</ItemId10>
+      <ItemId10>18</ItemId10>
       <Value10>true</Value10>
+      <ItemId11>19</ItemId11>
+      <Value11>true</Value11>
     </BoolList_BeanConfig>
     <BoolList_TaskConfig>
       <Count>0</Count>
@@ -12985,335 +12989,6 @@
   </Bean>
   <Bean>
     <Repository>file:/${ProcessorExpert_loc}/../../S32DS/software/S32SDK_S32K1xx_RTM_3.0.0/tools/pex/Repositories/SDK_S32K1xx_15_Repository</Repository>
-    <ComponentUUID>com.freescale.processorexpert.ksdk.timing_pal</ComponentUUID>
-    <BeanType>timing_pal</BeanType>
-    <Name>timing_pal1</Name>
-    <CompNumb>10</CompNumb>
-    <CompEnabled>true</CompEnabled>
-    <GenCodeMode>ALWAYS_WRITE</GenCodeMode>
-    <IconName>CLOCKS_LDD</IconName>
-    <UserFolderName />
-    <Comment lines_count="0" />
-    <Template />
-    <BeanVersion>SDK_S32K1xx_15</BeanVersion>
-    <LightErrorsIgnored>false</LightErrorsIgnored>
-    <Properties>
-      <ItemState>
-        <ItemSymbol>DeviceName</ItemSymbol>
-        <ReadOnly>false</ReadOnly>
-        <UserReadOnly>false</UserReadOnly>
-        <Value>timing_pal1</Value>
-      </ItemState>
-      <ItemState>
-        <ItemSymbol>PeriphDevice</ItemSymbol>
-        <ReadOnly>false</ReadOnly>
-        <UserReadOnly>false</UserReadOnly>
-        <Value>FTM0</Value>
-        <SharedPrphMode>false</SharedPrphMode>
-      </ItemState>
-      <ItemState>
-        <ItemSymbol>CompVersion</ItemSymbol>
-        <Value>S32_SDK</Value>
-      </ItemState>
-      <ItemState>
-        <ItemSymbol>ComponentName</ItemSymbol>
-        <ReadOnly>false</ReadOnly>
-        <UserReadOnly>false</UserReadOnly>
-        <Value>timing_pal</Value>
-      </ItemState>
-      <ItemState>
-        <ItemSymbol>VersionSpecificItem</ItemSymbol>
-        <ListItemCount>1</ListItemCount>
-      </ItemState>
-      <ItemState>
-        <ItemSymbol>Settings</ItemSymbol>
-        <ReadOnly>false</ReadOnly>
-        <UserReadOnly>false</UserReadOnly>
-      </ItemState>
-      <ItemState>
-        <ItemSymbol>PropertiesItem</ItemSymbol>
-        <ListItemCount>1</ListItemCount>
-        <ItemsTypeState>Beans\timing_pal\Items\S32_SDK\FTM\timing_pal.item</ItemsTypeState>
-      </ItemState>
-      <ItemState>
-        <ItemSymbol>MainConfigurationsGrp</ItemSymbol>
-        <ReadOnly>false</ReadOnly>
-        <UserReadOnly>false</UserReadOnly>
-        <Index>0</Index>
-        <Expanded>true</Expanded>
-      </ItemState>
-      <ItemState>
-        <ItemSymbol>Configuration_NAME</ItemSymbol>
-        <ReadOnly>false</ReadOnly>
-        <UserReadOnly>false</UserReadOnly>
-        <Value>timing_pal1_InitConfig</Value>
-      </ItemState>
-      <ItemState>
-        <ItemSymbol>ClockConfiguration</ItemSymbol>
-        <ReadOnly>false</ReadOnly>
-        <UserReadOnly>false</UserReadOnly>
-        <Index>0</Index>
-        <Expanded>true</Expanded>
-      </ItemState>
-      <ItemState>
-        <ItemSymbol>ClockConfigSelect</ItemSymbol>
-        <ReadOnly>false</ReadOnly>
-        <UserReadOnly>false</UserReadOnly>
-        <Value>Clock configuration 0</Value>
-      </ItemState>
-      <ItemState>
-        <ItemSymbol>ClockSource</ItemSymbol>
-        <ReadOnly>false</ReadOnly>
-        <UserReadOnly>false</UserReadOnly>
-        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
-        <TypeSpecNameState>timing_ftm_clock_source_t</TypeSpecNameState>
-        <Index>2</Index>
-        <EnumSymbVal>FTM_CLOCK_SOURCE_EXTERNALCLK</EnumSymbVal>
-      </ItemState>
-      <ItemState>
-        <ItemSymbol>PowerMode</ItemSymbol>
-        <ReadOnly>true</ReadOnly>
-        <UserReadOnly>false</UserReadOnly>
-        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
-        <Index>0</Index>
-        <EnumSymbVal>RUN</EnumSymbVal>
-      </ItemState>
-      <ItemState>
-        <ItemSymbol>Prescaler</ItemSymbol>
-        <ReadOnly>false</ReadOnly>
-        <UserReadOnly>false</UserReadOnly>
-        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
-        <TypeSpecNameState>timing_ftm_clock_ps_t</TypeSpecNameState>
-        <Index>7</Index>
-        <EnumSymbVal>FTM_CLOCK_DIVID_BY_128</EnumSymbVal>
-      </ItemState>
-      <ItemState>
-        <ItemSymbol>finalValueCounter</ItemSymbol>
-        <ReadOnly>false</ReadOnly>
-        <UserReadOnly>false</UserReadOnly>
-        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
-        <Value>65535</Value>
-        <Base>DEC</Base>
-      </ItemState>
-      <ItemState>
-        <ItemSymbol>timingChanCfg</ItemSymbol>
-        <ReadOnly>false</ReadOnly>
-        <ListItemCount>2</ListItemCount>
-        <UserReadOnly>false</UserReadOnly>
-        <Expanded>true</Expanded>
-      </ItemState>
-      <ItemState>
-        <ItemSymbol>timingChanCfg_0</ItemSymbol>
-        <ReadOnly>false</ReadOnly>
-        <UserReadOnly>false</UserReadOnly>
-        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
-        <Value>true</Value>
-        <Expanded>true</Expanded>
-      </ItemState>
-      <ItemState>
-        <ItemSymbol>Channel0</ItemSymbol>
-        <ReadOnly>false</ReadOnly>
-        <UserReadOnly>false</UserReadOnly>
-        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
-        <TypeSpecNameState>timing_ftm_channel_t</TypeSpecNameState>
-        <Index>0</Index>
-        <EnumSymbVal>0U</EnumSymbVal>
-      </ItemState>
-      <ItemState>
-        <ItemSymbol>notificationType0</ItemSymbol>
-        <ReadOnly>false</ReadOnly>
-        <UserReadOnly>false</UserReadOnly>
-        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
-        <Index>0</Index>
-        <EnumSymbVal>TIMER_CHAN_TYPE_CONTINUOUS</EnumSymbVal>
-      </ItemState>
-      <ItemState>
-        <ItemSymbol>ChannelCallback0</ItemSymbol>
-        <ReadOnly>false</ReadOnly>
-        <UserReadOnly>false</UserReadOnly>
-        <Value>timer_pal_chan0_callback_1000ms_v</Value>
-      </ItemState>
-      <ItemState>
-        <ItemSymbol>CallbackParam0</ItemSymbol>
-        <ReadOnly>false</ReadOnly>
-        <UserReadOnly>false</UserReadOnly>
-        <Value>NULL</Value>
-      </ItemState>
-      <ItemState>
-        <ItemSymbol>timingChanCfg_1</ItemSymbol>
-        <ReadOnly>false</ReadOnly>
-        <UserReadOnly>false</UserReadOnly>
-        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
-        <Value>true</Value>
-        <Expanded>true</Expanded>
-      </ItemState>
-      <ItemState>
-        <ItemSymbol>Channel1</ItemSymbol>
-        <ReadOnly>false</ReadOnly>
-        <UserReadOnly>false</UserReadOnly>
-        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
-        <TypeSpecNameState>timing_ftm_channel_t</TypeSpecNameState>
-        <Index>1</Index>
-        <EnumSymbVal>1U</EnumSymbVal>
-      </ItemState>
-      <ItemState>
-        <ItemSymbol>notificationType1</ItemSymbol>
-        <ReadOnly>false</ReadOnly>
-        <UserReadOnly>false</UserReadOnly>
-        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
-        <Index>0</Index>
-        <EnumSymbVal>TIMER_CHAN_TYPE_CONTINUOUS</EnumSymbVal>
-      </ItemState>
-      <ItemState>
-        <ItemSymbol>ChannelCallback1</ItemSymbol>
-        <ReadOnly>false</ReadOnly>
-        <UserReadOnly>false</UserReadOnly>
-        <Value>timer_pal_chan1_callback_5000ms_v</Value>
-      </ItemState>
-      <ItemState>
-        <ItemSymbol>CallbackParam1</ItemSymbol>
-        <ReadOnly>false</ReadOnly>
-        <UserReadOnly>false</UserReadOnly>
-        <Value>NULL</Value>
-      </ItemState>
-      <ItemState>
-        <ItemSymbol>LinkItem</ItemSymbol>
-        <ListItemCount>1</ListItemCount>
-        <ItemsTypeState>Beans\timing_pal\Items\S32_SDK\timing_pal_links.item</ItemsTypeState>
-      </ItemState>
-      <ItemState>
-        <ItemSymbol>LinkGrp</ItemSymbol>
-        <ReadOnly>false</ReadOnly>
-        <UserReadOnly>false</UserReadOnly>
-        <Expanded>true</Expanded>
-      </ItemState>
-      <ItemState>
-        <ItemSymbol>Link1</ItemSymbol>
-        <ReadOnly>false</ReadOnly>
-        <UserReadOnly>false</UserReadOnly>
-        <Value>clockMan1</Value>
-      </ItemState>
-      <ItemState>
-        <ItemSymbol>Link0</ItemSymbol>
-        <ReadOnly>false</ReadOnly>
-        <UserReadOnly>false</UserReadOnly>
-        <Value>intMan1</Value>
-      </ItemState>
-    </Properties>
-    <Methods>
-      <ItemState>
-        <ItemSymbol>SdkSpecificMethods</ItemSymbol>
-        <ListItemCount>1</ListItemCount>
-      </ItemState>
-      <ItemState>
-        <ItemSymbol>timing_irqgroup</ItemSymbol>
-        <ReadOnly>false</ReadOnly>
-        <UserReadOnly>false</UserReadOnly>
-      </ItemState>
-      <ItemState>
-        <ItemSymbol>TIMING_Init</ItemSymbol>
-        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
-        <Index>0</Index>
-        <Value>true</Value>
-        <LastSelection>true</LastSelection>
-        <LastUserSel>always</LastUserSel>
-        <UsrMethodName>TIMING_Init</UsrMethodName>
-      </ItemState>
-      <ItemState>
-        <ItemSymbol>TIMING_Deinit</ItemSymbol>
-        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
-        <Index>0</Index>
-        <Value>true</Value>
-        <LastSelection>true</LastSelection>
-        <LastUserSel>always</LastUserSel>
-        <UsrMethodName>TIMING_Deinit</UsrMethodName>
-      </ItemState>
-      <ItemState>
-        <ItemSymbol>TIMING_StartChannel</ItemSymbol>
-        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
-        <Index>0</Index>
-        <Value>true</Value>
-        <LastSelection>true</LastSelection>
-        <LastUserSel>always</LastUserSel>
-        <UsrMethodName>TIMING_StartChannel</UsrMethodName>
-      </ItemState>
-      <ItemState>
-        <ItemSymbol>TIMING_StopChannel</ItemSymbol>
-        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
-        <Index>0</Index>
-        <Value>true</Value>
-        <LastSelection>true</LastSelection>
-        <LastUserSel>always</LastUserSel>
-        <UsrMethodName>TIMING_StopChannel</UsrMethodName>
-      </ItemState>
-      <ItemState>
-        <ItemSymbol>TIMING_GetElapsed</ItemSymbol>
-        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
-        <Index>0</Index>
-        <Value>true</Value>
-        <LastSelection>true</LastSelection>
-        <LastUserSel>always</LastUserSel>
-        <UsrMethodName>TIMING_GetElapsed</UsrMethodName>
-      </ItemState>
-      <ItemState>
-        <ItemSymbol>TIMING_GetRemaining</ItemSymbol>
-        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
-        <Index>0</Index>
-        <Value>true</Value>
-        <LastSelection>true</LastSelection>
-        <LastUserSel>always</LastUserSel>
-        <UsrMethodName>TIMING_GetRemaining</UsrMethodName>
-      </ItemState>
-      <ItemState>
-        <ItemSymbol>TIMING_EnableNotification</ItemSymbol>
-        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
-        <Index>0</Index>
-        <Value>true</Value>
-        <LastSelection>true</LastSelection>
-        <LastUserSel>always</LastUserSel>
-        <UsrMethodName>TIMING_EnableNotification</UsrMethodName>
-      </ItemState>
-      <ItemState>
-        <ItemSymbol>TIMING_DisableNotification</ItemSymbol>
-        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
-        <Index>0</Index>
-        <Value>true</Value>
-        <LastSelection>true</LastSelection>
-        <LastUserSel>always</LastUserSel>
-        <UsrMethodName>TIMING_DisableNotification</UsrMethodName>
-      </ItemState>
-      <ItemState>
-        <ItemSymbol>TIMING_GetResolution</ItemSymbol>
-        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
-        <Index>0</Index>
-        <Value>true</Value>
-        <LastSelection>true</LastSelection>
-        <LastUserSel>always</LastUserSel>
-        <UsrMethodName>TIMING_GetResolution</UsrMethodName>
-      </ItemState>
-      <ItemState>
-        <ItemSymbol>TIMING_GetMaxPeriod</ItemSymbol>
-        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
-        <Index>0</Index>
-        <Value>true</Value>
-        <LastSelection>true</LastSelection>
-        <LastUserSel>always</LastUserSel>
-        <UsrMethodName>TIMING_GetMaxPeriod</UsrMethodName>
-      </ItemState>
-      <ItemState>
-        <ItemSymbol>TIMING_InstallCallback</ItemSymbol>
-        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
-        <Index>0</Index>
-        <Value>true</Value>
-        <LastSelection>true</LastSelection>
-        <LastUserSel>always</LastUserSel>
-        <UsrMethodName>TIMING_InstallCallback</UsrMethodName>
-      </ItemState>
-    </Methods>
-    <Events />
-  </Bean>
-  <Bean>
-    <Repository>file:/${ProcessorExpert_loc}/../../S32DS/software/S32SDK_S32K1xx_RTM_3.0.0/tools/pex/Repositories/SDK_S32K1xx_15_Repository</Repository>
     <ComponentUUID>com.freescale.processorexpert.ksdk.freertos</ComponentUUID>
     <BeanType>FreeRTOS</BeanType>
     <Name>FreeRTOS</Name>
@@ -13345,7 +13020,7 @@
         <ItemSymbol>FreeRTOSFileDirectory</ItemSymbol>
         <ReadOnly>true</ReadOnly>
         <UserReadOnly>false</UserReadOnly>
-        <Value>D:\NXP\S32DS_ARM_v2.2\eclipse\ProcessorExpert\..\..\S32DS\software\S32SDK_S32K1xx_RTM_3.0.0\rtos\FreeRTOS_S32K\</Value>
+        <Value>C:\NXP\S32DS_ARM_v2.2\eclipse\ProcessorExpert\..\..\S32DS\software\S32SDK_S32K1xx_RTM_3.0.0\rtos\FreeRTOS_S32K\</Value>
       </ItemState>
       <ItemState>
         <ItemSymbol>VersionSpecificItem</ItemSymbol>
@@ -14676,7 +14351,7 @@
         <UsrMethodName>pvTimerGetTimerID</UsrMethodName>
       </ItemState>
       <ItemState>
-        <ItemSymbol>pcTimerGetName</ItemSymbol>
+        <ItemSymbol>pcTimerGetTimerName</ItemSymbol>
         <ReadOnly>false</ReadOnly>
         <UserReadOnly>false</UserReadOnly>
         <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
@@ -14684,7 +14359,7 @@
         <Value>true</Value>
         <LastSelection>true</LastSelection>
         <LastUserSel>yes</LastUserSel>
-        <UsrMethodName>pcTimerGetName</UsrMethodName>
+        <UsrMethodName>pcTimerGetTimerName</UsrMethodName>
       </ItemState>
       <ItemState>
         <ItemSymbol>xTimerIsTimerActive</ItemSymbol>
@@ -14799,6 +14474,15 @@
         <ItemSymbol>FreeRTOS_Task managementgroup</ItemSymbol>
         <ReadOnly>false</ReadOnly>
         <UserReadOnly>false</UserReadOnly>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>portSWITCH_TO_USER_MODE</ItemSymbol>
+        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
+        <Index>0</Index>
+        <Value>true</Value>
+        <LastSelection>true</LastSelection>
+        <LastUserSel>always</LastUserSel>
+        <UsrMethodName>portSWITCH_TO_USER_MODE</UsrMethodName>
       </ItemState>
       <ItemState>
         <ItemSymbol>vTaskAllocateMPURegions</ItemSymbol>
@@ -14988,7 +14672,7 @@
         <UsrMethodName>uxTaskGetSystemState</UsrMethodName>
       </ItemState>
       <ItemState>
-        <ItemSymbol>pcTaskGetName</ItemSymbol>
+        <ItemSymbol>pcTaskGetTaskName</ItemSymbol>
         <ReadOnly>false</ReadOnly>
         <UserReadOnly>false</UserReadOnly>
         <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
@@ -14996,7 +14680,7 @@
         <Value>true</Value>
         <LastSelection>true</LastSelection>
         <LastUserSel>yes</LastUserSel>
-        <UsrMethodName>pcTaskGetName</UsrMethodName>
+        <UsrMethodName>pcTaskGetTaskName</UsrMethodName>
       </ItemState>
       <ItemState>
         <ItemSymbol>xTaskGetTickCount</ItemSymbol>
@@ -15151,7 +14835,7 @@
         <UsrMethodName>xTaskCallApplicationTaskHook</UsrMethodName>
       </ItemState>
       <ItemState>
-        <ItemSymbol>pcTimerGetTimerName</ItemSymbol>
+        <ItemSymbol>pcTimerGetName</ItemSymbol>
         <ReadOnly>false</ReadOnly>
         <UserReadOnly>false</UserReadOnly>
         <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
@@ -15159,19 +14843,10 @@
         <Value>true</Value>
         <LastSelection>true</LastSelection>
         <LastUserSel>yes</LastUserSel>
-        <UsrMethodName>pcTimerGetTimerName</UsrMethodName>
+        <UsrMethodName>pcTimerGetName</UsrMethodName>
       </ItemState>
       <ItemState>
-        <ItemSymbol>portSWITCH_TO_USER_MODE</ItemSymbol>
-        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
-        <Index>0</Index>
-        <Value>true</Value>
-        <LastSelection>true</LastSelection>
-        <LastUserSel>always</LastUserSel>
-        <UsrMethodName>portSWITCH_TO_USER_MODE</UsrMethodName>
-      </ItemState>
-      <ItemState>
-        <ItemSymbol>pcTaskGetTaskName</ItemSymbol>
+        <ItemSymbol>pcTaskGetName</ItemSymbol>
         <ReadOnly>false</ReadOnly>
         <UserReadOnly>false</UserReadOnly>
         <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
@@ -15179,7 +14854,7 @@
         <Value>true</Value>
         <LastSelection>true</LastSelection>
         <LastUserSel>yes</LastUserSel>
-        <UsrMethodName>pcTaskGetTaskName</UsrMethodName>
+        <UsrMethodName>pcTaskGetName</UsrMethodName>
       </ItemState>
     </Methods>
     <Events>
@@ -19301,7 +18976,7 @@
         <ItemSymbol>ProjectComponentsCount</ItemSymbol>
         <ReadOnly>false</ReadOnly>
         <UserReadOnly>false</UserReadOnly>
-        <Value>10</Value>
+        <Value>11</Value>
       </ItemState>
       <ItemState>
         <ItemSymbol>PeripheralMaxIdValue</ItemSymbol>
@@ -19973,6 +19648,865 @@
         <LastSelection>true</LastSelection>
         <LastUserSel>always</LastUserSel>
         <UsrMethodName>POWER_SYS_GetResetSrcStatusCmd</UsrMethodName>
+      </ItemState>
+    </Methods>
+    <Events />
+  </Bean>
+  <Bean>
+    <Repository>file:/${ProcessorExpert_loc}/../../S32DS/software/S32SDK_S32K1xx_RTM_3.0.0/tools/pex/Repositories/SDK_S32K1xx_15_Repository</Repository>
+    <ComponentUUID>com.freescale.processorexpert.ksdk.timing_pal</ComponentUUID>
+    <BeanType>timing_pal</BeanType>
+    <Name>timing_pal1</Name>
+    <CompNumb>18</CompNumb>
+    <CompEnabled>true</CompEnabled>
+    <GenCodeMode>ALWAYS_WRITE</GenCodeMode>
+    <IconName>CLOCKS_LDD</IconName>
+    <UserFolderName />
+    <Comment lines_count="0" />
+    <Template />
+    <BeanVersion>SDK_S32K1xx_15</BeanVersion>
+    <LightErrorsIgnored>false</LightErrorsIgnored>
+    <Properties>
+      <ItemState>
+        <ItemSymbol>DeviceName</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+        <Value>timing_pal1</Value>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>PeriphDevice</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+        <Value>FTM0</Value>
+        <SharedPrphMode>false</SharedPrphMode>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>CompVersion</ItemSymbol>
+        <Value>S32_SDK</Value>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>ComponentName</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+        <Value>timing_pal</Value>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>VersionSpecificItem</ItemSymbol>
+        <ListItemCount>1</ListItemCount>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>Settings</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>PropertiesItem</ItemSymbol>
+        <ListItemCount>1</ListItemCount>
+        <ItemsTypeState>Beans\timing_pal\Items\S32_SDK\FTM\timing_pal.item</ItemsTypeState>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>MainConfigurationsGrp</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+        <Index>0</Index>
+        <Expanded>true</Expanded>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>Configuration_NAME</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+        <Value>timing_pal1_InitConfig</Value>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>ClockConfiguration</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+        <Index>0</Index>
+        <Expanded>true</Expanded>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>ClockConfigSelect</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+        <Value>Clock configuration 0</Value>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>ClockSource</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
+        <TypeSpecNameState>timing_ftm_clock_source_t</TypeSpecNameState>
+        <Index>2</Index>
+        <EnumSymbVal>FTM_CLOCK_SOURCE_EXTERNALCLK</EnumSymbVal>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>PowerMode</ItemSymbol>
+        <ReadOnly>true</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
+        <Index>0</Index>
+        <EnumSymbVal>RUN</EnumSymbVal>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>Prescaler</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
+        <TypeSpecNameState>timing_ftm_clock_ps_t</TypeSpecNameState>
+        <Index>7</Index>
+        <EnumSymbVal>FTM_CLOCK_DIVID_BY_128</EnumSymbVal>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>finalValueCounter</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
+        <Value>65535</Value>
+        <Base>DEC</Base>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>timingChanCfg</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <ListItemCount>2</ListItemCount>
+        <UserReadOnly>false</UserReadOnly>
+        <Expanded>true</Expanded>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>timingChanCfg_0</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
+        <Value>true</Value>
+        <Expanded>true</Expanded>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>Channel0</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
+        <TypeSpecNameState>timing_ftm_channel_t</TypeSpecNameState>
+        <Index>0</Index>
+        <EnumSymbVal>0U</EnumSymbVal>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>notificationType0</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
+        <Index>0</Index>
+        <EnumSymbVal>TIMER_CHAN_TYPE_CONTINUOUS</EnumSymbVal>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>ChannelCallback0</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+        <Value>timer_pal_chan0_callback_1000ms_v</Value>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>CallbackParam0</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+        <Value>NULL</Value>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>timingChanCfg_1</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
+        <Value>true</Value>
+        <Expanded>true</Expanded>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>Channel1</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
+        <TypeSpecNameState>timing_ftm_channel_t</TypeSpecNameState>
+        <Index>1</Index>
+        <EnumSymbVal>1U</EnumSymbVal>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>notificationType1</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
+        <Index>0</Index>
+        <EnumSymbVal>TIMER_CHAN_TYPE_CONTINUOUS</EnumSymbVal>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>ChannelCallback1</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+        <Value>timer_pal_chan1_callback_5000ms_v</Value>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>CallbackParam1</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+        <Value>NULL</Value>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>LinkItem</ItemSymbol>
+        <ListItemCount>1</ListItemCount>
+        <ItemsTypeState>Beans\timing_pal\Items\S32_SDK\timing_pal_links.item</ItemsTypeState>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>LinkGrp</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+        <Expanded>true</Expanded>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>Link1</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+        <Value>clockMan1</Value>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>Link0</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+        <Value>intMan1</Value>
+      </ItemState>
+    </Properties>
+    <Methods>
+      <ItemState>
+        <ItemSymbol>SdkSpecificMethods</ItemSymbol>
+        <ListItemCount>1</ListItemCount>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>timing_irqgroup</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>TIMING_Init</ItemSymbol>
+        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
+        <Index>0</Index>
+        <Value>true</Value>
+        <LastSelection>true</LastSelection>
+        <LastUserSel>always</LastUserSel>
+        <UsrMethodName>TIMING_Init</UsrMethodName>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>TIMING_Deinit</ItemSymbol>
+        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
+        <Index>0</Index>
+        <Value>true</Value>
+        <LastSelection>true</LastSelection>
+        <LastUserSel>always</LastUserSel>
+        <UsrMethodName>TIMING_Deinit</UsrMethodName>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>TIMING_StartChannel</ItemSymbol>
+        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
+        <Index>0</Index>
+        <Value>true</Value>
+        <LastSelection>true</LastSelection>
+        <LastUserSel>always</LastUserSel>
+        <UsrMethodName>TIMING_StartChannel</UsrMethodName>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>TIMING_StopChannel</ItemSymbol>
+        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
+        <Index>0</Index>
+        <Value>true</Value>
+        <LastSelection>true</LastSelection>
+        <LastUserSel>always</LastUserSel>
+        <UsrMethodName>TIMING_StopChannel</UsrMethodName>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>TIMING_GetElapsed</ItemSymbol>
+        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
+        <Index>0</Index>
+        <Value>true</Value>
+        <LastSelection>true</LastSelection>
+        <LastUserSel>always</LastUserSel>
+        <UsrMethodName>TIMING_GetElapsed</UsrMethodName>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>TIMING_GetRemaining</ItemSymbol>
+        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
+        <Index>0</Index>
+        <Value>true</Value>
+        <LastSelection>true</LastSelection>
+        <LastUserSel>always</LastUserSel>
+        <UsrMethodName>TIMING_GetRemaining</UsrMethodName>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>TIMING_EnableNotification</ItemSymbol>
+        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
+        <Index>0</Index>
+        <Value>true</Value>
+        <LastSelection>true</LastSelection>
+        <LastUserSel>always</LastUserSel>
+        <UsrMethodName>TIMING_EnableNotification</UsrMethodName>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>TIMING_DisableNotification</ItemSymbol>
+        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
+        <Index>0</Index>
+        <Value>true</Value>
+        <LastSelection>true</LastSelection>
+        <LastUserSel>always</LastUserSel>
+        <UsrMethodName>TIMING_DisableNotification</UsrMethodName>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>TIMING_GetResolution</ItemSymbol>
+        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
+        <Index>0</Index>
+        <Value>true</Value>
+        <LastSelection>true</LastSelection>
+        <LastUserSel>always</LastUserSel>
+        <UsrMethodName>TIMING_GetResolution</UsrMethodName>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>TIMING_GetMaxPeriod</ItemSymbol>
+        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
+        <Index>0</Index>
+        <Value>true</Value>
+        <LastSelection>true</LastSelection>
+        <LastUserSel>always</LastUserSel>
+        <UsrMethodName>TIMING_GetMaxPeriod</UsrMethodName>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>TIMING_InstallCallback</ItemSymbol>
+        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
+        <Index>0</Index>
+        <Value>true</Value>
+        <LastSelection>true</LastSelection>
+        <LastUserSel>always</LastUserSel>
+        <UsrMethodName>TIMING_InstallCallback</UsrMethodName>
+      </ItemState>
+    </Methods>
+    <Events />
+  </Bean>
+  <Bean>
+    <Repository>file:/${ProcessorExpert_loc}/../../S32DS/software/S32SDK_S32K1xx_RTM_3.0.0/tools/pex/Repositories/SDK_S32K1xx_15_Repository</Repository>
+    <ComponentUUID>com.freescale.processorexpert.ksdk.flash</ComponentUUID>
+    <BeanType>flash</BeanType>
+    <Name>Flash1</Name>
+    <CompNumb>19</CompNumb>
+    <CompEnabled>true</CompEnabled>
+    <GenCodeMode>ALWAYS_WRITE</GenCodeMode>
+    <IconName>FLASH_LDD</IconName>
+    <UserFolderName />
+    <Comment lines_count="0" />
+    <Template />
+    <BeanVersion>1.0.0</BeanVersion>
+    <LightErrorsIgnored>false</LightErrorsIgnored>
+    <Properties>
+      <ItemState>
+        <ItemSymbol>DeviceName</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+        <Value>Flash1</Value>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>PrphDevice</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+        <Value>FTFC</Value>
+        <SharedPrphMode>false</SharedPrphMode>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>CompVersion</ItemSymbol>
+        <Value>S32K144_SDK01</Value>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>VersionSpecificItem</ItemSymbol>
+        <ListItemCount>1</ListItemCount>
+        <ItemsTypeState>Beans\flash\Items\S32K144_SDK01\flash_main.item</ItemsTypeState>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>Settings</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>PropertiesItem</ItemSymbol>
+        <ListItemCount>1</ListItemCount>
+        <ItemsTypeState>Beans\flash\Items\S32K144_SDK01\flash_properties.item</ItemsTypeState>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>Configuration_group</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+        <Index>0</Index>
+        <Expanded>true</Expanded>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>ConfigurationList</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <ListItemCount>1</ListItemCount>
+        <UserReadOnly>false</UserReadOnly>
+        <Expanded>true</Expanded>
+        <ItemsTypeState>Beans\flash\Items\S32K144_SDK01\flash_flashCfg.item</ItemsTypeState>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>flashCfg0</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+        <Index>0</Index>
+        <Expanded>true</Expanded>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>ConfigName0</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+        <Value>internal_flash_config_st</Value>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>PFlashBlockBase0</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
+        <Value>0</Value>
+        <Base>HEX</Base>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>PFlashBlockSize0</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
+        <Value>524288</Value>
+        <Base>HEX</Base>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>DFlashBlockBase0</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
+        <Value>268435456</Value>
+        <Base>HEX</Base>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>EERAMBlockBase0</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
+        <Value>335544320</Value>
+        <Base>HEX</Base>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>FlashCallbackName0</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+        <Value>NULL_CALLBACK</Value>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>EnableInitPflashSize0</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
+        <Index>1</Index>
+        <Value>false</Value>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>LinkItem</ItemSymbol>
+        <ListItemCount>1</ListItemCount>
+        <ItemsTypeState>Beans\flash\Items\S32K144_SDK01\flash_links.item</ItemsTypeState>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>LinkGrp</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+        <Expanded>true</Expanded>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>Link1</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+        <Value>clockMan1</Value>
+      </ItemState>
+    </Properties>
+    <Methods>
+      <ItemState>
+        <ItemSymbol>SdkSpecificMethods</ItemSymbol>
+        <ListItemCount>1</ListItemCount>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>flash_FlashMethodsgroup</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>FLASH_DRV_Init</ItemSymbol>
+        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
+        <Index>0</Index>
+        <Value>true</Value>
+        <LastSelection>true</LastSelection>
+        <LastUserSel>always</LastUserSel>
+        <UsrMethodName>FLASH_DRV_Init</UsrMethodName>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>FLASH_DRV_GetPFlashProtection</ItemSymbol>
+        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
+        <Index>0</Index>
+        <Value>true</Value>
+        <LastSelection>true</LastSelection>
+        <LastUserSel>always</LastUserSel>
+        <UsrMethodName>FLASH_DRV_GetPFlashProtection</UsrMethodName>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>FLASH_DRV_SetPFlashProtection</ItemSymbol>
+        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
+        <Index>0</Index>
+        <Value>true</Value>
+        <LastSelection>true</LastSelection>
+        <LastUserSel>always</LastUserSel>
+        <UsrMethodName>FLASH_DRV_SetPFlashProtection</UsrMethodName>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>FLASH_DRV_GetSecurityState</ItemSymbol>
+        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
+        <Index>0</Index>
+        <Value>true</Value>
+        <LastSelection>true</LastSelection>
+        <LastUserSel>always</LastUserSel>
+        <UsrMethodName>FLASH_DRV_GetSecurityState</UsrMethodName>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>FLASH_DRV_SecurityBypass</ItemSymbol>
+        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
+        <Index>0</Index>
+        <Value>true</Value>
+        <LastSelection>true</LastSelection>
+        <LastUserSel>always</LastUserSel>
+        <UsrMethodName>FLASH_DRV_SecurityBypass</UsrMethodName>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>FLASH_DRV_EraseAllBlock</ItemSymbol>
+        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
+        <Index>0</Index>
+        <Value>true</Value>
+        <LastSelection>true</LastSelection>
+        <LastUserSel>always</LastUserSel>
+        <UsrMethodName>FLASH_DRV_EraseAllBlock</UsrMethodName>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>FLASH_DRV_VerifyAllBlock</ItemSymbol>
+        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
+        <Index>0</Index>
+        <Value>true</Value>
+        <LastSelection>true</LastSelection>
+        <LastUserSel>always</LastUserSel>
+        <UsrMethodName>FLASH_DRV_VerifyAllBlock</UsrMethodName>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>FLASH_DRV_EraseSector</ItemSymbol>
+        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
+        <Index>0</Index>
+        <Value>true</Value>
+        <LastSelection>true</LastSelection>
+        <LastUserSel>always</LastUserSel>
+        <UsrMethodName>FLASH_DRV_EraseSector</UsrMethodName>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>FLASH_DRV_VerifySection</ItemSymbol>
+        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
+        <Index>0</Index>
+        <Value>true</Value>
+        <LastSelection>true</LastSelection>
+        <LastUserSel>always</LastUserSel>
+        <UsrMethodName>FLASH_DRV_VerifySection</UsrMethodName>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>FLASH_DRV_EraseSuspend</ItemSymbol>
+        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
+        <Index>0</Index>
+        <Value>true</Value>
+        <LastSelection>true</LastSelection>
+        <LastUserSel>always</LastUserSel>
+        <UsrMethodName>FLASH_DRV_EraseSuspend</UsrMethodName>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>FLASH_DRV_EraseResume</ItemSymbol>
+        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
+        <Index>0</Index>
+        <Value>true</Value>
+        <LastSelection>true</LastSelection>
+        <LastUserSel>always</LastUserSel>
+        <UsrMethodName>FLASH_DRV_EraseResume</UsrMethodName>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>FLASH_DRV_ReadOnce</ItemSymbol>
+        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
+        <Index>0</Index>
+        <Value>true</Value>
+        <LastSelection>true</LastSelection>
+        <LastUserSel>always</LastUserSel>
+        <UsrMethodName>FLASH_DRV_ReadOnce</UsrMethodName>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>FLASH_DRV_ProgramOnce</ItemSymbol>
+        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
+        <Index>0</Index>
+        <Value>true</Value>
+        <LastSelection>true</LastSelection>
+        <LastUserSel>always</LastUserSel>
+        <UsrMethodName>FLASH_DRV_ProgramOnce</UsrMethodName>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>FLASH_DRV_Program</ItemSymbol>
+        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
+        <Index>0</Index>
+        <Value>true</Value>
+        <LastSelection>true</LastSelection>
+        <LastUserSel>always</LastUserSel>
+        <UsrMethodName>FLASH_DRV_Program</UsrMethodName>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>FLASH_DRV_ProgramCheck</ItemSymbol>
+        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
+        <Index>0</Index>
+        <Value>true</Value>
+        <LastSelection>true</LastSelection>
+        <LastUserSel>always</LastUserSel>
+        <UsrMethodName>FLASH_DRV_ProgramCheck</UsrMethodName>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>FLASH_DRV_CheckSum</ItemSymbol>
+        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
+        <Index>0</Index>
+        <Value>true</Value>
+        <LastSelection>true</LastSelection>
+        <LastUserSel>always</LastUserSel>
+        <UsrMethodName>FLASH_DRV_CheckSum</UsrMethodName>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>FLASH_DRV_ProgramSection</ItemSymbol>
+        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
+        <Index>0</Index>
+        <Value>true</Value>
+        <LastSelection>true</LastSelection>
+        <LastUserSel>always</LastUserSel>
+        <UsrMethodName>FLASH_DRV_ProgramSection</UsrMethodName>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>FLASH_DRV_EraseBlock</ItemSymbol>
+        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
+        <Index>0</Index>
+        <Value>true</Value>
+        <LastSelection>true</LastSelection>
+        <LastUserSel>always</LastUserSel>
+        <UsrMethodName>FLASH_DRV_EraseBlock</UsrMethodName>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>FLASH_DRV_VerifyBlock</ItemSymbol>
+        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
+        <Index>0</Index>
+        <Value>true</Value>
+        <LastSelection>true</LastSelection>
+        <LastUserSel>always</LastUserSel>
+        <UsrMethodName>FLASH_DRV_VerifyBlock</UsrMethodName>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>FLASH_DRV_GetEERAMProtection</ItemSymbol>
+        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
+        <Index>0</Index>
+        <Value>true</Value>
+        <LastSelection>true</LastSelection>
+        <LastUserSel>always</LastUserSel>
+        <UsrMethodName>FLASH_DRV_GetEERAMProtection</UsrMethodName>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>FLASH_DRV_SetEERAMProtection</ItemSymbol>
+        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
+        <Index>0</Index>
+        <Value>true</Value>
+        <LastSelection>true</LastSelection>
+        <LastUserSel>always</LastUserSel>
+        <UsrMethodName>FLASH_DRV_SetEERAMProtection</UsrMethodName>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>FLASH_DRV_SetFlexRamFunction</ItemSymbol>
+        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
+        <Index>0</Index>
+        <Value>true</Value>
+        <LastSelection>true</LastSelection>
+        <LastUserSel>always</LastUserSel>
+        <UsrMethodName>FLASH_DRV_SetFlexRamFunction</UsrMethodName>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>FLASH_DRV_EEEWrite</ItemSymbol>
+        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
+        <Index>0</Index>
+        <Value>true</Value>
+        <LastSelection>true</LastSelection>
+        <LastUserSel>always</LastUserSel>
+        <UsrMethodName>FLASH_DRV_EEEWrite</UsrMethodName>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>FLASH_DRV_DEFlashPartition</ItemSymbol>
+        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
+        <Index>0</Index>
+        <Value>true</Value>
+        <LastSelection>true</LastSelection>
+        <LastUserSel>always</LastUserSel>
+        <UsrMethodName>FLASH_DRV_DEFlashPartition</UsrMethodName>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>FLASH_DRV_GetDFlashProtection</ItemSymbol>
+        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
+        <Index>0</Index>
+        <Value>true</Value>
+        <LastSelection>true</LastSelection>
+        <LastUserSel>always</LastUserSel>
+        <UsrMethodName>FLASH_DRV_GetDFlashProtection</UsrMethodName>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>FLASH_DRV_SetDFlashProtection</ItemSymbol>
+        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
+        <Index>0</Index>
+        <Value>true</Value>
+        <LastSelection>true</LastSelection>
+        <LastUserSel>always</LastUserSel>
+        <UsrMethodName>FLASH_DRV_SetDFlashProtection</UsrMethodName>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>FLASH_DRV_PFlashSwap</ItemSymbol>
+        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
+        <Index>0</Index>
+        <Value>true</Value>
+        <LastSelection>true</LastSelection>
+        <LastUserSel>always</LastUserSel>
+        <UsrMethodName>FLASH_DRV_PFlashSwap</UsrMethodName>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>FLASH_DRV_PFlashSwapCtl</ItemSymbol>
+        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
+        <Index>0</Index>
+        <Value>true</Value>
+        <LastSelection>true</LastSelection>
+        <LastUserSel>always</LastUserSel>
+        <UsrMethodName>FLASH_DRV_PFlashSwapCtl</UsrMethodName>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>FLASH_DRV_EraseAllBlockUnsecure</ItemSymbol>
+        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
+        <Index>0</Index>
+        <Value>true</Value>
+        <LastSelection>true</LastSelection>
+        <LastUserSel>always</LastUserSel>
+        <UsrMethodName>FLASH_DRV_EraseAllBlockUnsecure</UsrMethodName>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>FLASH_DRV_EnableCmdCompleteInterupt</ItemSymbol>
+        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
+        <Index>0</Index>
+        <Value>true</Value>
+        <LastSelection>true</LastSelection>
+        <LastUserSel>always</LastUserSel>
+        <UsrMethodName>FLASH_DRV_EnableCmdCompleteInterupt</UsrMethodName>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>FLASH_DRV_DisableCmdCompleteInterupt</ItemSymbol>
+        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
+        <Index>0</Index>
+        <Value>true</Value>
+        <LastSelection>true</LastSelection>
+        <LastUserSel>always</LastUserSel>
+        <UsrMethodName>FLASH_DRV_DisableCmdCompleteInterupt</UsrMethodName>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>FLASH_DRV_GetCmdCompleteFlag</ItemSymbol>
+        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
+        <Index>0</Index>
+        <Value>true</Value>
+        <LastSelection>true</LastSelection>
+        <LastUserSel>always</LastUserSel>
+        <UsrMethodName>FLASH_DRV_GetCmdCompleteFlag</UsrMethodName>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>FLASH_DRV_EnableReadColisionInterupt</ItemSymbol>
+        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
+        <Index>0</Index>
+        <Value>true</Value>
+        <LastSelection>true</LastSelection>
+        <LastUserSel>always</LastUserSel>
+        <UsrMethodName>FLASH_DRV_EnableReadColisionInterupt</UsrMethodName>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>FLASH_DRV_DisableReadColisionInterupt</ItemSymbol>
+        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
+        <Index>0</Index>
+        <Value>true</Value>
+        <LastSelection>true</LastSelection>
+        <LastUserSel>always</LastUserSel>
+        <UsrMethodName>FLASH_DRV_DisableReadColisionInterupt</UsrMethodName>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>FLASH_DRV_GetReadColisionFlag</ItemSymbol>
+        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
+        <Index>0</Index>
+        <Value>true</Value>
+        <LastSelection>true</LastSelection>
+        <LastUserSel>always</LastUserSel>
+        <UsrMethodName>FLASH_DRV_GetReadColisionFlag</UsrMethodName>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>FLASH_DRV_ClearReadColisionFlag</ItemSymbol>
+        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
+        <Index>0</Index>
+        <Value>true</Value>
+        <LastSelection>true</LastSelection>
+        <LastUserSel>always</LastUserSel>
+        <UsrMethodName>FLASH_DRV_ClearReadColisionFlag</UsrMethodName>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>FLASH_DRV_EnableDoubleBitFaultInterupt</ItemSymbol>
+        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
+        <Index>0</Index>
+        <Value>true</Value>
+        <LastSelection>true</LastSelection>
+        <LastUserSel>always</LastUserSel>
+        <UsrMethodName>FLASH_DRV_EnableDoubleBitFaultInterupt</UsrMethodName>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>FLASH_DRV_DisableDoubleBitFaultInterupt</ItemSymbol>
+        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
+        <Index>0</Index>
+        <Value>true</Value>
+        <LastSelection>true</LastSelection>
+        <LastUserSel>always</LastUserSel>
+        <UsrMethodName>FLASH_DRV_DisableDoubleBitFaultInterupt</UsrMethodName>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>FLASH_DRV_GetDoubleBitFaultFlag</ItemSymbol>
+        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
+        <Index>0</Index>
+        <Value>true</Value>
+        <LastSelection>true</LastSelection>
+        <LastUserSel>always</LastUserSel>
+        <UsrMethodName>FLASH_DRV_GetDoubleBitFaultFlag</UsrMethodName>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>FLASH_DRV_ClearDoubleBitFaultFlag</ItemSymbol>
+        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
+        <Index>0</Index>
+        <Value>true</Value>
+        <LastSelection>true</LastSelection>
+        <LastUserSel>always</LastUserSel>
+        <UsrMethodName>FLASH_DRV_ClearDoubleBitFaultFlag</UsrMethodName>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>FLASH_DRV_ForceDoubleBitFaultDetectCmd</ItemSymbol>
+        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
+        <Index>0</Index>
+        <Value>true</Value>
+        <LastSelection>true</LastSelection>
+        <LastUserSel>always</LastUserSel>
+        <UsrMethodName>FLASH_DRV_ForceDoubleBitFaultDetectCmd</UsrMethodName>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>FLASH_DRV_GetDefaultConfig</ItemSymbol>
+        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
+        <Index>0</Index>
+        <Value>true</Value>
+        <LastSelection>true</LastSelection>
+        <LastUserSel>always</LastUserSel>
+        <UsrMethodName>FLASH_DRV_GetDefaultConfig</UsrMethodName>
       </ItemState>
     </Methods>
     <Events />

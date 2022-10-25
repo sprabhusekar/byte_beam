@@ -47,7 +47,6 @@ status_t FTM_DRV_InitOutputCompare(uint32_t instance,
 {
     DEV_ASSERT(instance < FTM_INSTANCE_COUNT);
     DEV_ASSERT(param != NULL);
-    DEV_ASSERT(param->maxCountValue > 0U);
     FTM_Type * ftmBase = g_ftmBase[instance];
     uint8_t index = 0U;
     uint8_t hwChannel = 0U;
@@ -68,7 +67,6 @@ status_t FTM_DRV_InitOutputCompare(uint32_t instance,
         /* Use FTM as counter, disable all the channels */
         for (index = 0U; index < param->nNumOutputChannels; index++)
         {
-            DEV_ASSERT(param->maxCountValue >= param->outputChannelConfig[index].comparedValue);
             hwChannel = param->outputChannelConfig[index].hwChannelId;
             chnlPairNum =  (uint8_t)(hwChannel >> 1U);
             FTM_DRV_SetDualChnMofCombineCmd(ftmBase, chnlPairNum, false);

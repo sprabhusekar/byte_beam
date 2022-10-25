@@ -11,14 +11,16 @@
 
 U8 uart_data = 0;
 
- U8 uart_received_data_au8[150];
+ U8 uart_received_data_au8[525]; // 512 bytes + 9 =
+
+ U16 uart_receive_counter_u16 = 9;
 
 
 
 U32 uart_rx_data_queue(void)
 {
 	//return UART_ReceiveData(&uart_pal1_instance, uart_received_data_au8, new_rx_count_length_16);
-	return UART_ReceiveData(&uart_pal1_instance, uart_received_data_au8, 9);
+	return UART_ReceiveData(&uart_pal1_instance, uart_received_data_au8, uart_receive_counter_u16);
 	//UART_ReceiveDataBlocking(&uart_pal1_instance, uart_received_data_au8, 1, 1);
 	//while(UART_GetReceiveStatus(&uart_pal1_instance, &bytesRemaining) == STATUS_BUSY);
 }
@@ -59,14 +61,23 @@ void uart0_rx_callback(void *driverState, uart_event_t event, void *userData)
 /***************************************************************************************************/
        case  UART_EVENT_RX_FULL:
    	   {
-   		   for(rx_counter_u8 = 0;rx_counter_u8 <9;rx_counter_u8++)
+   		   if(0 == bootloader_enable_command_received_u8)
    		   {
-
-   			   process_uart_data(uart_received_data_au8[rx_counter_u8]);
+   			   for(rx_counter_u8 = 0;rx_counter_u8 <9;rx_counter_u8++)
+   			   {
+   				   process_uart_data(uart_received_data_au8[rx_counter_u8]);
+   			   }
+   			   if(uart_rx_data_queue())
+   			   {
+   				   uart_rx_data_queue();
+   			   }
    		   }
-   		   if(uart_rx_data_queue())
+   		   else
    		   {
-   			   uart_rx_data_queue();
+   			   for(rx_counter_u8 = 0;rx_counter_u8 <1;rx_counter_u8++)
+   			   {
+   				   process_uart_data(uart_received_data_au8[rx_counter_u8]);
+   			   }
    		   }
    	   }
    	   break;

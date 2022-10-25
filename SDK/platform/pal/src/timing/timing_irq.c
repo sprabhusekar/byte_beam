@@ -1207,8 +1207,8 @@ void FTM7_Ch4_Ch5_IrqHandler(void)
 void FTM7_Ch6_Ch7_IrqHandler(void)
 {
     const FTM_Type * const base = ftmBase[7];
-    bool chan6IntFlag = FTM_DRV_GetChnEventStatus(base, 6U);
-    bool chan7IntFlag = FTM_DRV_GetChnEventStatus(base, 7U);
+    bool chan6IntFlag = FTM_DRV_GetChnEventStatus(base, 4U);
+    bool chan7IntFlag = FTM_DRV_GetChnEventStatus(base, 5U);
 
     if (chan6IntFlag && g_ftmChannelRunning[7][6])
     {

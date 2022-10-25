@@ -86,7 +86,7 @@ U32 can_rx_array_queue_get(volatile can_message_t *queue_data_out)
 	}
 	else
 	{
-		memcpy(queue_data_out, &rx_can_queue.message[rx_can_queue.head], sizeof(can_message_t));
+		memcpy(queue_data_out, (U8*)&rx_can_queue.message[rx_can_queue.head], sizeof(can_message_t));
 		rx_can_queue.full_status = FALSE;
 	}
 	rx_can_queue.head = (rx_can_queue.head + 1) % CAN_QUEUE_SIZE;

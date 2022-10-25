@@ -86,7 +86,6 @@ typedef struct
     timer_callback_t callback;  /*!< To save callback for channels notification */
     void * callbackParam;       /*!< To save callback parameter pointer.*/
     bool enableNotification;    /*!< To save enable channels notification */
-    bool periodExpired;         /*!< If the channel type is one-shot, this flag is used to check whether period is expired */
 /*! @endcond */
 } timer_chan_state_t;
 
@@ -364,8 +363,8 @@ static status_t TIMING_InitFtm(uint32_t instance,
     for (index = 0U; index < config->numChan; index++)
     {
         chnConfigArray[index].hwChannelId = config->chanConfigArray[index].channel;
-        chnConfigArray[index].chMode = FTM_DISABLE_OUTPUT;
-        chnConfigArray[index].comparedValue = 0U;
+        chnConfigArray[index].chMode = FTM_TOGGLE_ON_MATCH;
+        chnConfigArray[index].comparedValue = FTM_COMPARE_MAX;
         chnConfigArray[index].enableExternalTrigger = false;
     }
     outputCmpConfig.nNumOutputChannels = config->numChan;
@@ -666,12 +665,8 @@ void TIMING_Deinit(const timing_instance_t * const instance)
  * Description   : Starts the timer channel counting.
  * This function starts channel counting with a new period in ticks.
  * Note that:
- * - If the timer is PIT or LPIT, if timer channel is running with a period, this function will not immediately restart
- *   timer channel with a new period, instead the new period will be loaded after the current period expires.
- *   In order to abort the current timer channel period and start timer channel with a new period, the timer channel
- *   must be stopped and started again with new period.
- *   Additional, if call this function with new period while timer channel is running, calling TIMING_GetElapsed and TIMING_GetRemaining
- *   may return unexpected result.
+ * - If the timer is PIT or LPIT, to abort the current timer channel period and start a timer channel period with a
+ *   new value, the timer channel must be stopped and started again.
  * - If the timer is FTM, this function start channel by enable channel interrupt generation.
  * - LPTMR and FTM is 16 bit timer, so the input period must be smaller than 65535.
  * - LPTMR and FTM is 16 bit timer, so the input period must be smaller than 65535.
@@ -698,8 +693,6 @@ void TIMING_StartChannel(const timing_instance_t * const instance,
         LPIT_DRV_StartTimerChannels(instance->instIdx, channelMask);
 
         channelState = &s_lpitState[instance->instIdx][channel];
-        /* Reset period expired flag */
-        channelState->periodExpired = false;
         /* Save the period of channel */
         channelState->period = periodTicks;
         /* Enable notification */
@@ -726,8 +719,6 @@ void TIMING_StartChannel(const timing_instance_t * const instance,
         LPTMR_DRV_StartCounter(lptmrInstance);
 
         channelState = &s_lptmrState[lptmrInstance][channel];
-        /* Reset period expired flag */
-        channelState->periodExpired = false;
         /* Save the period of channel */
         channelState->period = periodTicks;
         /* Enable notification */
@@ -742,9 +733,7 @@ void TIMING_StartChannel(const timing_instance_t * const instance,
     {
         uint32_t ftmInstance = instance->instIdx;
         FTM_Type * const base = ftmBase[ftmInstance];
-        uint32_t currentCounter = 0U;
-        uint32_t nexCompareValue = 0U;
-        uint32_t finalValue;
+        uint32_t currentCounter;
         status_t retVal;
 
         DEV_ASSERT(periodTicks <= FTM_DRV_GetMod(base));
@@ -753,29 +742,15 @@ void TIMING_StartChannel(const timing_instance_t * const instance,
         FTM_DRV_ClearChnEventStatus(base, channel);
         /* Get current counter*/
         currentCounter = FTM_DRV_GetCounter(base);
-        /* Get the final value of counter */
-        finalValue = FTM_DRV_GetMod(base);
-        /* Calculate the next compare value of the channel */
-        if ((finalValue - currentCounter) > periodTicks)
-        {
-            nexCompareValue = currentCounter + periodTicks;
-        }
-        else
-        {
-            nexCompareValue = periodTicks - (finalValue - currentCounter);
-        }
-        /* Update next compare value to the channel */
-        retVal = FTM_DRV_UpdateOutputCompareChannel(ftmInstance, channel, (uint16_t)nexCompareValue, FTM_ABSOLUTE_VALUE, false);
+        /* Update compare value of the channel */
+        retVal = FTM_DRV_UpdateOutputCompareChannel(ftmInstance, channel, (uint16_t)periodTicks, FTM_RELATIVE_VALUE, false);
         /* Enable the channel by enable interrupt generation */
         retVal = FTM_DRV_EnableInterrupts(ftmInstance, (1UL << channel));
-        (void)retVal;
         /* Update channel running status */
         g_ftmChannelRunning[ftmInstance][channel] = true;
+        (void)retVal;
         /* Save the start value of channel at the moment the start channel function is called */
         channelState = &s_ftmState[ftmInstance][channel];
-        /* Reset period expired flag */
-        channelState->periodExpired = false;
-        /* Save the channel start value */
         channelState->chanStartVal = currentCounter;
         /* Save the period of channel */
         channelState->period = periodTicks;
@@ -948,11 +923,6 @@ void TIMING_StopChannel(const timing_instance_t * const instance,
  * This function gets elapsed time since the last event by ticks. The elapsed time by nanosecond, microsecond or
  * millisecond is the result of this function multiplies by the result of the TIMING_GetResolution
  * function.
- * Note that:
- * If the timer channel type is continuous, this function may not return value of the period at the moment period is timeout depending on timer frequency,
- * optimizations, etc. The behavior occurs if the execution time of the function is significant relative to timer tick duration.
- * If the timer channel type is one-shot, this function can be used to check whether the current period is timeout, in this case
- * if the returned value is bigger or equal than the period, the current period is timeout or overflowed.
  *
  * Implements    : TIMING_GetElapsed_Activity
  *END**************************************************************************/
@@ -969,21 +939,12 @@ uint32_t TIMING_GetElapsed(const timing_instance_t * const instance,
     if (instance->instType == TIMING_INST_TYPE_LPIT)
     {
         const timer_chan_state_t * lpitChannelState;
-        uint32_t lpitChanPeriod = 0U;
         /* Get current channel counter value */
         currentCounter = LPIT_DRV_GetCurrentTimerCount(instance->instIdx, channel);
 
         lpitChannelState = &s_lpitState[instance->instIdx][channel];
-        /* Get channel period */
-        lpitChanPeriod = lpitChannelState->period;
         /* Calculate timer elapsed */
-        timeElapsed = lpitChanPeriod - currentCounter;
-
-        if ((lpitChannelState->chanType == TIMER_CHAN_TYPE_ONESHOT) && (lpitChannelState->periodExpired))
-        {
-            /* In the case channel type is one-shot and period is expired, set time elapsed to be period value */
-            timeElapsed = lpitChanPeriod;
-        }
+        timeElapsed = lpitChannelState->period - currentCounter;
     }
     else
 #endif
@@ -992,19 +953,11 @@ uint32_t TIMING_GetElapsed(const timing_instance_t * const instance,
 #if (defined (TIMING_OVER_LPTMR))
     if (instance->instType == TIMING_INST_TYPE_LPTMR)
     {
-        DEV_ASSERT(channel < LPTMR_TMR_COUNT);
-        const timer_chan_state_t * lptmrChannelState;
+        (void)channel;
         (void)currentCounter;
 
-        lptmrChannelState = &s_lptmrState[instance->instIdx][channel];
         /* Time elapsed is current counter value */
         timeElapsed = LPTMR_DRV_GetCounterValueByCount(instance->instIdx);
-
-        if ((lptmrChannelState->chanType == TIMER_CHAN_TYPE_ONESHOT) && (lptmrChannelState->periodExpired))
-        {
-            /* In the case channel type is one-shot and period is expired, set time elapsed to be period value*/
-            timeElapsed = lptmrChannelState->period;
-        }
     }
     else
 #endif
@@ -1018,46 +971,24 @@ uint32_t TIMING_GetElapsed(const timing_instance_t * const instance,
 
         uint32_t ftmInstance = instance->instIdx;
         const FTM_Type * const base = ftmBase[ftmInstance];
-        uint32_t ftmchanStartVal = 0U;
-        uint32_t ftmChanPeriod = 0U;
-        uint32_t finalValue = 0U;
-        timer_chan_type_t ftmChanType;
+        uint16_t finalValue;
         const timer_chan_state_t * ftmChannelState;
 
+        /* Get current FTM counter value */
+        currentCounter = FTM_DRV_GetCounter(base);
         /* Get the final value of counter */
         finalValue = FTM_DRV_GetMod(base);
         ftmChannelState = &s_ftmState[ftmInstance][channel];
-        /* Get channel start value */
-        ftmchanStartVal = ftmChannelState->chanStartVal;
-        /* Get current FTM counter value */
-        currentCounter = FTM_DRV_GetCounter(base);
-        /* Get channel period */
-        ftmChanPeriod = ftmChannelState->period;
-        /* Get channel type */
-        ftmChanType = ftmChannelState->chanType;
         /* Calculate time elapsed */
-        if (currentCounter >= ftmchanStartVal)
+        if (currentCounter >= ftmChannelState->chanStartVal)
         {
             /* In case the counter is smaller than the final value of counter */
-            timeElapsed = currentCounter - ftmchanStartVal;
+            timeElapsed = currentCounter - ftmChannelState->chanStartVal;
         }
         else
         {
             /* In case the counter is over the final value of counter */
-            timeElapsed = (finalValue - ftmchanStartVal) + currentCounter;
-        }
-
-        if ((ftmChanPeriod < timeElapsed) && (ftmChanType == TIMER_CHAN_TYPE_CONTINUOUS))
-        {
-            /* If the timer channel type is continuous and the timeElapsed is bigger than the period, the counter overflows the current period.
-               For this case, timeElapsed is the time elapsed of the next period, but not the current period */
-            timeElapsed %= ftmChanPeriod;
-        }
-
-        if ((ftmChanType == TIMER_CHAN_TYPE_ONESHOT) && (ftmChannelState->periodExpired))
-        {
-            /* In the case channel type is one-shot and period is expired, set time elapsed to be period value */
-            timeElapsed = ftmChanPeriod;
+            timeElapsed = (finalValue - ftmChannelState->chanStartVal) + currentCounter;
         }
     }
     else
@@ -1118,12 +1049,8 @@ uint32_t TIMING_GetElapsed(const timing_instance_t * const instance,
  * Function Name : TIMING_GetRemaining
  * Description   : Get remaining ticks.
  * This function gets remaining time to next event by ticks. The remaining time by nanosecond, microsecond or
- * millisecond is the result of this function multiplies by the result of the TIMING_GetResolution function.
- * Note that:
- * If the timer channel type is continuous, this function may not return 0 at the moment period is timeout depending on timer frequency,
- * optimizations, etc. The behavior occurs if the execution time of the function is significant relative to timer tick duration.
- * If the timer channel type is one-shot, this function can be used to check whether the current period is timeout, in this case
- * if the returned value is 0, the current period is timeout or overflowed.
+ * millisecond is the result of this function multiplies by the result of the TIMING_GetResolution
+ * function.
  *
  * Implements    : TIMING_GetRemaining_Activity
  *END**************************************************************************/
@@ -1139,20 +1066,9 @@ uint32_t TIMING_GetRemaining(const timing_instance_t * const instance,
 #if (defined (TIMING_OVER_LPIT))
     if (instance->instType == TIMING_INST_TYPE_LPIT)
     {
-        uint32_t lpitInstance = instance->instIdx;
-        const timer_chan_state_t * lpitChannelState;
         (void)timeElapsed;
-
-        lpitChannelState = &s_lpitState[lpitInstance][channel];
         /* Get the remaining time */
         timeRemain = LPIT_DRV_GetCurrentTimerCount(instance->instIdx, channel);
-
-        if ((lpitChannelState->chanType == TIMER_CHAN_TYPE_ONESHOT) && (lpitChannelState->periodExpired))
-        {
-            /* In the case channel type is one-shot and period is expired, set time remain to be 0 */
-            timeRemain = 0U;
-        }
-
     }
     else
 #endif
@@ -1171,12 +1087,6 @@ uint32_t TIMING_GetRemaining(const timing_instance_t * const instance,
         lptmrChannelState = &s_lptmrState[lptmrInstance][channel];
         /* Calculate the remaining time */
         timeRemain = lptmrChannelState->period - timeElapsed;
-
-        if ((lptmrChannelState->chanType == TIMER_CHAN_TYPE_ONESHOT) && (lptmrChannelState->periodExpired))
-        {
-            /* In the case channel type is one-shot and period is expired, set time remain to be 0 */
-            timeRemain = 0U;
-        }
     }
     else
 #endif
@@ -1190,49 +1100,28 @@ uint32_t TIMING_GetRemaining(const timing_instance_t * const instance,
 
         uint32_t ftmInstance = instance->instIdx;
         const FTM_Type * const base = ftmBase[ftmInstance];
-        uint32_t ftmCurrentCounter = 0U;
-        uint32_t ftmchanStartVal = 0U;
-        uint32_t ftmChanPeriod = 0U;
-        uint32_t finalValue = 0U;
+        uint16_t ftmCurrentCounter = 0U;
+        uint16_t finalValue;
         const timer_chan_state_t * ftmChannelState;
 
+        /* Get current FTM counter value */
+        ftmCurrentCounter = FTM_DRV_GetCounter(base);
         /* Get the final value of counter */
         finalValue = FTM_DRV_GetMod(base);
         ftmChannelState = &s_ftmState[ftmInstance][channel];
-        /* Get channel start value */
-        ftmchanStartVal = ftmChannelState->chanStartVal;
-        /* Get current FTM counter value */
-        ftmCurrentCounter = FTM_DRV_GetCounter(base);
-        /* Get channel period */
-        ftmChanPeriod = ftmChannelState->period;
         /* Calculate time elapsed */
-        if (ftmCurrentCounter >= ftmchanStartVal)
+        if (ftmCurrentCounter >= ftmChannelState->chanStartVal)
         {
             /* In case the counter is smaller than the final value of counter */
-            timeElapsed = ftmCurrentCounter - ftmchanStartVal;
+            timeElapsed = ftmCurrentCounter - ftmChannelState->chanStartVal;
         }
         else
         {
             /* In case the counter is over the final value of counter */
-            timeElapsed = (finalValue - ftmchanStartVal) + ftmCurrentCounter;
+            timeElapsed = (finalValue - ftmChannelState->chanStartVal) + ftmCurrentCounter;
         }
         /* Get the remaining time */
-        if(ftmChanPeriod >= timeElapsed)
-        {
-            timeRemain = ftmChanPeriod - timeElapsed;
-        }
-        else
-        {
-            /* If the timer channel type is continuous and the timeElapsed is bigger than the period, the counter overflows the current period.
-               For this case, timeRemain is the time remaining of the next period, but not the current period */
-            timeRemain = ftmChanPeriod - (timeElapsed % ftmChanPeriod);
-        }
-
-        if ((ftmChannelState->chanType == TIMER_CHAN_TYPE_ONESHOT) && (ftmChannelState->periodExpired))
-        {
-            /* Set time remain to be 0 if the period is expired */
-            timeRemain = 0U;
-        }
+        timeRemain = ftmChannelState->period - timeElapsed;
     }
     else
 #endif
@@ -1920,24 +1809,21 @@ void TIMING_InstallCallback(const timing_instance_t * const instance,
  *END**************************************************************************/
 void TIMING_Lpit_IrqHandler(uint32_t instance, uint8_t channel)
 {
-    timer_chan_state_t * channelState = &s_lpitState[instance][channel];
-
-    LPIT_DRV_ClearInterruptFlagTimerChannels(instance, (1UL << channel));
+    const timer_chan_state_t * channelState = &s_lpitState[instance][channel];
 
     if ((channelState->callback != NULL) && (channelState->enableNotification))
     {
         /* Call to callback function */
         (channelState->callback)(channelState->callbackParam);
-    }
 
-    if (channelState->chanType == TIMER_CHAN_TYPE_ONESHOT)
-    {
-        uint32_t channelMask = 1UL << channel;
-        /* Stop the channel counting */
-        LPIT_DRV_StopTimerChannels(instance, channelMask);
-        /* Set the flag to notify the period is expired*/
-        channelState->periodExpired = true;
+        if (channelState->chanType == TIMER_CHAN_TYPE_ONESHOT)
+        {
+            uint32_t channelMask = 1UL << channel;
+            /* Stop the channel counting */
+            LPIT_DRV_StopTimerChannels(instance, channelMask);
+        }
     }
+    LPIT_DRV_ClearInterruptFlagTimerChannels(instance, (1UL << channel));
 
 }
 #endif
@@ -1954,24 +1840,20 @@ void TIMING_Lpit_IrqHandler(uint32_t instance, uint8_t channel)
  *END**************************************************************************/
 void TIMING_Lptmr_IrqHandler(uint32_t instance, uint8_t channel)
 {
-    timer_chan_state_t * channelState = &s_lptmrState[instance][channel];
-
-    LPTMR_DRV_ClearCompareFlag(instance);
+    const timer_chan_state_t * channelState = &s_lptmrState[instance][channel];
 
     if ((channelState->callback != NULL) && (channelState->enableNotification))
     {
         /* Call to callback function */
         (channelState->callback)(channelState->callbackParam);
-    }
 
-    if (channelState->chanType == TIMER_CHAN_TYPE_ONESHOT)
-    {
-        /* Stop the channel counting */
-        LPTMR_DRV_StopCounter(instance);
-        /* Set the flag to notify the period is expired*/
-        channelState->periodExpired = true;
+        if (channelState->chanType == TIMER_CHAN_TYPE_ONESHOT)
+        {
+            /* Stop the channel counting */
+            LPTMR_DRV_StopCounter(instance);
+        }
     }
-
+    LPTMR_DRV_ClearCompareFlag(instance);
 }
 #endif
 
@@ -1987,20 +1869,21 @@ void TIMING_Lptmr_IrqHandler(uint32_t instance, uint8_t channel)
  *END**************************************************************************/
 void TIMING_Ftm_IrqHandler(uint32_t instance, uint8_t channel)
 {
-    FTM_Type * const base = ftmBase[instance];
+     FTM_Type * const base = ftmBase[instance];
     timer_chan_state_t * channelState = &s_ftmState[instance][channel];
-    /* Clear interrupt flag */
-    FTM_DRV_ClearChnEventStatus(base, channel);
 
-    /* Check channel type */
+    if ((channelState->callback != NULL) && (channelState->enableNotification))
+    {
+        /* Call to callback function */
+        (channelState->callback)(channelState->callbackParam);
+    }
+    /* Check notification type */
     if (channelState->chanType == TIMER_CHAN_TYPE_ONESHOT)
     {
         /* Stop the channel by disable interrupt generation */
         FTM_DRV_DisableInterrupts(instance, (1UL << channel));
         /* Update channel running status */
         g_ftmChannelRunning[instance][channel] = false;
-        /* Set the flag to notify the period is expired*/
-        channelState->periodExpired = true;
     }
     else
     {
@@ -2012,8 +1895,8 @@ void TIMING_Ftm_IrqHandler(uint32_t instance, uint8_t channel)
 
         /* Get the final value of counter */
         finalValue = FTM_DRV_GetMod(base);
-        /* Get current counter value */
-        currentCmpValue = FTM_DRV_GetCounter(base);
+        /* Get current compare value of the channel */
+        currentCmpValue = FTM_DRV_GetChnCountVal(base, channel);
         /* Calculate the next compare value of the channel */
         if ((finalValue - currentCmpValue) > currentPeriod)
         {
@@ -2029,12 +1912,8 @@ void TIMING_Ftm_IrqHandler(uint32_t instance, uint8_t channel)
         /* Save the start value of channel at the moment new period is started */
         channelState->chanStartVal = currentCmpValue;
     }
-    if ((channelState->callback != NULL) && (channelState->enableNotification))
-    {
-        /* Call to callback function */
-        (channelState->callback)(channelState->callbackParam);
-    }
-
+    /* Clear interrupt flag */
+    FTM_DRV_ClearChnEventStatus(base, channel);
 }
 #endif
 

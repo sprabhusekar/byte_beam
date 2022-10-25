@@ -149,19 +149,6 @@ Module "can_pal1"  (component can_pal)
    - can_pal1_CAN_InstallEventCallback -Installs a callback function for the IRQ handler.
    - can_pal1_CAN_GetDefaultConfig -Returns the default values for the CAN module.
 
-Module "timing_pal1" (component timing_pal)
-   - timing_pal1_TIMING_Init -Initialize the timer instance and timer channels with value from input configuration structure
-   - timing_pal1_TIMING_Deinit -De-initialize a timer instance
-   - timing_pal1_TIMING_StartChannel -Starts the timer channel counting
-   - timing_pal1_TIMING_StopChannel -Stop the timer channel counting
-   - timing_pal1_TIMING_GetElapsed -Get elapsed ticks
-   - timing_pal1_TIMING_GetRemaining -Get remaining ticks
-   - timing_pal1_TIMING_EnableNotification -Enable channel notifications
-   - timing_pal1_TIMING_DisableNotification -Disable channel notifications
-   - timing_pal1_TIMING_GetResolution -Get tick resolution
-   - timing_pal1_TIMING_GetMaxPeriod -Get max period in engineering units
-   - timing_pal1_TIMING_InstallCallback -Install new callback function and callback parameter for timer channel
-
 Module "FreeRTOS"  (component FreeRTOS)
    - FreeRTOS_xCoRoutineCreate -Create a new co-routine and add it to the list of co-routines that are ready to run.
    - FreeRTOS_crDELAY -Delay a co-routine for a fixed period of time. crDELAY can only be called from the co-routine function 
@@ -317,7 +304,7 @@ Module "FreeRTOS"  (component FreeRTOS)
    - FreeRTOS_xTimerGetTimerDaemonTaskHandle -INCLUDE_xTimerGetTimerDaemonTaskHandle and configUSE_TIMERS must both be set to 1 
                 in FreeRTOSConfig.h for xTimerGetTimerDaemonTaskHandle() to be available.
    - FreeRTOS_pvTimerGetTimerID -Returns the ID assigned to the timer.
-   - FreeRTOS_pcTimerGetName -Returns the human readable name assigned to a timer when the timer was created.
+   - FreeRTOS_pcTimerGetTimerName -Returns the human readable name assigned to a timer when the timer was created.
    - FreeRTOS_xTimerIsTimerActive -Queries a timer to see if it is active or dormant. A timer will be dormant if:      1. It 
                 has been created but not started, or   2. It is an expired one-shot timer that has not been restarted.
    - FreeRTOS_xTimerPendFunctionCall -Used to pend the execution of a function to the RTOS daemon task (the timer service task, 
@@ -339,6 +326,8 @@ Module "FreeRTOS"  (component FreeRTOS)
                 command queue is private to the RTOS kernel itself and is not directly accessible to application code. The 
                 length of the timer command queue is set by the configTIMER_QUEUE_LENGTH configuration constant.
    - FreeRTOS_xTimerStopFromISR -A version of xTimerStart() that can be called from an interrupt service routine.
+   - FreeRTOS_portSWITCH_TO_USER_MODE -Sets the calling task into User mode. Once in User mode a task cannot return to 
+                Privileged mode.
    - FreeRTOS_vTaskAllocateMPURegions -Memory regions are assigned to a restricted task when the task is created using a call 
                 to xTaskCreateRestricted(). The regions can then be modified or redefined at run time using 
                 vTaskAllocateMPURegions().
@@ -432,6 +421,64 @@ Module "pwrMan1"   (component power_manager)
                 notification.
    - pwrMan1_POWER_SYS_GetDefaultConfig -This function gets the power_manager configuration structure of the default power mode.
    - pwrMan1_POWER_SYS_GetResetSrcStatusCmd -This function gets the current reset source status for specified source.
+
+Module "timing_pal1" (component timing_pal)
+   - timing_pal1_TIMING_Init -Initialize the timer instance and timer channels with value from input configuration structure
+   - timing_pal1_TIMING_Deinit -De-initialize a timer instance
+   - timing_pal1_TIMING_StartChannel -Starts the timer channel counting
+   - timing_pal1_TIMING_StopChannel -Stop the timer channel counting
+   - timing_pal1_TIMING_GetElapsed -Get elapsed ticks
+   - timing_pal1_TIMING_GetRemaining -Get remaining ticks
+   - timing_pal1_TIMING_EnableNotification -Enable channel notifications
+   - timing_pal1_TIMING_DisableNotification -Disable channel notifications
+   - timing_pal1_TIMING_GetResolution -Get tick resolution
+   - timing_pal1_TIMING_GetMaxPeriod -Get max period in engineering units
+   - timing_pal1_TIMING_InstallCallback -Install new callback function and callback parameter for timer channel
+
+Module "Flash1"    (component flash)
+   - Flash1_FLASH_DRV_Init -Flash initialization.
+   - Flash1_FLASH_DRV_GetPFlashProtection -P-Flash get protection.
+   - Flash1_FLASH_DRV_SetPFlashProtection -P-Flash set protection.
+   - Flash1_FLASH_DRV_GetSecurityState -Flash get security state.
+   - Flash1_FLASH_DRV_SecurityBypass -Flash security bypass.
+   - Flash1_FLASH_DRV_EraseAllBlock -Flash erase all Blocks.
+   - Flash1_FLASH_DRV_VerifyAllBlock -Flash verify all Blocks.
+   - Flash1_FLASH_DRV_EraseSector -Flash erase sector.
+   - Flash1_FLASH_DRV_VerifySection -Flash verify sector.
+   - Flash1_FLASH_DRV_EraseSuspend -Flash erase suspend.
+   - Flash1_FLASH_DRV_EraseResume -Flash erase resume.
+   - Flash1_FLASH_DRV_ReadOnce -Flash read once.
+   - Flash1_FLASH_DRV_ProgramOnce -Flash program once.
+   - Flash1_FLASH_DRV_Program -Flash program.
+   - Flash1_FLASH_DRV_ProgramCheck -Flash program check.
+   - Flash1_FLASH_DRV_CheckSum -Calculate check sum.
+   - Flash1_FLASH_DRV_ProgramSection -Flash program section.
+   - Flash1_FLASH_DRV_EraseBlock -Flash erase block.
+   - Flash1_FLASH_DRV_VerifyBlock -Flash verify block.
+   - Flash1_FLASH_DRV_GetEERAMProtection -EERAM get protection.
+   - Flash1_FLASH_DRV_SetEERAMProtection -EERAM set protection.
+   - Flash1_FLASH_DRV_SetFlexRamFunction -Flash Set FlexRam function command.
+   - Flash1_FLASH_DRV_EEEWrite -EEPROM Emulator Write.
+   - Flash1_FLASH_DRV_DEFlashPartition -Flash D/E-Flash Partition.
+   - Flash1_FLASH_DRV_GetDFlashProtection -D-Flash get protection.
+   - Flash1_FLASH_DRV_SetDFlashProtection -D-Flash set protection.
+   - Flash1_FLASH_DRV_PFlashSwap -swap between the two half of total logical P-Flash memory blocks within the memory map
+   - Flash1_FLASH_DRV_PFlashSwapCtl -implements swap control command corresponding with swap control code provided via swapcmd 
+                parameter
+   - Flash1_FLASH_DRV_EraseAllBlockUnsecure -Flash erase all Blocks.
+   - Flash1_FLASH_DRV_EnableCmdCompleteInterupt -Enable the command complete interrupt.
+   - Flash1_FLASH_DRV_DisableCmdCompleteInterupt -Disable the command complete interrupt.
+   - Flash1_FLASH_DRV_GetCmdCompleteFlag -Check the command complete flag has completed or not.
+   - Flash1_FLASH_DRV_EnableReadColisionInterupt -Enable the read collision error interrupt.
+   - Flash1_FLASH_DRV_DisableReadColisionInterupt -Disable the read collision error interrupt.
+   - Flash1_FLASH_DRV_GetReadColisionFlag -Check the read collision error flag is detected or not.
+   - Flash1_FLASH_DRV_ClearReadColisionFlag -Clear the read collision error flag.
+   - Flash1_FLASH_DRV_EnableDoubleBitFaultInterupt -Enable the double bit fault detect interrupt.
+   - Flash1_FLASH_DRV_DisableDoubleBitFaultInterupt -Disable the double bit fault detect interrupt.
+   - Flash1_FLASH_DRV_GetDoubleBitFaultFlag -Check the double bit fault flag is detected or not.
+   - Flash1_FLASH_DRV_ClearDoubleBitFaultFlag -Clear the double bit fault detect flag.
+   - Flash1_FLASH_DRV_ForceDoubleBitFaultDetectCmd -Force Double Bit Fault Detect.
+   - Flash1_FLASH_DRV_GetDefaultConfig -Get default flash user configuration.
 
 Module "Cpu"       (component S32K144_48)
    - Cpu_SystemInit -This function disables the watchdog, enables FPU and the power mode protection. SystemInit is called from 

@@ -7,7 +7,7 @@
 **     Version     : Component SDK_S32K1xx_15, Driver 01.00, CPU db: 3.00.000
 **     Repository  : SDK_S32K1xx_15
 **     Compiler    : GNU C Compiler
-**     Date/Time   : 2022-07-31, 17:56, # CodeGen: 29
+**     Date/Time   : 2022-10-01, 08:48, # CodeGen: 54
 **     Contents    :
 **         TIMING_Init                - status_t TIMING_Init(const timing_instance_t * const instance, const...
 **         TIMING_Deinit              - void TIMING_Deinit(const timing_instance_t * const instance);

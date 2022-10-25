@@ -15,6 +15,7 @@
 #include "operating_system.h"
 #include "rr_nvic.h"
 #include "clock.h"
+#include "internal_flash_app.h"
 
 uint8_t core_main_u8(void)
 {
@@ -25,6 +26,7 @@ uint8_t core_main_u8(void)
     can_init();
     core_sts_u8 += timer_init_u8();
     core_sts_u8 += uart_init();
+    core_sts_u8 += internal_flash_app_init();
      nvic_init_v();
     nvic_disable_all_Interrupts_v();
     return core_sts_u8;

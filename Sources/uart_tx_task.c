@@ -11,6 +11,7 @@
 #include "can_app.h"
 #include "uart_state_machine.h"
 #include "can.h"
+#include "bootloader_app.h"
 
 operating_system_uart_tx_queue_tst queue_received_uart_send_gst;
 
@@ -77,6 +78,12 @@ void uart_tx_task_v(void *parameter)
 								//send_heartbeat();
 						}
 					}
+				}
+				break;
+/************************************************************************************************************/
+				case UART_BOOTLOADER_ENABLE_CMD_ACK_SEND:
+				{
+					bootloader_app_uart_cmd_ack_send_v(BOOTLOADER_MODE_ENABLE_CMD_ACK_STATUS, BAPP_UART_SUCCESS_STS);
 				}
 				break;
 /************************************************************************************************************/

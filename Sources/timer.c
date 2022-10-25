@@ -13,9 +13,10 @@
 #include "operating_system.h"
 #include "timer.h"
 
+
 #define N58_COMMUNICATION_TIMEOUT   20
 
-volatile U8 timer_pal_chan0_100ms_timer_call_back_vu8 = 0;
+volatile U8 timer_pal_chan0_2ms_timer_call_back_vu8 = 0;
 
 volatile U8 timer_pal_chan2_10ms_timer_call_back_vu8 = 0;
 
@@ -48,7 +49,7 @@ void timer_start_base_v(void)
 
 void timer_pal1_chan0_callback_100ms_v(void *userdata)
 {
-	timer_pal_chan0_100ms_timer_call_back_vu8 = 1;
+	timer_pal_chan0_2ms_timer_call_back_vu8 = 1;
 }
 
 

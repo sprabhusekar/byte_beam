@@ -1538,23 +1538,6 @@ status_t FTM_DRV_SetSoftOutChnValue(uint32_t instance,
 
 /*!
  * @brief This function will configure which output channel can be software controlled.
- * Software output control forces the following values on channels (n) and (n+1) when the
- * COMP bit is zero and POL bit is zero.
- * CH(n)OC|CH(n+1)OC|CH(n)OCV|CH(n+1)OCV|Channel (n) Output      | Channel (n+1) Output
- *    0   |    0    |   X    |    X     | is not modified by SWOC| is not modified by SWOC
- *    1   |    1    |   0    |    0     | is forced to zero      | is forced to zero
- *    1   |    1    |   0    |    1     | is forced to zero      | is forced to one
- *    1   |    1    |   1    |    0     | is forced to one       | is forced to zero
- *    1   |    1    |   1    |    1     | is forced to one       | is forced to one
- *
- * Software output control forces the following values on channels (n) and (n+1) when the
- * COMP bit is one and POL bit is zero.
- * CH(n)OC|CH(n+1)OC|CH(n)OCV|CH(n+1)OCV|Channel (n) Output      | Channel (n+1) Output
- *    0   |    0    |   X    |    X     | is not modified by SWOC| is not modified by SWOC
- *    1   |    1    |   0    |    0     | is forced to zero      | is forced to zero
- *    1   |    1    |   0    |    1     | is forced to zero      | is forced to one
- *    1   |    1    |   1    |    0     | is forced to one       | is forced to zero
- *    1   |    1    |   1    |    1     | is forced to one       | is forced to zero
  *
  * @param [in] instance The FTM peripheral instance number.
  * @param [in] channelsMask The mask which will configure the channels which can be software controlled.
@@ -1703,8 +1686,6 @@ uint32_t FTM_DRV_GetEnabledInterrupts(uint32_t instance);
 
 /*!
  * @brief This function will get the FTM status flags.
- * @Note: Regarding the duty cycle is 100% at the channel output, the match interrupt
- * has no event due to the C(n)V and C(n+1)V value are not between CNTIN value and MOD value.
  *
  * @param[in] instance The FTM peripheral instance number.
  * @return The status flags. This is the logical OR of members of the

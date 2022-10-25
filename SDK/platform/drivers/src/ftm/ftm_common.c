@@ -800,7 +800,6 @@ uint32_t FTM_DRV_GetFrequency(uint32_t instance)
     uint8_t clkPs;
     uint32_t frequency = 0U;
     const ftm_state_t * state = ftmStatePtr[instance];
-    DEV_ASSERT(state != NULL);
     clkPs = (uint8_t)(1U << FTM_DRV_GetClockPs(ftmBase));
 
     switch (state->ftmClockSource)

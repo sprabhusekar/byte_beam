@@ -26,7 +26,7 @@
  *
  *
  */
-
+ 
 #ifndef TIMING_PAL_H
 #define TIMING_PAL_H
 
@@ -217,17 +217,13 @@ void TIMING_StopChannel(const timing_instance_t * const instance,
 /*!
  * @brief Get elapsed ticks
  *
- * This function gets elapsed time of the current period by ticks. The elapsed time by nanosecond, microsecond or
- * millisecond is the result of this function multiplies by the result of the TIMING_GetResolution function.
- * Note that:
- * If the timer channel type is continuous, this function may not return value of the period at the moment period is timeout depending on timer frequency,
- * optimizations, etc. The behavior occurs if the execution time of the function is significant relative to timer tick duration.
- * If the timer channel type is one-shot, this function can be used to check whether the current period is timeout, in this case
- * if the returned value is bigger or equal than the period, the current period is timeout or overflowed.
+ * This function gets elapsed time since the last notification by ticks. The elapsed time by nanosecond, microsecond or
+ * millisecond is the result of this function multiplies by the result of the TIMING_GetResolution
+ * function.
  *
  * @param[in] instance The pointer to timer instance number structure
  * @param[in] channel The channel number
- * @return Number of ticks elapsed of the current period
+ * @return Number of ticks elapsed since last notification
  */
 uint32_t TIMING_GetElapsed(const timing_instance_t * const instance,
                            const uint8_t channel);
@@ -235,17 +231,13 @@ uint32_t TIMING_GetElapsed(const timing_instance_t * const instance,
 /*!
  * @brief Get remaining ticks
  *
- * This function gets remaining time of the current period by ticks. The remaining time by nanosecond, microsecond or
- * millisecond is the result of this function multiplies by the result of the TIMING_GetResolution function.
- * Note that:
- * If the timer channel type is continuous, this function may not return 0 at the moment period is timeout depending on timer frequency,
- * optimizations, etc. The behavior occurs if the execution time of the function is significant relative to timer tick duration.
- * If the timer channel type is one-shot, this function can be used to check whether the current period is timeout, in this case
- * if the returned value is 0, the current period is timeout or overflowed.
+ * This function gets remaining time to next notification by ticks. The remaining time by nanosecond, microsecond or
+ * millisecond is the result of this function multiplies by the result of the TIMING_GetResolution
+ * function.
  *
  * @param[in] instance The pointer to timer instance number structure
  * @param[in] channel The channel number
- * @return Number of ticks remaining of the current period
+ * @return Number of ticks remaining to next notification
  */
 uint32_t TIMING_GetRemaining(const timing_instance_t * const instance,
                              const uint8_t channel);

@@ -45,9 +45,9 @@ M_VECTOR_RAM_SIZE = DEFINED(__flash_vector_table__) ? 0x0 : 0x0400;
 MEMORY
 {
   /* Flash */
-  m_interrupts          (RX)  : ORIGIN = 0x00000000, LENGTH = 0x00000400
-  m_flash_config        (RX)  : ORIGIN = 0x00000400, LENGTH = 0x00000010
-  m_text                (RX)  : ORIGIN = 0x00000410, LENGTH = 0x0007FBF0
+  m_interrupts          (RX)  : ORIGIN = 0x0000E000, LENGTH = 0x00000400
+  m_flash_config        (RX)  : ORIGIN = 0x0000E400, LENGTH = 0x00000010
+  m_text                (RX)  : ORIGIN = 0x0000E410, LENGTH = 0x00042000
 
   /* SRAM_L */
   m_data                (RW)  : ORIGIN = 0x1FFF8000, LENGTH = 0x00008000
@@ -155,7 +155,6 @@ SECTIONS
     __customSection_end__ = .;
   } > m_data_2
   __CUSTOM_END = __CUSTOM_ROM + (__customSection_end__ - __customSection_start__);
-  __rom_end    = __CUSTOM_END;
 
   /* Uninitialized data section. */
   .bss :
@@ -203,9 +202,6 @@ SECTIONS
   } > m_data_2
 
   .ARM.attributes 0 : { *(.ARM.attributes) }
-  
-  /* Memory validation */
-  ASSERT(__rom_end <= (ORIGIN(m_text) + LENGTH(m_text)), "Region m_text overflowed!")
 
   ASSERT(__StackLimit >= __HeapLimit, "region m_data_2 overflowed with stack and heap")
 }

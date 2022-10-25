@@ -7,7 +7,7 @@
 **     Version     : Component 01.197, Driver 01.00, CPU db: 3.00.000
 **     Datasheet   : S32K1XXRM Rev. 9, 09/2018
 **     Compiler    : GNU C Compiler
-**     Date/Time   : 2022-08-01, 12:19, # CodeGen: 41
+**     Date/Time   : 2022-10-02, 11:09, # CodeGen: 55
 **     Abstract    :
 **
 **     Settings    :
@@ -63,8 +63,9 @@
 #include "osif.h"
 #include "uart_pal.h"
 #include "can_pal.h"
-#include "timing_pal.h"
 #include "power_manager.h"
+#include "timing_pal.h"
+#include "flash_driver.h"
 #include "system_S32K144.h"
 
 /* Including needed modules to compile this module/procedure */
@@ -72,10 +73,11 @@
 #include "uart_pal1.h"
 #include "dmaController1.h"
 #include "can_pal1.h"
-#include "timing_pal1.h"
 #include "FreeRTOS.h"
 #include "clockMan1.h"
 #include "pwrMan1.h"
+#include "timing_pal1.h"
+#include "Flash1.h"
 
 #ifdef __cplusplus
 extern "C" {

@@ -60,6 +60,12 @@ typedef enum operating_system_uart_rx_queue_event_list_te_tag
 {
 	UART_RX_HEART_BEAT_ACK_RECEIVED,
 	UART_RX_CAN_ACK_RECEIVED,
+	UART_BOOTLOADER_CMD_RECEIVED,
+	UART_BOOT_CONFIG_CMD_RECEIVED,
+	UART_BOOTLOADER_FIRMWARE_DATA_RECEIVED,
+	UART_BOOTLOADER_END_OF_DATA_RECEIVED,
+	UART_BOOTLOADER_WHOLE_CRC_CHECK_CMD_RECEIVED,
+	UART_BOOTLOADER_JUMPT_TO_BOOTLOADER_SECTION_CMD_RECEIVED,
 }operating_system_uart_rx_queue_event_list_te;
 
 typedef struct operating_system_uart_rx_queue_tst_tag
@@ -72,6 +78,11 @@ typedef enum operating_system_uart_tx_queue_event_list_te_tag
 {
 	UART_TX_HEART_BEAT_SEND,
 	UART_TX_CAN_DATA_SEND,
+	UART_BOOTLOADER_ENABLE_CMD_ACK_SEND,
+	UART_BOOTLOADER_BOOT_CONFIG_CMD_ACK_SEND,
+	UART_BOOTLOADER_FIRMWARE_CRC_DATA_ACK_SEND,
+	UART_BOOTLOADER_END_OF_DATA_ACK_SEND,
+	UART_BOOTLOADER_WHOLE_CRC_CHECK_ACK_SEND,
 }operating_system_uart_tx_queue_event_list_te;
 
 typedef struct operating_system_uart_tx_queue_tst_tag

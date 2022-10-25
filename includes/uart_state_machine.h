@@ -16,10 +16,12 @@ extern uint8_t last_uart_command_ack_pending;
 U8 heart_beat_check(void);
 extern U8 send_heartbeat(void);
 U8 process_uart_data(U8 data);
+extern  U16 uart_receive_counter_u16;
+
 
 extern  U8 last_uart_command_ack_pending;
 
-
+extern U8 bootloader_enable_command_received_u8;
 
 
 typedef enum UART_PARSER_STATE_te_tag
@@ -37,15 +39,28 @@ typedef enum UART_PARSER_STATE_te_tag
 	STATE_MAX
 } UART_PARSER_STATE;
 
+
+typedef enum UART_COMMAND_LIST_te_tag
+{
+   UART_HEART_BIT_ACK_COMMAND = 0x00,
+   UART_CAN_ACK_COMMAND= 0x04,
+   UART_BOOTLOADER_ENABLE_COMMAND,
+   UART_BOOTLOADER_DATA_RECEIVED_COMMAND,
+   UART_BOOTLOADER_STATUS_COMMAND,
+   UART_MAX_COMMAND
+} UART_COMMAND_LIST_te;
+
 typedef struct __attribute__((packed)) UART_data_struct
 {
 	U16 stx_U16;
 	U8 cmd_u8;
 	U16 length_u16;
-	U8 payload_au8[100];
+	U8 payload_au8[300];
 	U16 crc_u16;
 	U64 timestamp_u64;
 	U8 etx_u8;
 } UART_data_struct;
+
+extern UART_data_struct uart_rx_data;
 
 #endif /* UART_STATE_MACHINE_H_ */

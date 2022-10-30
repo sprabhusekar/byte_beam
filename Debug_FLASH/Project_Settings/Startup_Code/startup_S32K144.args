@@ -1,5 +1,4 @@
 -c
--I"D:/Prabhu/New folder/New folder/New folder/modified_code/bytebeam_nxp_s32k144/Generated_Code/"
 -x assembler-with-cpp
 -DTURN_ON_CPU0
 -DSEMIHOSTING
@@ -11,4 +10,4 @@
 -mfpu=fpv4-sp-d16
 -specs=nano.specs
 -specs=nosys.specs
---sysroot="D:/NXP/S32DS_ARM_v2.2/S32DS/build_tools/gcc_v6.3/gcc-6.3-arm32-eabi/arm-none-eabi/newlib"
+--sysroot="C:/NXP/S32DS_ARM_v2.2/S32DS/build_tools/gcc_v6.3/gcc-6.3-arm32-eabi/arm-none-eabi/newlib"

@@ -99,7 +99,7 @@ void can_init(void)
 			for(can_bank_counter_u8 = 12;can_bank_counter_u8<22;can_bank_counter_u8++)
 			{
 				CAN_ConfigRxBuff(&can_pal1_instance, can_bank_counter_u8, &can_rx_buff_config3,0);
-				CAN_SetRxFilter(&can_pal1_instance, CAN_MSG_ID_STD, CAN_RX_MAILBOX1, 0);
+				CAN_SetRxFilter(&can_pal1_instance, CAN_MSG_ID_EXT, CAN_RX_MAILBOX1, 0);
 				CAN_Receive(&can_pal1_instance, can_bank_counter_u8, &message_can);
 			}
 			can_queue_init();

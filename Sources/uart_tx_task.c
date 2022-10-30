@@ -11,7 +11,8 @@
 #include "can_app.h"
 #include "uart_state_machine.h"
 #include "can.h"
-#include "bootloader_app.h"
+#include "uart_tx_task.h"
+
 
 operating_system_uart_tx_queue_tst queue_received_uart_send_gst;
 

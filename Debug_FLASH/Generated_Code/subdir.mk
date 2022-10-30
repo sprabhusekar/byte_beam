@@ -5,6 +5,7 @@
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS += \
 ../Generated_Code/Cpu.c \
+../Generated_Code/Flash1.c \
 ../Generated_Code/can_pal1.c \
 ../Generated_Code/clockMan1.c \
 ../Generated_Code/dmaController1.c \
@@ -15,6 +16,7 @@ C_SRCS += \
 
 OBJS += \
 ./Generated_Code/Cpu.o \
+./Generated_Code/Flash1.o \
 ./Generated_Code/can_pal1.o \
 ./Generated_Code/clockMan1.o \
 ./Generated_Code/dmaController1.o \
@@ -25,6 +27,7 @@ OBJS += \
 
 C_DEPS += \
 ./Generated_Code/Cpu.d \
+./Generated_Code/Flash1.d \
 ./Generated_Code/can_pal1.d \
 ./Generated_Code/clockMan1.d \
 ./Generated_Code/dmaController1.d \

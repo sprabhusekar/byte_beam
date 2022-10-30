@@ -17,7 +17,7 @@
 -I"D:/Prabhu/New folder/New folder/New folder/modified_code/bytebeam_nxp_s32k144/SDK/platform/pal/inc"
 -I"D:/Prabhu/New folder/New folder/New folder/modified_code/bytebeam_nxp_s32k144/SDK/rtos/FreeRTOS_S32K/Source/include"
 -I"D:/Prabhu/New folder/New folder/New folder/modified_code/bytebeam_nxp_s32k144/SDK/rtos/FreeRTOS_S32K/Source/portable/GCC/ARM_CM4F"
--I"D:/NXP/S32DS_ARM_v2.2/S32DS/software/S32SDK_S32K1xx_RTM_3.0.0/platform/drivers/inc"
+-I"C:/NXP/S32DS_ARM_v2.2/S32DS/software/S32SDK_S32K1xx_RTM_3.0.0/platform/drivers/inc"
 -O1
 -g
 -pedantic
@@ -36,4 +36,4 @@
 -mfpu=fpv4-sp-d16
 -specs=nano.specs
 -specs=nosys.specs
---sysroot="D:/NXP/S32DS_ARM_v2.2/S32DS/build_tools/gcc_v6.3/gcc-6.3-arm32-eabi/arm-none-eabi/newlib"
+--sysroot="C:/NXP/S32DS_ARM_v2.2/S32DS/build_tools/gcc_v6.3/gcc-6.3-arm32-eabi/arm-none-eabi/newlib"

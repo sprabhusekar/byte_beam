@@ -15,6 +15,7 @@ O_SRCS :=
 S_UPPER_SRCS := 
 EXECUTABLES := 
 OBJS := 
+SECONDARY_FLASH := 
 SECONDARY_SIZE := 
 C_DEPS := 
 
@@ -27,6 +28,7 @@ SDK/platform/devices/S32K144/startup \
 SDK/platform/devices \
 SDK/platform/drivers/src/clock/S32K1xx \
 SDK/platform/drivers/src/edma \
+SDK/platform/drivers/src/flash \
 SDK/platform/drivers/src/flexcan \
 SDK/platform/drivers/src/ftm \
 SDK/platform/drivers/src/interrupt \

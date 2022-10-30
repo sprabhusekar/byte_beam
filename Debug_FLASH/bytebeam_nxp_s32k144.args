@@ -10,8 +10,9 @@
 -mfpu=fpv4-sp-d16
 -specs=nano.specs
 -specs=nosys.specs
---sysroot="D:/NXP/S32DS_ARM_v2.2/S32DS/build_tools/gcc_v6.3/gcc-6.3-arm32-eabi/arm-none-eabi/newlib"
+--sysroot="C:/NXP/S32DS_ARM_v2.2/S32DS/build_tools/gcc_v6.3/gcc-6.3-arm32-eabi/arm-none-eabi/newlib"
 "./Generated_Code/Cpu.o"
+"./Generated_Code/Flash1.o"
 "./Generated_Code/can_pal1.o"
 "./Generated_Code/clockMan1.o"
 "./Generated_Code/dmaController1.o"
@@ -29,6 +30,7 @@
 "./SDK/platform/drivers/src/edma/edma_driver.o"
 "./SDK/platform/drivers/src/edma/edma_hw_access.o"
 "./SDK/platform/drivers/src/edma/edma_irq.o"
+"./SDK/platform/drivers/src/flash/flash_driver.o"
 "./SDK/platform/drivers/src/flexcan/flexcan_driver.o"
 "./SDK/platform/drivers/src/flexcan/flexcan_hw_access.o"
 "./SDK/platform/drivers/src/flexcan/flexcan_irq.o"
@@ -60,6 +62,7 @@
 "./SDK/rtos/FreeRTOS_S32K/Source/portable/MemMang/heap_2.o"
 "./SDK/rtos/osif/osif_freertos.o"
 "./Sources/app_main.o"
+"./Sources/bb_memory.o"
 "./Sources/can.o"
 "./Sources/can_app.o"
 "./Sources/can_queue.o"
@@ -69,6 +72,8 @@
 "./Sources/core_main.o"
 "./Sources/diagnostic_task.o"
 "./Sources/gpio.o"
+"./Sources/internal_flash.o"
+"./Sources/internal_flash_app.o"
 "./Sources/main.o"
 "./Sources/operating_system.o"
 "./Sources/rr_nvic.o"

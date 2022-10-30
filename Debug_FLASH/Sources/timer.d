@@ -30,14 +30,15 @@ Sources/timer.o: ../Sources/timer.c \
  D:/Prabhu/New\ folder/New\ folder/New\ folder/modified_code/bytebeam_nxp_s32k144/SDK/platform/pal/inc/can_pal_mapping.h \
  D:/Prabhu/New\ folder/New\ folder/New\ folder/modified_code/bytebeam_nxp_s32k144/SDK/platform/drivers/inc/flexcan_driver.h \
  D:/Prabhu/New\ folder/New\ folder/New\ folder/modified_code/bytebeam_nxp_s32k144/SDK/platform/drivers/inc/edma_driver.h \
+ D:/Prabhu/New\ folder/New\ folder/New\ folder/modified_code/bytebeam_nxp_s32k144/SDK/platform/drivers/inc/power_manager.h \
+ d:\prabhu\new\ folder\new\ folder\new\ folder\modified_code\bytebeam_nxp_s32k144\sdk\platform\drivers\src\power\s32k1xx\power_manager_s32k1xx.h \
  D:/Prabhu/New\ folder/New\ folder/New\ folder/modified_code/bytebeam_nxp_s32k144/SDK/platform/pal/inc/timing_pal.h \
  D:/Prabhu/New\ folder/New\ folder/New\ folder/modified_code/bytebeam_nxp_s32k144/SDK/platform/pal/inc/timing_pal_mapping.h \
  D:/Prabhu/New\ folder/New\ folder/New\ folder/modified_code/bytebeam_nxp_s32k144/Generated_Code/timing_pal_cfg.h \
  D:/Prabhu/New\ folder/New\ folder/New\ folder/modified_code/bytebeam_nxp_s32k144/SDK/platform/drivers/inc/ftm_oc_driver.h \
  D:/Prabhu/New\ folder/New\ folder/New\ folder/modified_code/bytebeam_nxp_s32k144/SDK/platform/drivers/inc/ftm_common.h \
  D:/Prabhu/New\ folder/New\ folder/New\ folder/modified_code/bytebeam_nxp_s32k144/SDK/platform/drivers/inc/ftm_mc_driver.h \
- D:/Prabhu/New\ folder/New\ folder/New\ folder/modified_code/bytebeam_nxp_s32k144/SDK/platform/drivers/inc/power_manager.h \
- d:\prabhu\new\ folder\new\ folder\new\ folder\modified_code\bytebeam_nxp_s32k144\sdk\platform\drivers\src\power\s32k1xx\power_manager_s32k1xx.h \
+ D:/Prabhu/New\ folder/New\ folder/New\ folder/modified_code/bytebeam_nxp_s32k144/SDK/platform/drivers/inc/flash_driver.h \
  D:/Prabhu/New\ folder/New\ folder/New\ folder/modified_code/bytebeam_nxp_s32k144/SDK/platform/devices/S32K144/startup/system_S32K144.h \
  D:/Prabhu/New\ folder/New\ folder/New\ folder/modified_code/bytebeam_nxp_s32k144/Generated_Code/pin_mux.h \
  D:/Prabhu/New\ folder/New\ folder/New\ folder/modified_code/bytebeam_nxp_s32k144/SDK/platform/drivers/inc/pins_driver.h \
@@ -46,8 +47,9 @@ Sources/timer.o: ../Sources/timer.c \
  D:/Prabhu/New\ folder/New\ folder/New\ folder/modified_code/bytebeam_nxp_s32k144/Generated_Code/Cpu.h \
  D:/Prabhu/New\ folder/New\ folder/New\ folder/modified_code/bytebeam_nxp_s32k144/Generated_Code/dmaController1.h \
  D:/Prabhu/New\ folder/New\ folder/New\ folder/modified_code/bytebeam_nxp_s32k144/Generated_Code/can_pal1.h \
- D:/Prabhu/New\ folder/New\ folder/New\ folder/modified_code/bytebeam_nxp_s32k144/Generated_Code/timing_pal1.h \
  D:/Prabhu/New\ folder/New\ folder/New\ folder/modified_code/bytebeam_nxp_s32k144/Generated_Code/pwrMan1.h \
+ D:/Prabhu/New\ folder/New\ folder/New\ folder/modified_code/bytebeam_nxp_s32k144/Generated_Code/timing_pal1.h \
+ D:/Prabhu/New\ folder/New\ folder/New\ folder/modified_code/bytebeam_nxp_s32k144/Generated_Code/Flash1.h \
  D:/Prabhu/New\ folder/New\ folder/New\ folder/modified_code/bytebeam_nxp_s32k144/includes/common_header.h \
  D:/Prabhu/New\ folder/New\ folder/New\ folder/modified_code/bytebeam_nxp_s32k144/includes/uart_state_machine.h \
  D:/Prabhu/New\ folder/New\ folder/New\ folder/modified_code/bytebeam_nxp_s32k144/includes/common_header.h \
@@ -120,6 +122,10 @@ D:/Prabhu/New\ folder/New\ folder/New\ folder/modified_code/bytebeam_nxp_s32k144
 
 D:/Prabhu/New\ folder/New\ folder/New\ folder/modified_code/bytebeam_nxp_s32k144/SDK/platform/drivers/inc/edma_driver.h:
 
+D:/Prabhu/New\ folder/New\ folder/New\ folder/modified_code/bytebeam_nxp_s32k144/SDK/platform/drivers/inc/power_manager.h:
+
+d:\prabhu\new\ folder\new\ folder\new\ folder\modified_code\bytebeam_nxp_s32k144\sdk\platform\drivers\src\power\s32k1xx\power_manager_s32k1xx.h:
+
 D:/Prabhu/New\ folder/New\ folder/New\ folder/modified_code/bytebeam_nxp_s32k144/SDK/platform/pal/inc/timing_pal.h:
 
 D:/Prabhu/New\ folder/New\ folder/New\ folder/modified_code/bytebeam_nxp_s32k144/SDK/platform/pal/inc/timing_pal_mapping.h:
@@ -132,9 +138,7 @@ D:/Prabhu/New\ folder/New\ folder/New\ folder/modified_code/bytebeam_nxp_s32k144
 
 D:/Prabhu/New\ folder/New\ folder/New\ folder/modified_code/bytebeam_nxp_s32k144/SDK/platform/drivers/inc/ftm_mc_driver.h:
 
-D:/Prabhu/New\ folder/New\ folder/New\ folder/modified_code/bytebeam_nxp_s32k144/SDK/platform/drivers/inc/power_manager.h:
-
-d:\prabhu\new\ folder\new\ folder\new\ folder\modified_code\bytebeam_nxp_s32k144\sdk\platform\drivers\src\power\s32k1xx\power_manager_s32k1xx.h:
+D:/Prabhu/New\ folder/New\ folder/New\ folder/modified_code/bytebeam_nxp_s32k144/SDK/platform/drivers/inc/flash_driver.h:
 
 D:/Prabhu/New\ folder/New\ folder/New\ folder/modified_code/bytebeam_nxp_s32k144/SDK/platform/devices/S32K144/startup/system_S32K144.h:
 
@@ -152,9 +156,11 @@ D:/Prabhu/New\ folder/New\ folder/New\ folder/modified_code/bytebeam_nxp_s32k144
 
 D:/Prabhu/New\ folder/New\ folder/New\ folder/modified_code/bytebeam_nxp_s32k144/Generated_Code/can_pal1.h:
 
+D:/Prabhu/New\ folder/New\ folder/New\ folder/modified_code/bytebeam_nxp_s32k144/Generated_Code/pwrMan1.h:
+
 D:/Prabhu/New\ folder/New\ folder/New\ folder/modified_code/bytebeam_nxp_s32k144/Generated_Code/timing_pal1.h:
 
-D:/Prabhu/New\ folder/New\ folder/New\ folder/modified_code/bytebeam_nxp_s32k144/Generated_Code/pwrMan1.h:
+D:/Prabhu/New\ folder/New\ folder/New\ folder/modified_code/bytebeam_nxp_s32k144/Generated_Code/Flash1.h:
 
 D:/Prabhu/New\ folder/New\ folder/New\ folder/modified_code/bytebeam_nxp_s32k144/includes/common_header.h:
 

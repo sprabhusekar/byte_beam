@@ -23,6 +23,7 @@ RM := rm -rf
 -include SDK/platform/drivers/src/interrupt/subdir.mk
 -include SDK/platform/drivers/src/ftm/subdir.mk
 -include SDK/platform/drivers/src/flexcan/subdir.mk
+-include SDK/platform/drivers/src/flash/subdir.mk
 -include SDK/platform/drivers/src/edma/subdir.mk
 -include SDK/platform/drivers/src/clock/S32K1xx/subdir.mk
 -include SDK/platform/devices/S32K144/startup/subdir.mk
@@ -42,6 +43,9 @@ endif
 -include ../makefile.defs
 
 # Add inputs and outputs from these tool invocations to the build variables 
+SECONDARY_FLASH += \
+bytebeam_nxp_s32k144.bin \
+
 SECONDARY_SIZE += \
 bytebeam_nxp_s32k144.siz \
 
@@ -57,6 +61,12 @@ bytebeam_nxp_s32k144.elf: $(OBJS) D:/Prabhu/New\ folder/New\ folder/New\ folder/
 	@echo 'Finished building target: $@'
 	@echo ' '
 
+bytebeam_nxp_s32k144.bin: bytebeam_nxp_s32k144.elf
+	@echo 'Invoking: Standard S32DS Create Flash Image'
+	arm-none-eabi-objcopy -O binary bytebeam_nxp_s32k144.elf  "bytebeam_nxp_s32k144.bin"
+	@echo 'Finished building: $@'
+	@echo ' '
+
 bytebeam_nxp_s32k144.siz: bytebeam_nxp_s32k144.elf
 	@echo 'Invoking: Standard S32DS Print Size'
 	arm-none-eabi-size --format=berkeley bytebeam_nxp_s32k144.elf
@@ -68,7 +78,7 @@ clean:
 	-$(RM) ./*
 	-@echo ' '
 
-secondary-outputs: $(SECONDARY_SIZE)
+secondary-outputs: $(SECONDARY_FLASH) $(SECONDARY_SIZE)
 
 .PHONY: all clean dependents
 

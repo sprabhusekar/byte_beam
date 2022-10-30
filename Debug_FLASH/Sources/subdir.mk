@@ -5,6 +5,7 @@
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS += \
 ../Sources/app_main.c \
+../Sources/bb_memory.c \
 ../Sources/can.c \
 ../Sources/can_app.c \
 ../Sources/can_queue.c \
@@ -14,6 +15,8 @@ C_SRCS += \
 ../Sources/core_main.c \
 ../Sources/diagnostic_task.c \
 ../Sources/gpio.c \
+../Sources/internal_flash.c \
+../Sources/internal_flash_app.c \
 ../Sources/main.c \
 ../Sources/operating_system.c \
 ../Sources/rr_nvic.c \
@@ -26,6 +29,7 @@ C_SRCS += \
 
 OBJS += \
 ./Sources/app_main.o \
+./Sources/bb_memory.o \
 ./Sources/can.o \
 ./Sources/can_app.o \
 ./Sources/can_queue.o \
@@ -35,6 +39,8 @@ OBJS += \
 ./Sources/core_main.o \
 ./Sources/diagnostic_task.o \
 ./Sources/gpio.o \
+./Sources/internal_flash.o \
+./Sources/internal_flash_app.o \
 ./Sources/main.o \
 ./Sources/operating_system.o \
 ./Sources/rr_nvic.o \
@@ -47,6 +53,7 @@ OBJS += \
 
 C_DEPS += \
 ./Sources/app_main.d \
+./Sources/bb_memory.d \
 ./Sources/can.d \
 ./Sources/can_app.d \
 ./Sources/can_queue.d \
@@ -56,6 +63,8 @@ C_DEPS += \
 ./Sources/core_main.d \
 ./Sources/diagnostic_task.d \
 ./Sources/gpio.d \
+./Sources/internal_flash.d \
+./Sources/internal_flash_app.d \
 ./Sources/main.d \
 ./Sources/operating_system.d \
 ./Sources/rr_nvic.d \

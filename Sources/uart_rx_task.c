@@ -57,8 +57,9 @@ void uart_rx_task_v(void *parameter)
 /********************************************************************************************************/
 				case UART_BOOTLOADER_CMD_RECEIVED:
 				{
-					bootloader_app_uart_cmd_ack_send_v(BOOTLOADER_MODE_ENABLE_CMD_ACK_STATUS, BAPP_UART_SUCCESS_STS);
-					//received_boot_config_st.new_firmware_status_u8 = 0xCC;
+					//bootloader_app_uart_cmd_ack_send_v(BOOTLOADER_MODE_ENABLE_CMD_ACK_STATUS, BAPP_UART_SUCCESS_STS);
+					received_boot_config_st.new_firmware_status_u8 = 0xCC;
+					bootloader_jumping_to_boot_section();
 					//uart_rx_tx_que_st.event_e =  UART_BOOTLOADER_ENABLE_CMD_ACK_SEND;
 					//uart_rx_tx_que_st.source_u8 = last_can_command_ack_pending;
 				   //xQueueSend(os_uart_tx_queue_handler_ge,&uart_rx_tx_que_st,100);

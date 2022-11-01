@@ -55,7 +55,7 @@ typedef struct __attribute__((packed)) UART_data_struct
 	U16 stx_U16;
 	U8 cmd_u8;
 	U16 length_u16;
-	U8 payload_au8[300];
+	U8 payload_au8[200];
 	U16 crc_u16;
 	U64 timestamp_u64;
 	U8 etx_u8;

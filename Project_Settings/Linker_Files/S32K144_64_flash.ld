@@ -50,10 +50,10 @@ MEMORY
   m_text                (RX)  : ORIGIN = 0x0000E410, LENGTH = 0x00042000
 
   /* SRAM_L */
-  m_data                (RW)  : ORIGIN = 0x1FFF8000, LENGTH = 0x00008000
+  m_data                (RW)  : ORIGIN = 0x1FFF8000, LENGTH = 0x0000F000
 
   /* SRAM_U */
-  m_data_2              (RW)  : ORIGIN = 0x20000000, LENGTH = 0x00007000
+  /*m_data              (RW)  : ORIGIN = 0x20002000, LENGTH = 0x00005000*/
 }
 
 /* Define output sections */
@@ -148,12 +148,12 @@ SECTIONS
 
   /* Custom Section Block that can be used to place data at absolute address. */
   /* Use __attribute__((section (".customSection"))) to place data here. */
-  .customSectionBlock  ORIGIN(m_data_2) : AT(__CUSTOM_ROM)
+  .customSectionBlock  ORIGIN(m_data) : AT(__CUSTOM_ROM)
   {
     __customSection_start__ = .;
     KEEP(*(.customSection))  /* Keep section even if not referenced. */
     __customSection_end__ = .;
-  } > m_data_2
+  } > m_data
   __CUSTOM_END = __CUSTOM_ROM + (__customSection_end__ - __customSection_start__);
 
   /* Uninitialized data section. */
@@ -169,7 +169,7 @@ SECTIONS
     . = ALIGN(4);
     __bss_end__ = .;
     __BSS_END = .;
-  } > m_data_2
+  } > m_data
 
    /* Put heap section after the program data */
   .heap :
@@ -185,10 +185,10 @@ SECTIONS
     __HeapLimit = .;
     __heap_limit = .;
     __heap_end__ = .;
-  } > m_data_2
+  } > m_data
 
   /* Initializes stack on the end of block */
-  __StackTop   = ORIGIN(m_data_2) + LENGTH(m_data_2);
+  __StackTop   = ORIGIN(m_data) + LENGTH(m_data);
   __StackLimit = __StackTop - STACK_SIZE;
   PROVIDE(__stack = __StackTop);
   __RAM_END = __StackTop;
@@ -199,10 +199,10 @@ SECTIONS
     __stack_start__ = .;
     . += STACK_SIZE;
     __stack_end__ = .;
-  } > m_data_2
+  } > m_data
 
   .ARM.attributes 0 : { *(.ARM.attributes) }
 
-  ASSERT(__StackLimit >= __HeapLimit, "region m_data_2 overflowed with stack and heap")
+  ASSERT(__StackLimit >= __HeapLimit, "region m_data overflowed with stack and heap")
 }
 

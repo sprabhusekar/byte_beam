@@ -54,7 +54,7 @@ bytebeam_nxp_s32k144.siz \
 all: bytebeam_nxp_s32k144.elf secondary-outputs
 
 # Tool invocations
-bytebeam_nxp_s32k144.elf: $(OBJS) D:/Prabhu/New\ folder/New\ folder/New\ folder/modified_code/bytebeam_nxp_s32k144/Project_Settings/Linker_Files/S32K144_64_flash.ld $(USER_OBJS)
+bytebeam_nxp_s32k144.elf: $(OBJS) C:/Users/bhaar/Documents/s32k_test/byte_beam/Project_Settings/Linker_Files/S32K144_64_flash.ld $(USER_OBJS)
 	@echo 'Building target: $@'
 	@echo 'Invoking: Standard S32DS C Linker'
 	arm-none-eabi-gcc -o "bytebeam_nxp_s32k144.elf" "@bytebeam_nxp_s32k144.args"  $(USER_OBJS) $(LIBS)

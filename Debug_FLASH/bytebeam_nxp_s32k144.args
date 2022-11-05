@@ -1,5 +1,5 @@
 -T
-"D:/Prabhu/New folder/New folder/New folder/modified_code/bytebeam_nxp_s32k144/Project_Settings/Linker_Files/S32K144_64_flash.ld"
+"C:/Users/bhaar/Documents/s32k_test/byte_beam/Project_Settings/Linker_Files/S32K144_64_flash.ld"
 -Wl,-Map,"bytebeam_nxp_s32k144.map"
 -Xlinker
 --gc-sections

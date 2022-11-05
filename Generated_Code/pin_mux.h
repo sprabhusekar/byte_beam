@@ -7,7 +7,7 @@
 **     Version     : Component 1.2.0, Driver 1.4, CPU db: 3.00.000
 **     Repository  : SDK_S32K1xx_15
 **     Compiler    : GNU C Compiler
-**     Date/Time   : 2022-07-31, 11:28, # CodeGen: 11
+**     Date/Time   : 2022-11-05, 18:17, # CodeGen: 61
 **     Abstract    :
 **
 **     Settings    :
@@ -193,8 +193,8 @@
 **                  Direction                              : <Automatic>
 **                  Pin 10(JTAG)                           : <Automatic>
 **                  Direction                              : <Automatic>
-**                  Pin 11                                 : <Automatic>
-**                  Direction                              : <Automatic>
+**                  Pin 11                                 : PTA11
+**                  Direction                              : Output
 **                  Pin 12                                 : <Automatic>
 **                  Direction                              : <Automatic>
 **                  Pin 13                                 : <Automatic>
@@ -940,7 +940,7 @@
 
 
 /*! @brief User number of configured pins */
-#define NUM_OF_CONFIGURED_PINS 4
+#define NUM_OF_CONFIGURED_PINS 5
 
 /*! @brief User configuration structure */
 extern pin_settings_config_t g_pin_mux_InitConfigArr[NUM_OF_CONFIGURED_PINS];

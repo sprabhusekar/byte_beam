@@ -3,7 +3,7 @@
   <Header>
     <Name>bytebeam_nxp_s32k144</Name>
     <SavedBy>Prabhu</SavedBy>
-    <ModificationStamp>39</ModificationStamp>
+    <ModificationStamp>40</ModificationStamp>
     <Date>2022-07-31</Date>
     <IDE>Eclipse IDE</IDE>
     <PEversion>1.12.2.RT7_b1743-0713</PEversion>
@@ -1970,14 +1970,14 @@
         <ItemSymbol>PTA_port_11</ItemSymbol>
         <ReadOnly>false</ReadOnly>
         <UserReadOnly>false</UserReadOnly>
-        <Value>&lt;Automatic&gt;</Value>
+        <Value>PTA11</Value>
         <SharedPrphMode>false</SharedPrphMode>
       </ItemState>
       <ItemState>
         <ItemSymbol>PTA_port_11_Dir</ItemSymbol>
         <ReadOnly>false</ReadOnly>
         <UserReadOnly>false</UserReadOnly>
-        <Value>&lt;Automatic&gt;</Value>
+        <Value>Output</Value>
       </ItemState>
       <ItemState>
         <ItemSymbol>PTA_port_12</ItemSymbol>

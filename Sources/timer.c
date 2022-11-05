@@ -73,7 +73,24 @@ void timer_pal_chan1_callback_5000ms_v(void *userdata)
 
 	U32 dummy_byte_u32 = 100;
 	operating_system_uart_tx_queue_tst uart_tx_que_st;
+	static uint8_t boot_toggle = 0;
+	if(boot_toggle == 0)
+	{
+		PINS_DRV_WritePin(PTA, 11, 0);
+	}
+	else if(boot_toggle == 1)
+	{
+		PINS_DRV_WritePin(PTA, 11, 1);
+	}
+	else if(boot_toggle =2)
+	{
+		boot_toggle =100;
+	}
 
+	if(boot_toggle <3)
+	{
+		boot_toggle++;
+	}
 	if(0 == n58_communication_start_vu8)
 	{
 		timer_10s_counter_u8++;

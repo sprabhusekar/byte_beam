@@ -7,8 +7,8 @@
 
 #include "can.h"
 #include "timer.h"
-
-
+#include "tork_update_app.h"
+#include "operating_system.h"
 
 
 
@@ -38,7 +38,7 @@ void can_init(void)
 		can_tx_buff_config.enableBRS = false;
 		can_tx_buff_config.enableFD = false;
 		can_tx_buff_config.fdPadding = false;
-		can_tx_buff_config.idType = CAN_MSG_ID_STD;
+		can_tx_buff_config.idType = CAN_MSG_ID_EXT;
 		can_tx_buff_config.isRemote = false;
 
 		CAN_ConfigTxBuff(&can_pal1_instance,
@@ -48,7 +48,7 @@ void can_init(void)
 			can_tx_buff_config1.enableBRS = false;
 			can_tx_buff_config1.enableFD = false;
 			can_tx_buff_config1.fdPadding = false;
-			can_tx_buff_config1.idType = CAN_MSG_ID_STD;
+			can_tx_buff_config1.idType = CAN_MSG_ID_STD;   //have changed it to Extended ID
 			can_tx_buff_config1.isRemote = false;
 
 			CAN_ConfigTxBuff(&can_pal1_instance,
@@ -119,9 +119,32 @@ void CAN_eventHandler(uint8_t instance, flexcan_event_type_t eventType,
 /**********************************************************************************************************************/
 		case FLEXCAN_EVENT_RX_COMPLETE:
 		{
-			if(n58_communication_start_vu8)
+			if((message_can.id != 0x10F) && (message_can.id != 0x11F))
 			{
-				can_rx_array_queue_put(message_can);
+				if(n58_communication_start_vu8)
+				{
+					if((message_can.id == 0x100) ||
+					   (message_can.id == 0x101) ||
+					   (message_can.id == 0x102) ||
+					   (message_can.id == 0x103) ||
+					   (message_can.id == 0x105) ||
+					   (message_can.id == 0x106))
+					{
+						operating_system_uart_tx_queue_tst uart_tx_que_st;
+						operating_system_can_rx_msg_queue_tst can_rx_msg_que_st;
+						uart_tx_que_st.event_e = TORK_BLE_DATA_FRAME_EVT;
+						can_rx_msg_que_st.received_can_msg.id = message_can.id;
+						memcpy(can_rx_msg_que_st.received_can_msg.data, message_can.data, 8);
+						BaseType_t xHigherPriorityTaskWoken = pdFALSE;
+						xQueueSendFromISR(os_uart_tx_queue_handler_ge,&uart_tx_que_st,&xHigherPriorityTaskWoken);
+						xQueueSendFromISR(os_tork_ble_data_queue_handler_ge,&can_rx_msg_que_st,&xHigherPriorityTaskWoken);
+					}
+					can_rx_array_queue_put(message_can);
+				}
+			}
+			else
+			{
+				tork_update_app_process_can_msg(message_can);
 			}
 			CAN_Receive(&can_pal1_instance, buffIdx, &message_can);
 		}

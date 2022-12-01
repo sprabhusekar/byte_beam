@@ -15,8 +15,7 @@
 
 volatile U16 new_rx_count_length_16 = 1;
 
-
-UART_data_struct uart_rx_data;
+//UART_data_struct uart_rx_data;
 
 U8 heart_beat_flag = 0;
 U8 last_uart_command_ack_pending = false;
@@ -153,10 +152,21 @@ void execute_command(UART_data_struct uart_strcut)
 	    		uart_received_ack_st.event_e = UART_BOOTLOADER_CMD_RECEIVED;
 	    		uart_received_ack_st.source_u8 = uart_strcut.cmd_u8;
 	    	    xQueueSendFromISR(os_uart_rx_queue_handler_ge,&uart_received_ack_st,NULL);
-
 	    }
 	    break;
 /***********************************************************************************************/
+	    case UART_EXT_ECU_UPDATE_COMMAND:
+	    {
+	    	operating_system_can_tx_queue_tst uart_received_can_st;
+	    	memcpy((uint8_t *)(&uart_received_can_st.can_data_struct.can_payload[0]), (uint8_t* )(&uart_strcut.payload_au8[0]), 13);
+	    	xQueueSendFromISR(os_can_tx_queue_handler_ge, &uart_received_can_st, NULL);
+	    }
+	    break;
+	    case 0x55:
+	    {
+			SystemSoftwareReset();
+	    }
+	    break;
 	    default:
 	    {
 
@@ -236,12 +246,20 @@ U8 process_uart_data(U8 data)
 		{
 			len_counter++;
 			uart_rx_data.payload_au8[len_counter - 1] = data;
-			if (length_16 > len_counter)
+			if (13 > len_counter)
 			{
 				data_process_state = DATA_STATE;
 			}
 			else
 			{
+//				can_message_t can_msg;
+//				can_msg.id = 0x1234;
+//				can_msg.length = 8;
+//				for(int loop_var =0;loop_var<8;loop_var++)
+//				{
+//					can_msg.data[loop_var] = uart_rx_data.payload_au8[loop_var+4];
+//				}
+//				CAN_Send(&can_pal1_instance, CAN_TX_MAILBOX0, &can_msg);
 				data_process_state = CRC1_STATE;
 				len_counter = 0;
 			}

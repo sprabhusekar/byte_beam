@@ -1,5 +1,5 @@
 -T
-"D:/Prabhu/New folder/New folder/New folder/modified_code/bytebeam_nxp_s32k144/Project_Settings/Linker_Files/S32K144_64_flash.ld"
+"C:/Users/prade/Documents/Bytebeam_source_codes/S32k_code/byte_beam/Project_Settings/Linker_Files/S32K144_64_flash.ld"
 -Wl,-Map,"bytebeam_nxp_s32k144.map"
 -Xlinker
 --gc-sections
@@ -14,6 +14,7 @@
 "./Generated_Code/Cpu.o"
 "./Generated_Code/Flash1.o"
 "./Generated_Code/can_pal1.o"
+"./Generated_Code/can_pal2.o"
 "./Generated_Code/clockMan1.o"
 "./Generated_Code/dmaController1.o"
 "./Generated_Code/pin_mux.o"
@@ -78,6 +79,7 @@
 "./Sources/operating_system.o"
 "./Sources/rr_nvic.o"
 "./Sources/timer.o"
+"./Sources/tork_update_app.o"
 "./Sources/uart.o"
 "./Sources/uart_queue.o"
 "./Sources/uart_rx_task.o"

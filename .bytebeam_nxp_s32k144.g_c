@@ -2,7 +2,7 @@
 <GenerationInfo_G_C>
   <Options>
     <ProjectName>bytebeam_nxp_s32k144</ProjectName>
-    <ProjectDirectory>D:\Prabhu\New folder\New folder\New folder\modified_code\bytebeam_nxp_s32k144\</ProjectDirectory>
+    <ProjectDirectory>C:\Users\prade\Documents\Bytebeam_source_codes\S32k_code\byte_beam\</ProjectDirectory>
     <ProjectMainModuleName>main</ProjectMainModuleName>
     <DestEventsDirectory>Sources\</DestEventsDirectory>
     <DestDriversSubDirectory>..\Generated_Code\</DestDriversSubDirectory>
@@ -20,10 +20,10 @@
         <Line>Generated_Code\can_pal_cfg.h</Line>
         <Line>Generated_Code\uart_pal_cfg.h</Line>
       </GenExtraFiles>
-      <XtraAge0>1430340776</XtraAge0>
-      <XtraAge1>1430341149</XtraAge1>
-      <XtraAge2>1426017776</XtraAge2>
-      <XtraAge3>1430341149</XtraAge3>
+      <XtraAge0>1432260627</XtraAge0>
+      <XtraAge1>1432260476</XtraAge1>
+      <XtraAge2>1433965507</XtraAge2>
+      <XtraAge3>1433965507</XtraAge3>
       <GenExtraFileType3>4</GenExtraFileType3>
       <GenExtraFileType2>4</GenExtraFileType2>
       <GenExtraFileType1>4</GenExtraFileType1>
@@ -962,8 +962,9 @@
       <GenMethodsInEvents lines_count="1">
         <Line>FreeRTOS_vApplicationStackOverflowHook</Line>
       </GenMethodsInEvents>
-      <GenAllModules lines_count="11">
+      <GenAllModules lines_count="12">
         <Line>can_pal1</Line>
+        <Line>can_pal2</Line>
         <Line>clockMan1</Line>
         <Line>Cpu</Line>
         <Line>dmaController1</Line>
@@ -976,7 +977,7 @@
         <Line>uart_pal1</Line>
       </GenAllModules>
       <GenExternModules lines_count="0" />
-      <GenBeanModules lines_count="9">
+      <GenBeanModules lines_count="10">
         <Line>pin_mux</Line>
         <Line>uart_pal1</Line>
         <Line>dmaController1</Line>
@@ -986,11 +987,12 @@
         <Line>pwrMan1</Line>
         <Line>timing_pal1</Line>
         <Line>Flash1</Line>
+        <Line>can_pal2</Line>
       </GenBeanModules>
     </GenFiles>
     <SignalListFile />
     <DestinationCompiler>GNUC</DestinationCompiler>
-    <ProjectModificationStamp>39</ProjectModificationStamp>
+    <ProjectModificationStamp>40</ProjectModificationStamp>
   </Options>
   <CpuID_14>
     <Generated>true</Generated>
@@ -998,8 +1000,8 @@
     <GenComponentVersion>01.197</GenComponentVersion>
     <GenDriverVersion>01.00</GenDriverVersion>
     <GenEventModule>Events</GenEventModule>
-    <HeaderAge>1430411564</HeaderAge>
-    <CodeAge>1426017994</CodeAge>
+    <HeaderAge>1433965507</HeaderAge>
+    <CodeAge>1432260476</CodeAge>
     <AsemblAge>-1</AsemblAge>
     <GenNumMethods>3</GenNumMethods>
     <SystemInit>true</SystemInit>
@@ -1065,8 +1067,8 @@
     <GenComponentVersion>1.2.0</GenComponentVersion>
     <GenDriverVersion>1.4</GenDriverVersion>
     <GenEventModule />
-    <HeaderAge>1426021257</HeaderAge>
-    <CodeAge>1426017994</CodeAge>
+    <HeaderAge>1432260476</HeaderAge>
+    <CodeAge>1432260476</CodeAge>
     <AsemblAge>-1</AsemblAge>
     <GenNumMethods>25</GenNumMethods>
     <PINS_DRV_Init>true</PINS_DRV_Init>
@@ -1145,8 +1147,8 @@
     <GenComponentVersion>SDK_S32K1xx_15</GenComponentVersion>
     <GenDriverVersion>01.00</GenDriverVersion>
     <GenEventModule />
-    <HeaderAge>1426021498</HeaderAge>
-    <CodeAge>1426041629</CodeAge>
+    <HeaderAge>1432260476</HeaderAge>
+    <CodeAge>1432260476</CodeAge>
     <AsemblAge>-1</AsemblAge>
     <GenNumMethods>15</GenNumMethods>
     <UART_GetDefaultConfig>true</UART_GetDefaultConfig>
@@ -1180,8 +1182,8 @@
     <GenComponentVersion>SDK_S32K1xx_15</GenComponentVersion>
     <GenDriverVersion>01.00</GenDriverVersion>
     <GenEventModule />
-    <HeaderAge>1426022071</HeaderAge>
-    <CodeAge>1426022090</CodeAge>
+    <HeaderAge>1432260476</HeaderAge>
+    <CodeAge>1432260476</CodeAge>
     <AsemblAge>-1</AsemblAge>
     <GenNumMethods>32</GenNumMethods>
     <EDMA_DRV_Init>true</EDMA_DRV_Init>
@@ -1264,8 +1266,8 @@
     <GenComponentVersion>SDK_S32K1xx_15</GenComponentVersion>
     <GenDriverVersion>01.00</GenDriverVersion>
     <GenEventModule />
-    <HeaderAge>1426017994</HeaderAge>
-    <CodeAge>1426152556</CodeAge>
+    <HeaderAge>1432260476</HeaderAge>
+    <CodeAge>1432260476</CodeAge>
     <AsemblAge>-1</AsemblAge>
     <GenNumMethods>16</GenNumMethods>
     <CAN_Init>true</CAN_Init>
@@ -1465,8 +1467,8 @@
     <GenComponentVersion>SDK_S32K1xx_15</GenComponentVersion>
     <GenDriverVersion>01.00</GenDriverVersion>
     <GenEventModule />
-    <HeaderAge>1426152556</HeaderAge>
-    <CodeAge>1426152556</CodeAge>
+    <HeaderAge>1432260476</HeaderAge>
+    <CodeAge>1432260476</CodeAge>
     <AsemblAge>-1</AsemblAge>
     <GenNumMethods>6</GenNumMethods>
     <CLOCK_DRV_Init>true</CLOCK_DRV_Init>
@@ -1497,8 +1499,8 @@
     <GenComponentVersion>SDK_S32K1xx_15</GenComponentVersion>
     <GenDriverVersion>01.00</GenDriverVersion>
     <GenEventModule />
-    <HeaderAge>1426154106</HeaderAge>
-    <CodeAge>1426154106</CodeAge>
+    <HeaderAge>1432260476</HeaderAge>
+    <CodeAge>1432260476</CodeAge>
     <AsemblAge>-1</AsemblAge>
     <GenNumMethods>10</GenNumMethods>
     <POWER_SYS_Init>true</POWER_SYS_Init>
@@ -1532,8 +1534,8 @@
     <GenComponentVersion>SDK_S32K1xx_15</GenComponentVersion>
     <GenDriverVersion>01.00</GenDriverVersion>
     <GenEventModule />
-    <HeaderAge>1430341149</HeaderAge>
-    <CodeAge>1430341149</CodeAge>
+    <HeaderAge>1432260627</HeaderAge>
+    <CodeAge>1432260627</CodeAge>
     <AsemblAge>-1</AsemblAge>
     <GenNumMethods>11</GenNumMethods>
     <TIMING_Init>true</TIMING_Init>
@@ -1565,8 +1567,8 @@
     <GenComponentVersion>1.0.0</GenComponentVersion>
     <GenDriverVersion>01.00</GenDriverVersion>
     <GenEventModule />
-    <HeaderAge>1430411602</HeaderAge>
-    <CodeAge>1430411602</CodeAge>
+    <HeaderAge>1432260627</HeaderAge>
+    <CodeAge>1432260627</CodeAge>
     <AsemblAge>-1</AsemblAge>
     <GenNumMethods>42</GenNumMethods>
     <FLASH_DRV_Init>true</FLASH_DRV_Init>
@@ -1620,6 +1622,42 @@
     <ExtraFile0>SDK\platform\drivers\inc\flash_driver.h</ExtraFile0>
     <ExtraFile1>SDK\platform\drivers\src\flash\flash_driver.c</ExtraFile1>
   </ComponentID_19>
+  <ComponentID_20>
+    <Generated>true</Generated>
+    <GenCompName>can_pal2</GenCompName>
+    <GenComponentVersion>SDK_S32K1xx_15</GenComponentVersion>
+    <GenDriverVersion>01.00</GenDriverVersion>
+    <GenEventModule />
+    <HeaderAge>1433965507</HeaderAge>
+    <CodeAge>1433965507</CodeAge>
+    <AsemblAge>-1</AsemblAge>
+    <GenNumMethods>16</GenNumMethods>
+    <CAN_Init>true</CAN_Init>
+    <CAN_Deinit>true</CAN_Deinit>
+    <CAN_SetBitrate>true</CAN_SetBitrate>
+    <CAN_GetBitrate>true</CAN_GetBitrate>
+    <CAN_ConfigTxBuff>true</CAN_ConfigTxBuff>
+    <CAN_ConfigRemoteResponseBuff>true</CAN_ConfigRemoteResponseBuff>
+    <CAN_ConfigRxBuff>true</CAN_ConfigRxBuff>
+    <CAN_Send>true</CAN_Send>
+    <CAN_SendBlocking>true</CAN_SendBlocking>
+    <CAN_Receive>true</CAN_Receive>
+    <CAN_ReceiveBlocking>true</CAN_ReceiveBlocking>
+    <CAN_AbortTransfer>true</CAN_AbortTransfer>
+    <CAN_SetRxFilter>true</CAN_SetRxFilter>
+    <CAN_GetTransferStatus>true</CAN_GetTransferStatus>
+    <CAN_InstallEventCallback>true</CAN_InstallEventCallback>
+    <CAN_GetDefaultConfig>true</CAN_GetDefaultConfig>
+    <GenNumEvents>0</GenNumEvents>
+    <GenSmartUserChangesDetected_Header>false</GenSmartUserChangesDetected_Header>
+    <GenSmartUserChangesDetected_Code>false</GenSmartUserChangesDetected_Code>
+    <GenSmartUserChangesDetected_Asembl>false</GenSmartUserChangesDetected_Asembl>
+    <GenMethodPos>0</GenMethodPos>
+    <GenExtraFilesCount>3</GenExtraFilesCount>
+    <ExtraFile0>SDK\platform\pal\inc\can_pal.h</ExtraFile0>
+    <ExtraFile1>SDK\platform\pal\inc\can_pal_mapping.h</ExtraFile1>
+    <ExtraFile2>SDK\platform\pal\src\can\can_pal.c</ExtraFile2>
+  </ComponentID_20>
   <UsedSrcFiles>
     <SrcFile0>Drivers\S32K\S32_SDK\timing_pal.drv=-1</SrcFile0>
     <SrcFile1>Drivers\interrupt_manager.src=-1</SrcFile1>

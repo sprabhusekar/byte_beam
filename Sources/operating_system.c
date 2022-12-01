@@ -63,7 +63,9 @@ QueueHandle_t os_uart_rx_queue_handler_ge   = NULL;
 
 QueueHandle_t os_uart_tx_queue_handler_ge   = NULL;
 
+QueueHandle_t os_can_tx_queue_handler_ge = NULL;
 
+QueueHandle_t os_tork_ble_data_queue_handler_ge = NULL;
 
 SemaphoreHandle_t uart_rx_intrupt_Semaphore = NULL;
 
@@ -216,7 +218,16 @@ static uint8_t operating_system_create_queue_pru8(void)
 	{
 		return_val_u8++;
 	}
-
+	os_can_tx_queue_handler_ge = xQueueCreate(10, sizeof(operating_system_can_tx_queue_tst));
+	if(os_can_tx_queue_handler_ge == NULL)
+	{
+		return_val_u8++;
+	}
+	os_tork_ble_data_queue_handler_ge = xQueueCreate(10, sizeof(operating_system_can_rx_msg_queue_tst));
+	if(os_tork_ble_data_queue_handler_ge == NULL)
+	{
+		return_val_u8++;
+	}
 	return (return_val_u8);
 }
 
@@ -303,10 +314,10 @@ static uint8_t operating_system_create_task_pru8(void)
 	}
 #endif
 
-#if 0
+#if 1
 	/* definition and creation of bmsTask */
     xTaskCreate(can_comm_tx_task_v,					/* The function that implements the task. */
-				"bms_can_tx",									/* The text name assigned to the task - for debug only as it is not used by the kernel. */
+				"can_tx_task",									/* The text name assigned to the task - for debug only as it is not used by the kernel. */
 				OS_CAN_TX_TASK_STACK_SIZE, 				/* The size of the stack to allocate to the task. */
 				NULL,                              		/* The parameter passed to the task - just to check the functionality. */
 				OS_CAN_TX_TASK_PRIORITY, 					/* The priority assigned to the task. */

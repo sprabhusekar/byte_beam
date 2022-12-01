@@ -94,7 +94,7 @@ void timer_pal_chan1_callback_5000ms_v(void *userdata)
 			uart_tx_que_st.source_u8 = dummy_byte_u32;
 			BaseType_t xHigherPriorityTaskWoken = pdFALSE;
 		//xSemaphoreGiveFromISR(uart_tx_intrupt_Semaphore,&xHigherPriorityTaskWoken);
-			xQueueSendFromISR(os_uart_tx_queue_handler_ge,&uart_tx_que_st,&xHigherPriorityTaskWoken);
+			xQueueSendFromISR(os_uart_tx_queue_handler_ge,&uart_tx_que_st,&xHigherPriorityTaskWoken);         //uncommented
 		}
 	}
 }

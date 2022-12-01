@@ -480,6 +480,24 @@ Module "Flash1"    (component flash)
    - Flash1_FLASH_DRV_ForceDoubleBitFaultDetectCmd -Force Double Bit Fault Detect.
    - Flash1_FLASH_DRV_GetDefaultConfig -Get default flash user configuration.
 
+Module "can_pal2"  (component can_pal)
+   - can_pal2_CAN_Init -Initializes the CAN module.
+   - can_pal2_CAN_Deinit -De-initializes the CAN module.
+   - can_pal2_CAN_SetBitrate -Configures the CAN bitrate.
+   - can_pal2_CAN_GetBitrate -Returns the CAN bitrate.
+   - can_pal2_CAN_ConfigTxBuff -Configures a buffer for transmission.
+   - can_pal2_CAN_ConfigRemoteResponseBuff -Configures a transmit message buffer for remote frame response.
+   - can_pal2_CAN_ConfigRxBuff -Configures a buffer for reception.
+   - can_pal2_CAN_Send -Sends a CAN frame using the specified buffer.
+   - can_pal2_CAN_SendBlocking -Sends a CAN frame using the specified buffer, in a blocking manner.
+   - can_pal2_CAN_Receive -Receives a CAN frame using the specified message buffer.
+   - can_pal2_CAN_ReceiveBlocking -Receives a CAN frame using the specified buffer, in a blocking manner.
+   - can_pal2_CAN_AbortTransfer -Ends a non-blocking CAN transfer early.
+   - can_pal2_CAN_SetRxFilter -Configures an ID filter for a specific reception buffer.
+   - can_pal2_CAN_GetTransferStatus -Returns the state of the previous CAN transfer.
+   - can_pal2_CAN_InstallEventCallback -Installs a callback function for the IRQ handler.
+   - can_pal2_CAN_GetDefaultConfig -Returns the default values for the CAN module.
+
 Module "Cpu"       (component S32K144_48)
    - Cpu_SystemInit -This function disables the watchdog, enables FPU and the power mode protection. SystemInit is called from 
                 startup_device file.

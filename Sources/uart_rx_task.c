@@ -182,7 +182,6 @@ static void bootloader_jumping_to_boot_section(void)
     can_data[length + 7] = 0xAD;   //TODO::implement CRC check
     can_data[length + 8] = 0x03;
     uart_tx_data(can_data, (length+9));
-
 }
 
 

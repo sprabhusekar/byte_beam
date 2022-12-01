@@ -91,5 +91,25 @@ void uart_send_received_can_data(void)
 
 }
 
+void uart_send_single_can_msg(U8 cmd, U32 can_msg_id, U8 *can_buff)
+{
+	U8 can_data_buff[20] = {0,};
+	U16 length = 12;
+	can_data_buff[0] = 0xDE;
+	can_data_buff[1] = 0xAD;
+	can_data_buff[2] = cmd;
+	can_data_buff[3] = length & 0xFF;    //length lo byte //status length is one more byte
+	can_data_buff[4] = length >> 8;		 //length hi byte
+	can_data_buff[5] = (uint8_t)(can_msg_id & 0xFF);
+	can_data_buff[6] = (uint8_t)((can_msg_id >> 8) & 0xFF);
+	can_data_buff[7] = (uint8_t)((can_msg_id >> 16) & 0xFF);
+	can_data_buff[8] = (uint8_t)((can_msg_id >> 24) & 0xFF);
+	memcpy(&can_data_buff[9], can_buff, 8);
+	can_data_buff[17] = 0xDE;
+	can_data_buff[18] = 0xAD;   //TODO::implement CRC check
+	can_data_buff[19] = 0x03;
+	uart_tx_data(can_data_buff, 20);
+}
+
 
 

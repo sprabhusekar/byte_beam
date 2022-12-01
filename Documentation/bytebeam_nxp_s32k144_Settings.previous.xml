@@ -168,5 +168,19 @@
       <EmptySection_DummyValue />
     </Events>
   </Bean>
+  <Bean name="Flash1" type="flash">
+    <Enabled v="Y" />
+    <Properties>
+      <Component_name v="Flash1" />
+      <Device v="FTFC" />
+      <Component_version v="S32K144_SDK01" />
+    </Properties>
+    <Methods>
+      <EmptySection_DummyValue />
+    </Methods>
+    <Events>
+      <EmptySection_DummyValue />
+    </Events>
+  </Bean>
 </PE_PROJECT_SETTINGS_DOCUMENTATION>
 

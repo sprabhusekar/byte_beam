@@ -16,6 +16,8 @@
 #include "semphr.h"
 #include "Cpu.h"
 #include "common_header.h"
+#include "uart_state_machine.h"
+
 /* @{
  * Macro definition */
 typedef enum operating_system_priority_te_tag
@@ -66,13 +68,13 @@ typedef enum operating_system_uart_rx_queue_event_list_te_tag
 	UART_BOOTLOADER_END_OF_DATA_RECEIVED,
 	UART_BOOTLOADER_WHOLE_CRC_CHECK_CMD_RECEIVED,
 	UART_BOOTLOADER_JUMPT_TO_BOOTLOADER_SECTION_CMD_RECEIVED,
-}operating_system_uart_rx_queue_event_list_te;
+} operating_system_uart_rx_queue_event_list_te;
 
 typedef struct operating_system_uart_rx_queue_tst_tag
 {
 	operating_system_uart_rx_queue_event_list_te event_e;
 	uint8_t source_u8 ;
-}operating_system_uart_rx_queue_tst;
+} operating_system_uart_rx_queue_tst;
 
 typedef enum operating_system_uart_tx_queue_event_list_te_tag
 {
@@ -83,18 +85,34 @@ typedef enum operating_system_uart_tx_queue_event_list_te_tag
 	UART_BOOTLOADER_FIRMWARE_CRC_DATA_ACK_SEND,
 	UART_BOOTLOADER_END_OF_DATA_ACK_SEND,
 	UART_BOOTLOADER_WHOLE_CRC_CHECK_ACK_SEND,
-}operating_system_uart_tx_queue_event_list_te;
+	TORK_BLDR_INIT_ACK_EVT,
+	TORK_BLDR_CODE_SIZE_CMD_ACK_EVT,
+	TORK_BLDR_ERASE_CMD_ACK_EVT,
+	TORK_BLDR_WRITE_DATA_BLOCK_ACK_EVT,
+	TORK_BLDR_JMP_CMD_ACK_EVT,
+	TORK_BLE_DATA_FRAME_EVT
+} operating_system_uart_tx_queue_event_list_te;
 
 typedef struct operating_system_uart_tx_queue_tst_tag
 {
 	operating_system_uart_tx_queue_event_list_te event_e;
 	uint8_t source_u8 ;
-}operating_system_uart_tx_queue_tst;
+} operating_system_uart_tx_queue_tst;
+
+typedef struct operating_system_can_tx_queue_tst_tag
+{
+	UART_rx_canframe_data_struct can_data_struct;
+} operating_system_can_tx_queue_tst;
+
+typedef struct operating_system_can_rx_queue_tst_tag
+{
+	can_message_t received_can_msg;
+} operating_system_can_rx_msg_queue_tst;
 
 extern QueueHandle_t os_uart_rx_queue_handler_ge;
 extern QueueHandle_t os_uart_tx_queue_handler_ge;
-
-
+extern QueueHandle_t os_can_tx_queue_handler_ge;
+extern QueueHandle_t os_tork_ble_data_queue_handler_ge;
 
 extern SemaphoreHandle_t uart_rx_intrupt_Semaphore;
 

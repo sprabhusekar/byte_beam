@@ -47,7 +47,8 @@ typedef enum UART_COMMAND_LIST_te_tag
    UART_BOOTLOADER_ENABLE_COMMAND,
    UART_BOOTLOADER_DATA_RECEIVED_COMMAND,
    UART_BOOTLOADER_STATUS_COMMAND,
-   UART_MAX_COMMAND
+   UART_MAX_COMMAND,
+   UART_EXT_ECU_UPDATE_COMMAND = 0xAB,
 } UART_COMMAND_LIST_te;
 
 typedef struct __attribute__((packed)) UART_data_struct
@@ -60,6 +61,11 @@ typedef struct __attribute__((packed)) UART_data_struct
 	U64 timestamp_u64;
 	U8 etx_u8;
 } UART_data_struct;
+
+typedef struct UART_rx_canframe_data_struct_tag
+{
+	U8 can_payload[13];
+} UART_rx_canframe_data_struct;
 
 extern UART_data_struct uart_rx_data;
 

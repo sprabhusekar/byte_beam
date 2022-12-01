@@ -11,10 +11,9 @@
 
 U8 uart_data = 0;
 
- U8 uart_received_data_au8[525]; // 512 bytes + 9 =
+U8 uart_received_data_au8[525]; // 512 bytes + 9 =
 
- U16 uart_receive_counter_u16 = 9;
-
+U16 uart_receive_counter_u16 = 21;
 
 
 U32 uart_rx_data_queue(void)
@@ -63,14 +62,22 @@ void uart0_rx_callback(void *driverState, uart_event_t event, void *userData)
    	   {
    		   if(0 == bootloader_enable_command_received_u8)
    		   {
-   			   for(rx_counter_u8 = 0;rx_counter_u8 <9;rx_counter_u8++)
-   			   {
-   				   process_uart_data(uart_received_data_au8[rx_counter_u8]);
-   			   }
-   			   if(uart_rx_data_queue())
-   			   {
-   				   uart_rx_data_queue();
-   			   }
+//   			   for(rx_counter_u8 = 0;rx_counter_u8 <9;rx_counter_u8++)
+//   			   {
+//   				   process_uart_data(uart_received_data_au8[rx_counter_u8]);
+//   			   }
+//   			   if(uart_rx_data_queue())
+//   			   {
+//   				   uart_rx_data_queue();
+//   			   }
+   			   for(rx_counter_u8 = 0;rx_counter_u8 <21;rx_counter_u8++)
+			   {
+				   process_uart_data(uart_received_data_au8[rx_counter_u8]);
+			   }
+			   if(uart_rx_data_queue())
+			   {
+				   uart_rx_data_queue();
+			   }
    		   }
    		   else
    		   {
@@ -79,6 +86,11 @@ void uart0_rx_callback(void *driverState, uart_event_t event, void *userData)
    				   process_uart_data(uart_received_data_au8[rx_counter_u8]);
    			   }
    		   }
+//		   for(rx_counter_u8 = 0;rx_counter_u8 <1;rx_counter_u8++)
+//		   {
+//			   process_uart_data(uart_received_data_au8[rx_counter_u8]);
+//		   }
+
    	   }
    	   break;
  /*****************************************************************************************************/

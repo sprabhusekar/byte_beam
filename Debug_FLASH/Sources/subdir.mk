@@ -21,6 +21,7 @@ C_SRCS += \
 ../Sources/operating_system.c \
 ../Sources/rr_nvic.c \
 ../Sources/timer.c \
+../Sources/tork_update_app.c \
 ../Sources/uart.c \
 ../Sources/uart_queue.c \
 ../Sources/uart_rx_task.c \
@@ -45,6 +46,7 @@ OBJS += \
 ./Sources/operating_system.o \
 ./Sources/rr_nvic.o \
 ./Sources/timer.o \
+./Sources/tork_update_app.o \
 ./Sources/uart.o \
 ./Sources/uart_queue.o \
 ./Sources/uart_rx_task.o \
@@ -69,6 +71,7 @@ C_DEPS += \
 ./Sources/operating_system.d \
 ./Sources/rr_nvic.d \
 ./Sources/timer.d \
+./Sources/tork_update_app.d \
 ./Sources/uart.d \
 ./Sources/uart_queue.d \
 ./Sources/uart_rx_task.d \

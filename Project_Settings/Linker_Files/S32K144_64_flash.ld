@@ -53,7 +53,7 @@ MEMORY
   m_data                (RW)  : ORIGIN = 0x1FFF8000, LENGTH = 0x00008000
 
   /* SRAM_U */
-  m_data_2              (RW)  : ORIGIN = 0x20000000, LENGTH = 0x00007000
+  m_data_2              (RW)  : ORIGIN = 0x20000000, LENGTH = 0x00007000        /* 20000000  7000*/
 }
 
 /* Define output sections */
@@ -205,4 +205,3 @@ SECTIONS
 
   ASSERT(__StackLimit >= __HeapLimit, "region m_data_2 overflowed with stack and heap")
 }
-

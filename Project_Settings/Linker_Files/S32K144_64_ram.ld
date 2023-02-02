@@ -175,4 +175,3 @@ SECTIONS
   *(.FlashConfig)
   }
 }
-

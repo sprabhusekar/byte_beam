@@ -50,7 +50,6 @@ Sources/uart_state_machine.o: ../Sources/uart_state_machine.c \
  C:/Users/prade/Documents/Bytebeam_source_codes/S32k_code/byte_beam/Generated_Code/pwrMan1.h \
  C:/Users/prade/Documents/Bytebeam_source_codes/S32k_code/byte_beam/Generated_Code/timing_pal1.h \
  C:/Users/prade/Documents/Bytebeam_source_codes/S32k_code/byte_beam/Generated_Code/Flash1.h \
- C:/Users/prade/Documents/Bytebeam_source_codes/S32k_code/byte_beam/Generated_Code/can_pal2.h \
  C:/Users/prade/Documents/Bytebeam_source_codes/S32k_code/byte_beam/includes/can.h \
  C:/Users/prade/Documents/Bytebeam_source_codes/S32k_code/byte_beam/Generated_Code/can_pal1.h \
  C:/Users/prade/Documents/Bytebeam_source_codes/S32k_code/byte_beam/includes/can_queue.h \
@@ -64,7 +63,10 @@ Sources/uart_state_machine.o: ../Sources/uart_state_machine.c \
  C:/Users/prade/Documents/Bytebeam_source_codes/S32k_code/byte_beam/includes/uart_state_machine.h \
  C:/Users/prade/Documents/Bytebeam_source_codes/S32k_code/byte_beam/includes/rr_nvic.h \
  C:/Users/prade/Documents/Bytebeam_source_codes/S32k_code/byte_beam/SDK/platform/devices/S32K144/include/S32K144.h \
- C:/Users/prade/Documents/Bytebeam_source_codes/S32k_code/byte_beam/includes/uart_state_machine.h
+ C:/Users/prade/Documents/Bytebeam_source_codes/S32k_code/byte_beam/includes/uart_state_machine.h \
+ C:/Users/prade/Documents/Bytebeam_source_codes/S32k_code/byte_beam/RTT/SEGGER_RTT.h \
+ C:/Users/prade/Documents/Bytebeam_source_codes/S32k_code/byte_beam/RTT/SEGGER_RTT_Conf.h \
+ C:/Users/prade/Documents/Bytebeam_source_codes/S32k_code/byte_beam/includes/tork_update_app.h
 
 C:/Users/prade/Documents/Bytebeam_source_codes/S32k_code/byte_beam/includes/uart_queue.h:
 
@@ -168,8 +170,6 @@ C:/Users/prade/Documents/Bytebeam_source_codes/S32k_code/byte_beam/Generated_Cod
 
 C:/Users/prade/Documents/Bytebeam_source_codes/S32k_code/byte_beam/Generated_Code/Flash1.h:
 
-C:/Users/prade/Documents/Bytebeam_source_codes/S32k_code/byte_beam/Generated_Code/can_pal2.h:
-
 C:/Users/prade/Documents/Bytebeam_source_codes/S32k_code/byte_beam/includes/can.h:
 
 C:/Users/prade/Documents/Bytebeam_source_codes/S32k_code/byte_beam/Generated_Code/can_pal1.h:
@@ -197,3 +197,9 @@ C:/Users/prade/Documents/Bytebeam_source_codes/S32k_code/byte_beam/includes/rr_n
 C:/Users/prade/Documents/Bytebeam_source_codes/S32k_code/byte_beam/SDK/platform/devices/S32K144/include/S32K144.h:
 
 C:/Users/prade/Documents/Bytebeam_source_codes/S32k_code/byte_beam/includes/uart_state_machine.h:
+
+C:/Users/prade/Documents/Bytebeam_source_codes/S32k_code/byte_beam/RTT/SEGGER_RTT.h:
+
+C:/Users/prade/Documents/Bytebeam_source_codes/S32k_code/byte_beam/RTT/SEGGER_RTT_Conf.h:
+
+C:/Users/prade/Documents/Bytebeam_source_codes/S32k_code/byte_beam/includes/tork_update_app.h:

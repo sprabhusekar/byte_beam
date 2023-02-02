@@ -82,8 +82,8 @@ SemaphoreHandle_t can_tx_intrupt_Semaphore = NULL;
 #define OS_UART_RX_TASK_STACK_SIZE		(256U) /* 256 words = 1024B - 744 Used */
 #define OS_UART_TX_TASK_STACK_SIZE		(256U) /* 256 words = 1024B - 744 Used */
 #define OS_CAN_RX_TASK_STACK_SIZE		(256U)
-#define OS_CAN_TX_TASK_STACK_SIZE		(256U)
-#define OS_DIAGNOSTIC_TASK_STACK_SIZE		(256U)
+#define OS_CAN_TX_TASK_STACK_SIZE		(192U)
+#define OS_DIAGNOSTIC_TASK_STACK_SIZE		(64U)
 
 
 
@@ -218,12 +218,12 @@ static uint8_t operating_system_create_queue_pru8(void)
 	{
 		return_val_u8++;
 	}
-	os_can_tx_queue_handler_ge = xQueueCreate(10, sizeof(operating_system_can_tx_queue_tst));
+	os_can_tx_queue_handler_ge = xQueueCreate(20, sizeof(operating_system_can_tx_queue_tst));
 	if(os_can_tx_queue_handler_ge == NULL)
 	{
 		return_val_u8++;
 	}
-	os_tork_ble_data_queue_handler_ge = xQueueCreate(10, sizeof(operating_system_can_rx_msg_queue_tst));
+	os_tork_ble_data_queue_handler_ge = xQueueCreate(5, sizeof(operating_system_can_rx_msg_queue_tst));
 	if(os_tork_ble_data_queue_handler_ge == NULL)
 	{
 		return_val_u8++;

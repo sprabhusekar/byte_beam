@@ -14,5 +14,7 @@ uint8_t gpio_init_u8(void)
 {
 	uint8_t return_sts_u8 = 0;
 	return_sts_u8 = PINS_DRV_Init(NUM_OF_CONFIGURED_PINS, g_pin_mux_InitConfigArr);
+	PINS_DRV_WritePin(PTD, 0, 0);
+//	PINS_DRV_WritePin(PTA, 12, 0);
 	return return_sts_u8;
 }

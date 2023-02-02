@@ -5,6 +5,7 @@
 -DSTART_FROM_FLASH
 -DUSING_OS_FREERTOS
 -I"C:/Users/prade/Documents/Bytebeam_source_codes/S32k_code/byte_beam/Generated_Code"
+-I"C:/Users/prade/Documents/Bytebeam_source_codes/S32k_code/byte_beam/RTT"
 -I"C:/Users/prade/Documents/Bytebeam_source_codes/S32k_code/byte_beam/includes"
 -I"C:/Users/prade/Documents/Bytebeam_source_codes/S32k_code/byte_beam/Sources"
 -I"C:/Users/prade/Documents/Bytebeam_source_codes/S32k_code/byte_beam/SDK/platform/drivers/src/clock/S32K1xx"
@@ -34,6 +35,5 @@
 -mthumb
 -mfloat-abi=hard
 -mfpu=fpv4-sp-d16
--specs=nano.specs
--specs=nosys.specs
+-specs=rdimon.specs
 --sysroot="C:/NXP/S32DS_ARM_v2.2/S32DS/build_tools/gcc_v6.3/gcc-6.3-arm32-eabi/arm-none-eabi/newlib"

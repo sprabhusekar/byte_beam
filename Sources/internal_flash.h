@@ -93,4 +93,5 @@ extern U8 internal_flash_init(void);
 extern internal_flash_status_e internal_flash_program_e(U32 flash_start_address_aru32,U16 write_count_u16,U8 *flash_data_arpu8);
 extern internal_flash_status_e internal_flash_erase_e(U32 flash_erase_start_address_aru32 ,U32 flash_erase_end_address_aru32 );
 
+
 #endif /* CORE_LAYER_INC_RR_INTERNAL_FLASH_H_ */

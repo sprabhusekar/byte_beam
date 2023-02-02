@@ -53,7 +53,6 @@ Sources/can_rx_task.o: ../Sources/can_rx_task.c \
  C:/Users/prade/Documents/Bytebeam_source_codes/S32k_code/byte_beam/Generated_Code/pwrMan1.h \
  C:/Users/prade/Documents/Bytebeam_source_codes/S32k_code/byte_beam/Generated_Code/timing_pal1.h \
  C:/Users/prade/Documents/Bytebeam_source_codes/S32k_code/byte_beam/Generated_Code/Flash1.h \
- C:/Users/prade/Documents/Bytebeam_source_codes/S32k_code/byte_beam/Generated_Code/can_pal2.h \
  C:/Users/prade/Documents/Bytebeam_source_codes/S32k_code/byte_beam/includes/common_header.h \
  C:/Users/prade/Documents/Bytebeam_source_codes/S32k_code/byte_beam/includes/uart_state_machine.h \
  C:/Users/prade/Documents/Bytebeam_source_codes/S32k_code/byte_beam/includes/common_header.h \
@@ -170,8 +169,6 @@ C:/Users/prade/Documents/Bytebeam_source_codes/S32k_code/byte_beam/Generated_Cod
 C:/Users/prade/Documents/Bytebeam_source_codes/S32k_code/byte_beam/Generated_Code/timing_pal1.h:
 
 C:/Users/prade/Documents/Bytebeam_source_codes/S32k_code/byte_beam/Generated_Code/Flash1.h:
-
-C:/Users/prade/Documents/Bytebeam_source_codes/S32k_code/byte_beam/Generated_Code/can_pal2.h:
 
 C:/Users/prade/Documents/Bytebeam_source_codes/S32k_code/byte_beam/includes/common_header.h:
 

@@ -10,7 +10,8 @@
 #include "operating_system.h"
 #include "rr_nvic.h"
 #include "uart_state_machine.h"
-
+#include "SEGGER_RTT.h"
+#include "tork_update_app.h"
 
 
 volatile U16 new_rx_count_length_16 = 1;
@@ -20,6 +21,7 @@ volatile U16 new_rx_count_length_16 = 1;
 U8 heart_beat_flag = 0;
 U8 last_uart_command_ack_pending = false;
 U8 bootloader_enable_command_received_u8 = false;
+U8 heart_beat_received = 0;
 
 
 U8 heart_beat_check(void)
@@ -124,15 +126,16 @@ void execute_command(UART_data_struct uart_strcut)
 		{
 			if(uart_strcut.payload_au8[0] == 0x00)
 			{
+				heart_beat_received = 1;
 				heart_beat_flag = 1;
 				uart_received_ack_st.event_e = UART_RX_HEART_BEAT_ACK_RECEIVED;
 				uart_received_ack_st.source_u8 = uart_strcut.cmd_u8;
 				xQueueSendFromISR(os_uart_rx_queue_handler_ge,&uart_received_ack_st,NULL);
 			}
-			else
-			{
-				heart_beat_flag = 0;
-			}
+//			else
+//			{
+//				heart_beat_flag = 0;
+//			}
 		}
 		break;
 /***********************************************************************************************/
@@ -147,6 +150,7 @@ void execute_command(UART_data_struct uart_strcut)
 /***********************************************************************************************/
 	    case UART_BOOTLOADER_ENABLE_COMMAND:
 	    {
+	    		SEGGER_RTT_printf(0,"Received BOOTLOADING CMD \r\n");
 	    		bootloader_enable_command_received_u8 = true;
 	    		uart_receive_counter_u16 = 1;
 	    		uart_received_ack_st.event_e = UART_BOOTLOADER_CMD_RECEIVED;
@@ -164,7 +168,13 @@ void execute_command(UART_data_struct uart_strcut)
 	    break;
 	    case 0x55:
 	    {
+//	    	SEGGER_RTT_printf(0,"Received Reset command so resetting the device \r\n");
 			SystemSoftwareReset();
+	    }
+	    break;
+	    case 0x66:
+	    {
+	    	deac_heart_beat = 1;
 	    }
 	    break;
 	    default:

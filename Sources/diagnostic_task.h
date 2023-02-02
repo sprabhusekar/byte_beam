@@ -8,6 +8,10 @@
 #ifndef DIAGNOSTIC_TASK_H_
 #define DIAGNOSTIC_TASK_H_
 
+#include "common_header.h"
+
 extern void diagnostic_task_v(void *parameter);
+
+extern uint8_t ignition_status;
 
 #endif /* DIAGNOSTIC_TASK_H_ */

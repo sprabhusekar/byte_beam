@@ -15,6 +15,7 @@
 #include "uart_rx_task.h"
 #include "bb_memory.h"
 #include "uart.h"
+#include "SEGGER_RTT.h"
 
 
 bootloader_config_tst received_boot_config_st;
@@ -46,6 +47,7 @@ void uart_rx_task_v(void *parameter)
 				case UART_RX_HEART_BEAT_ACK_RECEIVED:
 				{
 					last_uart_command_ack_pending = false;
+					SEGGER_RTT_printf(0,"Received Hearbeat ack\r\n");
 				}
 				break;
 /*********************************************************************************************************/
@@ -57,8 +59,10 @@ void uart_rx_task_v(void *parameter)
 /********************************************************************************************************/
 				case UART_BOOTLOADER_CMD_RECEIVED:
 				{
-					bootloader_app_uart_cmd_ack_send_v(BOOTLOADER_MODE_ENABLE_CMD_ACK_STATUS, BAPP_UART_SUCCESS_STS);
-					//received_boot_config_st.new_firmware_status_u8 = 0xCC;
+					//bootloader_app_uart_cmd_ack_send_v(BOOTLOADER_MODE_ENABLE_CMD_ACK_STATUS, BAPP_UART_SUCCESS_STS);
+					SEGGER_RTT_printf(0,"Received UPLOADING so resetting the device \r\n");
+					received_boot_config_st.new_firmware_status_u8 = 0xCC;
+					bootloader_jumping_to_boot_section();
 					//uart_rx_tx_que_st.event_e =  UART_BOOTLOADER_ENABLE_CMD_ACK_SEND;
 					//uart_rx_tx_que_st.source_u8 = last_can_command_ack_pending;
 				   //xQueueSend(os_uart_tx_queue_handler_ge,&uart_rx_tx_que_st,100);
@@ -113,11 +117,56 @@ void uart_rx_task_v(void *parameter)
 
 
 
+//static void bootloader_jumping_to_boot_section(void)
+//{
+//
+//	U8 write_data_au8[16];
+//	U32 int_flash_write_data_u32 = 0;
+//	if(in_flash_app_erase_e(BOOTLOADER_CONFIG_START_ADDRESS, BOOTLOADER_CONFIG_END_ADDRESS) == IN_FLASH_SUCCESS)
+//	{
+//		memory_copy_u8_array_v((U8*)write_data_au8, (U8*)&received_boot_config_st, sizeof(received_boot_config_st));
+//		memory_copy_u8_array_v((U8*)&boot_loader_conf_gst,  (U8*)&received_boot_config_st, sizeof(received_boot_config_st));
+//		int_flash_write_data_u32 = (U32)&write_data_au8;
+//		if(internal_flash_app_write_e(BOOTLOADER_CONFIG_START_ADDRESS, write_data_au8, 16) == IN_FLASH_SUCCESS)
+//		{
+//			if(internal_flash_app_read_e(BOOTLOADER_CONFIG_START_ADDRESS,
+//											(U8*)&flash_read_boot_config_st, sizeof(received_boot_config_st)) == IN_FLASH_SUCCESS)
+//			{
+//				if(!memory_comp_u8((U8*)&received_boot_config_st,
+//	        					  (U8*)&flash_read_boot_config_st,  sizeof(received_boot_config_st)))
+//				{
+//					//bootloader_app_can_ACK_cmd_send_v(TX_CMD_DIAG_BOOTLOADER_TOOL_CNT_ACK_ID,
+//						//							  BOOTLOADER_JUMPING_TO_BOOTLOADER_STATUS,
+//							//	 					  BAPP_CAN_SUCCESS_STS);
+//					//boot_loader_app_jumping_to_Bootloader_section_e();
+//					SystemSoftwareReset();
+//				}
+//			}
+//			else
+//			{
+//				bootloader_app_uart_cmd_ack_send_v(BOOTLOADER_JUMPING_TO_BOOTLOADER_STATUS, BAPP_UART_FAILURE_STS);
+//			}
+//		}
+//		else
+//		{
+//			bootloader_app_uart_cmd_ack_send_v(BOOTLOADER_JUMPING_TO_BOOTLOADER_STATUS, BAPP_UART_FAILURE_STS);
+//		}
+//	}
+//	else
+//	{
+//		bootloader_app_uart_cmd_ack_send_v(BOOTLOADER_JUMPING_TO_BOOTLOADER_STATUS, BAPP_UART_FAILURE_STS);
+//	}
+//
+//}
+
+
 static void bootloader_jumping_to_boot_section(void)
 {
 
 	U8 write_data_au8[16];
 	U32 int_flash_write_data_u32 = 0;
+
+
 	if(in_flash_app_erase_e(BOOTLOADER_CONFIG_START_ADDRESS, BOOTLOADER_CONFIG_END_ADDRESS) == IN_FLASH_SUCCESS)
 	{
 		memory_copy_u8_array_v((U8*)write_data_au8, (U8*)&received_boot_config_st, sizeof(received_boot_config_st));
@@ -152,7 +201,6 @@ static void bootloader_jumping_to_boot_section(void)
 	{
 		bootloader_app_uart_cmd_ack_send_v(BOOTLOADER_JUMPING_TO_BOOTLOADER_STATUS, BAPP_UART_FAILURE_STS);
 	}
-
 }
 
 

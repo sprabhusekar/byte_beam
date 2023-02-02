@@ -307,7 +307,6 @@ U8 internal_flash_app_init(void)
 	U8  in_flsh_init_sts_u8 = 3;
 	in_flsh_init_sts_u8 = internal_flash_init();
 	return  in_flsh_init_sts_u8;
-
 }
 
 

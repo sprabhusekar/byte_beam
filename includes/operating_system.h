@@ -36,7 +36,7 @@ typedef enum operating_system_priority_te_tag
 #define OS_UART_RX_TASK_PRIORITY		(osPriorityRealtime)
 #define OS_UART_TX_TASK_PRIORITY		(osPriorityAboveNormal)
 #define OS_CAN_RX_TASK_PRIORITY		 	(osPriorityHigh)
-#define OS_CAN_TX_TASK_PRIORITY			(osPriorityAboveNormal)
+#define OS_CAN_TX_TASK_PRIORITY			(osPriorityHigh) //(osPriorityAboveNormal)
 #define OS_DIAGNOSTIC_TASK_PRIORITY		(osPriorityRealtime)
 
 
@@ -85,12 +85,13 @@ typedef enum operating_system_uart_tx_queue_event_list_te_tag
 	UART_BOOTLOADER_FIRMWARE_CRC_DATA_ACK_SEND,
 	UART_BOOTLOADER_END_OF_DATA_ACK_SEND,
 	UART_BOOTLOADER_WHOLE_CRC_CHECK_ACK_SEND,
-	TORK_BLDR_INIT_ACK_EVT,
+	TORK_BLDR_INIT_ACK_EVT = 17,
 	TORK_BLDR_CODE_SIZE_CMD_ACK_EVT,
 	TORK_BLDR_ERASE_CMD_ACK_EVT,
 	TORK_BLDR_WRITE_DATA_BLOCK_ACK_EVT,
 	TORK_BLDR_JMP_CMD_ACK_EVT,
-	TORK_BLE_DATA_FRAME_EVT
+	TORK_BLE_DATA_FRAME_EVT,
+	IGNITION_STATUS_EVT,
 } operating_system_uart_tx_queue_event_list_te;
 
 typedef struct operating_system_uart_tx_queue_tst_tag

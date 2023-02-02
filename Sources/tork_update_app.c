@@ -3,6 +3,8 @@
 #include "operating_system.h"
 #include "can_tx_task.h"
 #include "uart.h"
+#include "can.h"
+//#include "SEGGER_RTT.h"
 
 uint8_t deac_heart_beat = 0;
 
@@ -51,6 +53,7 @@ int tork_update_app_process_can_msg(can_message_t message_can)
 		{
 			if(message_can.id == 0x10F && jmp_cmd_sent_u8 != 1)
 			{
+				//SEGGER_RTT_printf(0,"ack val is %x \r\n",message_can.data[1]);
 				uart_tx_que_st.event_e = TORK_BLDR_WRITE_DATA_BLOCK_ACK_EVT;
 				BaseType_t xHigherPriorityTaskWoken = pdFALSE;
 				xQueueSendFromISR(os_uart_tx_queue_handler_ge,&uart_tx_que_st,&xHigherPriorityTaskWoken);

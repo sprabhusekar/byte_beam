@@ -43,7 +43,7 @@ Generated_Code/Cpu.o: ../Generated_Code/Cpu.c ../Generated_Code/Cpu.h \
  ../Generated_Code/uart_pal1.h ../Generated_Code/clockMan1.h \
  ../Generated_Code/dmaController1.h ../Generated_Code/can_pal1.h \
  ../Generated_Code/pwrMan1.h ../Generated_Code/timing_pal1.h \
- ../Generated_Code/Flash1.h ../Generated_Code/can_pal2.h
+ ../Generated_Code/Flash1.h
 
 ../Generated_Code/Cpu.h:
 
@@ -142,5 +142,3 @@ C:/Users/prade/Documents/Bytebeam_source_codes/S32k_code/byte_beam/SDK/platform/
 ../Generated_Code/timing_pal1.h:
 
 ../Generated_Code/Flash1.h:
-
-../Generated_Code/can_pal2.h:

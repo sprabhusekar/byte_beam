@@ -44,7 +44,7 @@ Generated_Code/timing_pal1.o: ../Generated_Code/timing_pal1.c \
  C:/Users/prade/Documents/Bytebeam_source_codes/S32k_code/byte_beam/SDK/platform/drivers/inc/pins_driver.h \
  ../Generated_Code/uart_pal1.h ../Generated_Code/dmaController1.h \
  ../Generated_Code/can_pal1.h ../Generated_Code/pwrMan1.h \
- ../Generated_Code/Flash1.h ../Generated_Code/can_pal2.h
+ ../Generated_Code/Flash1.h
 
 ../Generated_Code/timing_pal1.h:
 
@@ -143,5 +143,3 @@ C:/Users/prade/Documents/Bytebeam_source_codes/S32k_code/byte_beam/SDK/platform/
 ../Generated_Code/pwrMan1.h:
 
 ../Generated_Code/Flash1.h:
-
-../Generated_Code/can_pal2.h:

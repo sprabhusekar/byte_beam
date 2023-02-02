@@ -7,7 +7,7 @@
 **     Version     : Component 01.197, Driver 01.00, CPU db: 3.00.000
 **     Datasheet   : S32K1XXRM Rev. 9, 09/2018
 **     Compiler    : GNU C Compiler
-**     Date/Time   : 2022-11-24, 18:30, # CodeGen: 61
+**     Date/Time   : 2023-01-01, 19:15, # CodeGen: 67
 **     Abstract    :
 **
 **     Settings    :
@@ -78,7 +78,6 @@
 #include "pwrMan1.h"
 #include "timing_pal1.h"
 #include "Flash1.h"
-#include "can_pal2.h"
 
 #ifdef __cplusplus
 extern "C" {

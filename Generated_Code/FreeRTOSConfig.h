@@ -7,7 +7,7 @@
 **     Version     : Component SDK_S32K1xx_15, Driver 01.00, CPU db: 3.00.000
 **     Repository  : SDK_S32K1xx_15
 **     Compiler    : GNU C Compiler
-**     Date/Time   : 2022-10-01, 08:37, # CodeGen: 51
+**     Date/Time   : 2023-01-11, 23:19, # CodeGen: 73
 **     Contents    :
 **         xCoRoutineCreate               - BaseType_t xCoRoutineCreate(crCOROUTINE_CODE pxCoRoutineCode,UBaseType_t...
 **         crDELAY                        - void crDELAY(CoRoutineHandle_t xHandle ,TickType_t xTicksToDelay);
@@ -203,7 +203,9 @@
 #define configUSE_DAEMON_TASK_STARTUP_HOOK       0
 
 /* Run time and task stats gathering related definitions. */
-#define configGENERATE_RUN_TIME_STATS            0 
+#define configGENERATE_RUN_TIME_STATS            1 
+#define portCONFIGURE_TIMER_FOR_RUN_TIME_STATS() /* nothing */ /* default: use Tick counter as runtime counter */   
+#define portGET_RUN_TIME_COUNTER_VALUE()         xTaskGetTickCount() /* default: use Tick counter as runtime counter */ 
 #define configUSE_TRACE_FACILITY                 0
 #define configUSE_STATS_FORMATTING_FUNCTIONS     0
 

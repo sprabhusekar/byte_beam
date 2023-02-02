@@ -11,7 +11,7 @@
 #include "status.h"
 #include "common_header.h"
 
-#define CAN_QUEUE_SIZE 300
+#define CAN_QUEUE_SIZE 250                      //200                //250                //300
 #define TRUE true
 #define FALSE false
 

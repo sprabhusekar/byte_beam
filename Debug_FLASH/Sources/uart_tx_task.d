@@ -53,7 +53,6 @@ Sources/uart_tx_task.o: ../Sources/uart_tx_task.c \
  C:/Users/prade/Documents/Bytebeam_source_codes/S32k_code/byte_beam/Generated_Code/pwrMan1.h \
  C:/Users/prade/Documents/Bytebeam_source_codes/S32k_code/byte_beam/Generated_Code/timing_pal1.h \
  C:/Users/prade/Documents/Bytebeam_source_codes/S32k_code/byte_beam/Generated_Code/Flash1.h \
- C:/Users/prade/Documents/Bytebeam_source_codes/S32k_code/byte_beam/Generated_Code/can_pal2.h \
  C:/Users/prade/Documents/Bytebeam_source_codes/S32k_code/byte_beam/includes/common_header.h \
  C:/Users/prade/Documents/Bytebeam_source_codes/S32k_code/byte_beam/includes/uart_state_machine.h \
  ../Sources/uart_rx_task.h \
@@ -64,7 +63,9 @@ Sources/uart_tx_task.o: ../Sources/uart_tx_task.c \
  C:/Users/prade/Documents/Bytebeam_source_codes/S32k_code/byte_beam/includes/can_queue.h \
  ../Sources/uart_tx_task.h \
  C:/Users/prade/Documents/Bytebeam_source_codes/S32k_code/byte_beam/includes/tork_update_app.h \
- C:/Users/prade/Documents/Bytebeam_source_codes/S32k_code/byte_beam/includes/can.h
+ C:/Users/prade/Documents/Bytebeam_source_codes/S32k_code/byte_beam/includes/can.h \
+ ../Sources/diagnostic_task.h \
+ C:/Users/prade/Documents/Bytebeam_source_codes/S32k_code/byte_beam/includes/common_header.h
 
 C:/Users/prade/Documents/Bytebeam_source_codes/S32k_code/byte_beam/includes/operating_system.h:
 
@@ -174,8 +175,6 @@ C:/Users/prade/Documents/Bytebeam_source_codes/S32k_code/byte_beam/Generated_Cod
 
 C:/Users/prade/Documents/Bytebeam_source_codes/S32k_code/byte_beam/Generated_Code/Flash1.h:
 
-C:/Users/prade/Documents/Bytebeam_source_codes/S32k_code/byte_beam/Generated_Code/can_pal2.h:
-
 C:/Users/prade/Documents/Bytebeam_source_codes/S32k_code/byte_beam/includes/common_header.h:
 
 C:/Users/prade/Documents/Bytebeam_source_codes/S32k_code/byte_beam/includes/uart_state_machine.h:
@@ -197,3 +196,7 @@ C:/Users/prade/Documents/Bytebeam_source_codes/S32k_code/byte_beam/includes/can_
 C:/Users/prade/Documents/Bytebeam_source_codes/S32k_code/byte_beam/includes/tork_update_app.h:
 
 C:/Users/prade/Documents/Bytebeam_source_codes/S32k_code/byte_beam/includes/can.h:
+
+../Sources/diagnostic_task.h:
+
+C:/Users/prade/Documents/Bytebeam_source_codes/S32k_code/byte_beam/includes/common_header.h:

@@ -131,7 +131,7 @@ extern "C" {
  */
 #if defined ( __GNUC__ ) || defined (__ARMCC_VERSION)
     #define START_FUNCTION_DECLARATION_RAMSECTION
-    #define END_FUNCTION_DECLARATION_RAMSECTION        __attribute__((section (".code_ram")));
+    #define END_FUNCTION_DECLARATION_RAMSECTION        __attribute__((section ("m_data_2")));
 #elif defined ( __ghs__ )
     #define START_FUNCTION_DECLARATION_RAMSECTION      _Pragma("ghs callmode=far")
     #define END_FUNCTION_DECLARATION_RAMSECTION        __attribute__((section (".code_ram")));\

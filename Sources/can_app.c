@@ -12,7 +12,7 @@
 #include "operating_system.h"
 #include "can_app.h"
 #if 1
-U8 can_data[14 * CAN_QUEUE_SIZE + 8] = { 0x02, 0x04 };
+U8 can_data[15 * CAN_QUEUE_SIZE + 8] = { 0x02, 0x04 };
 
 
 volatile U8 can_queue_timeout_vu8 = 0;
@@ -28,6 +28,7 @@ void can_data_push(void)
 {
 	can_message_t rx_can_data_read;
 	static U32 i = 0;
+	static U16 seq_id = 0;
 	U16 length = 0;
 	can_data[0] = 0xDE;
 	can_data[1] = 0xAD;
@@ -38,20 +39,22 @@ void can_data_push(void)
 	for (i = 0; i < can_queue_size_u16; i++)
 	{
 		if (can_rx_array_queue_get(&rx_can_data_read) == CAN_QUEUE_SUCCESS) {
-			can_data[5 + i * 14] = 0x00;		//CAN type for extended ID
-			can_data[6 + i * 14] = rx_can_data_read.length;		//DLC
-			can_data[7 + i * 14] = rx_can_data_read.id >> 24;
-			can_data[8 + i * 14] = rx_can_data_read.id >> 16;
-			can_data[9 + i * 14] = rx_can_data_read.id >> 8;
-			can_data[10 + i * 14] = rx_can_data_read.id;
-			can_data[11 + i * 14] = rx_can_data_read.data[0];
-			can_data[12 + i * 14] = rx_can_data_read.data[1];
-			can_data[13 + i * 14] = rx_can_data_read.data[2];
-			can_data[14 + i * 14] = rx_can_data_read.data[3];
-			can_data[15 + i * 14] = rx_can_data_read.data[4];
-			can_data[16 + i * 14] = rx_can_data_read.data[5];
-			can_data[17 + i * 14] = rx_can_data_read.data[6];
-			can_data[18 + i * 14] = rx_can_data_read.data[7];
+			seq_id++;
+			can_data[5 + i * 15] = seq_id >> 8;		//CAN type for extended ID
+			can_data[6 + i * 15] = seq_id;
+			can_data[7 + i * 15] = rx_can_data_read.length;		//DLC
+			can_data[8 + i * 15] = rx_can_data_read.id >> 24;
+			can_data[9 + i * 15] = rx_can_data_read.id >> 16;
+			can_data[10 + i * 15] = rx_can_data_read.id >> 8;
+			can_data[11 + i * 15] = rx_can_data_read.id;
+			can_data[12 + i * 15] = rx_can_data_read.data[0];
+			can_data[13 + i * 15] = rx_can_data_read.data[1];
+			can_data[14 + i * 15] = rx_can_data_read.data[2];
+			can_data[15 + i * 15] = rx_can_data_read.data[3];
+			can_data[16 + i * 15] = rx_can_data_read.data[4];
+			can_data[17 + i * 15] = rx_can_data_read.data[5];
+			can_data[18 + i * 15] = rx_can_data_read.data[6];
+			can_data[19 + i * 15] = rx_can_data_read.data[7];
 
 
 
@@ -65,12 +68,12 @@ void can_data_push(void)
 		}
 	}
 
-	length = i * 14;
+	length = i * 15;
 	can_data[3] = length & 0xFF;		//length lo byte
 	can_data[4] = length >> 8;		//length hi byte
-	can_data[5 + i * 14] = 0xAA;
-	can_data[6 + i * 14] = 0xBB;
-	can_data[7 + i * 14] = 0x03;
+	can_data[5 + i * 15] = 0xAA;
+	can_data[6 + i * 15] = 0xBB;
+	can_data[7 + i * 15] = 0x03;
 	if(length != 0)
 	{
 		total_uart_length_u16 = length+8;

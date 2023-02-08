@@ -1,7 +1,7 @@
 -Xlinker
 -print-memory-usage
 -T
-"C:/Users/prade/Documents/Bytebeam_source_codes/S32k_code/byte_beam/Project_Settings/Linker_Files/S32K144_64_flash.ld"
+"C:/Users/bhaar/Documents/electorq_persitance/s32k/byte_beam/Project_Settings/Linker_Files/S32K144_64_flash.ld"
 -Wl,-Map,"bytebeam_nxp_s32k144.map"
 -Xlinker
 --gc-sections
